@@ -10,7 +10,7 @@
 
 typedef int phone_number;
 typedef int integer;
-typedef char string[100];
+typedef char String[100];
 
 struct Vector2{
         double x;
@@ -20,7 +20,7 @@ struct Vector2{
 typedef struct Vector2 Vector2;
 
 struct Person{
-    string name;
+    String name;
     integer age;
     phone_number contact_number;
     Vector2 position;
