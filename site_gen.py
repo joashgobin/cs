@@ -18,13 +18,17 @@ def declare_action(action):
 
 target_folders = ["c/","python/"]
 
-def find_files_recursively(directory_path):
+def find_files_recursively(directory_path="."):
 
     declare_action("Detecting files...")
     file_list = []
     for root, dirs, files in os.walk(directory_path):
         for file in files:
             path = os.path.join(root,file)
+            if ".mypy_cache" in path:
+                continue
+            if "__pycache__" in path:
+                continue
             cf = [fo for fo in target_folders if path.startswith("./"+fo)]
             print_fancy(f"ALLOW {path}") if len(cf)>0 else print_fancy(f"REJECT {path}",'red')
             if len(cf)>0:
@@ -50,15 +54,16 @@ def create_html_file(file_path):
     new_path = os.path.splitext(file_path)[0]+".html"
     new_path = new_path.replace("./","./presentation/")
     print_fancy(f"CREATE {new_path}")
-    return
+    new_dir = os.path.dirname(new_path)
+    print(f"Creating directory: {new_dir}")
+    os.makedirs(new_dir,exist_ok=True)
     
-    old_file = open(old_path,'r')
-    new_file = open(new_path,'w')
-    new_file.write(old_file.read())
-    old_file.close()
-    new_file.close()
-    
+    with open(old_path,'r') as old_file:
+        new_file = open(new_path,'w')
+        new_file.write(old_file.read())
+        new_file.close()
 
-files = find_files_recursively(".")
+
+files = find_files_recursively()
 create_file_tree_html(files)
 
