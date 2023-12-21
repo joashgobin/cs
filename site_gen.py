@@ -16,7 +16,7 @@ def print_fancy(message,fore_color='green'):
 def declare_action(action):
     print_fancy(action,'yellow')
 
-target_folders = ["c","python"]
+target_folders = ["c/","python/"]
 
 def find_files_recursively(directory_path):
 
@@ -42,6 +42,22 @@ def create_file_tree_html(file_list):
     f.write(f"<div class='links'>{link_text}</div>")
 
     f.close()
+    for file in file_list:
+        create_html_file(file)
+
+def create_html_file(file_path):
+    old_path = file_path
+    new_path = os.path.splitext(file_path)[0]+".html"
+    new_path = new_path.replace("./","./presentation/")
+    print_fancy(f"CREATE {new_path}")
+    return
+    
+    old_file = open(old_path,'r')
+    new_file = open(new_path,'w')
+    new_file.write(old_file.read())
+    old_file.close()
+    new_file.close()
+    
 
 files = find_files_recursively(".")
 create_file_tree_html(files)
