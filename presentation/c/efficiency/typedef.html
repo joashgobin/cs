@@ -5,8 +5,10 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>Code tree generator</title>
+        <link rel='stylesheet' href='/highlight/styles/default.min.css'>
     </head>
     <body>
+    <pre><code>
     /* typedef can be used to create an alias for another
  * datatype. We can use it to give more meaning to our
  * variable declarations without changing the underlying
@@ -50,6 +52,12 @@ int main(){
     printf("Their current position is (%g, %g)\n",person.position.x,person.position.y);
     return 0;
 }
-</body>
+
+    </code></pre>
+    <script src='/highlight/highlight.min.js'></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    </body>
     </html>
     

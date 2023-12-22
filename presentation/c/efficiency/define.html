@@ -5,8 +5,10 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>Code tree generator</title>
+        <link rel='stylesheet' href='/highlight/styles/default.min.css'>
     </head>
     <body>
+    <pre><code>
     /* #define is used to define macros
  * The # means it is a preprocessor directive
  * Macros are identifiers which will be replaced
@@ -37,6 +39,12 @@ int main(){
 
     return  0;
 }
-</body>
+
+    </code></pre>
+    <script src='/highlight/highlight.min.js'></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    </body>
     </html>
     

@@ -56,10 +56,18 @@ def wrap_with_html_boilerplate(text):
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>Code tree generator</title>
+        <link rel='stylesheet' href='/highlight/styles/default.min.css'>
     </head>
     <body>
+    <pre><code>
     """
-    end = """</body>
+    end = """
+    </code></pre>
+    <script src='/highlight/highlight.min.js'></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    </body>
     </html>
     """
     return start+text+end
