@@ -1,5 +1,4 @@
 import os
-from re import A
 from colorama import init, Fore
 
 init(autoreset=True)
@@ -49,6 +48,22 @@ def create_file_tree_html(file_list):
     for file in file_list:
         create_html_file(file)
 
+def wrap_with_html_boilerplate(text):
+    start = """<!DOCTYPE html>
+    <html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>Code tree generator</title>
+    </head>
+    <body>
+    """
+    end = """</body>
+    </html>
+    """
+    return start+text+end
+
 def create_html_file(file_path):
     old_path = file_path
     new_path = os.path.splitext(file_path)[0]+".html"
@@ -60,7 +75,7 @@ def create_html_file(file_path):
     
     with open(old_path,'r') as old_file:
         new_file = open(new_path,'w')
-        new_file.write(old_file.read())
+        new_file.write(wrap_with_html_boilerplate(old_file.read()))
         new_file.close()
 
 
