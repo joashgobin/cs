@@ -5,7 +5,7 @@
 int main(){
     float angle_in_degrees;
     int correct_inputs = 0;
-    
+
     do {printf("Please enter an angle to convert to radians:\n");
         correct_inputs = scanf("%f",&angle_in_degrees);
         fflush(stdin);

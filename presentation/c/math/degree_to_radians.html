@@ -4,14 +4,14 @@
 <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Code tree generator</title>
+    <title>Code Snippets</title>
     <link rel='stylesheet' href='/highlight/styles/base16/ros-pine.css'>
 </head>
 <body style='background-color:black'>
-<p style='color:darkgray'>c/math</p>
+<small style='color:darkgray'>c/math</small>
 <h2 style='color:orange'>degree_to_radians.c</h2>
 <pre>
-<code>
+<code class='c'>
 #include &lt;stdio.h&gt;
 #include &lt;math.h&gt;
 #define PI acos(-1.0)
@@ -19,7 +19,7 @@
 int main(){
     float angle_in_degrees;
     int correct_inputs = 0;
-    
+
     do {printf(&quot;Please enter an angle to convert to radians:\n&quot;);
         correct_inputs = scanf(&quot;%f&quot;,&amp;angle_in_degrees);
         fflush(stdin);
@@ -31,8 +31,8 @@ int main(){
 
 </code>
 </pre>
-<script src='/highlight/highlight.js'></script>
-<script src='/highlight/languages/c.js'></script>
+<script src='/highlight/highlight.min.js'></script>
+<script src='/highlight/languages/c.min.js'></script>
 <script>
     hljs.highlightAll();
 </script>

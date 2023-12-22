@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(int argc, char *argv[])
+int main()
 {
     double n = 6.02E23;
     double e = 1.6E-19;

@@ -1,0 +1,83 @@
+
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Code Snippets</title>
+    <link rel='stylesheet' href='/highlight/styles/base16/ros-pine.css'>
+</head>
+<body style='background-color:black'>
+<small style='color:darkgray'>c/functions</small>
+<h2 style='color:orange'>function_pointers.c</h2>
+<pre>
+<code class='c'>
+/* Function pointers are used to point to code
+ * whereas normal pointers point to data at a memory
+ * location. We do not need to allocate and de-allocate
+ * memory for function pointers as we do with normal pointers
+ * A function&#x27;s name is a way to get the function&#x27;s address
+ * Function pointers can be used to achieve the strategy pattern in C
+ * a.k.a. dependency injection
+ */
+
+#include &lt;stdio.h&gt;
+
+// using a typedef to make specifying function pointers easier
+typedef int (*binary_operation_ptr)(int,int);
+
+// defining a struct to act as a class with its own name and method
+struct Strategy{
+    char name[10];
+    binary_operation_ptr operation;
+    // OR int (*operation)(int,int); WITHOUT typedef
+};
+
+typedef struct Strategy Strategy;
+
+int diff(int x,int y){
+    return x-y;
+}
+
+int sum(int x,int y){
+    return x+y;
+}
+
+void use_strategy(Strategy strategy){
+    printf(&quot;The result of using %s wth 5 and 6 is %d\n&quot;,strategy.name,strategy.operation(5,6));
+}
+
+void do_calculation(int (*op)(int,int), int x, int y){
+    printf(&quot;The result of the operation is %d\n&quot;,op(x,y));
+}
+
+int main(){
+    // calls the sum function
+    do_calculation(&amp;sum,3,4);
+    // does the same thing because the function&#x27;s name is sufficient to locate the function
+    do_calculation(sum,3,4);
+
+    Strategy addition;
+    strcpy(addition.name,&quot;Addition&quot;);
+    addition.operation = sum;
+    use_strategy(addition);
+
+    Strategy subtraction;
+    strcpy(subtraction.name,&quot;Subtraction&quot;);
+    subtraction.operation = diff;
+    use_strategy(subtraction);
+    
+
+    return 0;
+}
+
+
+</code>
+</pre>
+<script src='/highlight/highlight.min.js'></script>
+<script src='/highlight/languages/c.min.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
+</body>
+</html>

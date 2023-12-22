@@ -1,6 +1,5 @@
 import os
 import html
-from os.path import basename
 from colorama import init, Fore
 
 init(autoreset=True)
@@ -59,28 +58,28 @@ def wrap_with_html_boilerplate(text,orig_file:str):
         case '.py':
             hljs_lib = 'python'
 
-    print(f"Using hljs library: {hljs_lib}.js")
+    print(f"Using hljs library: {hljs_lib}.min.js")
     start = f"""
 <!DOCTYPE html><html lang='en'>
 <head>
 <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Code tree generator</title>
+    <title>Code Snippets</title>
     <link rel='stylesheet' href='/highlight/styles/base16/ros-pine.css'>
 </head>
 <body style='background-color:black'>
-<p style='color:darkgray'>{dir}</p>
+<small style='color:darkgray'>{dir}</small>
 <h2 style='color:orange'>{basename}</h2>
 <pre>
-<code>
+<code class='{hljs_lib}'>
 """
     end = f"""
 
 </code>
 </pre>
-<script src='/highlight/highlight.js'></script>
-<script src='/highlight/languages/{hljs_lib}.js'></script>
+<script src='/highlight/highlight.min.js'></script>
+<script src='/highlight/languages/{hljs_lib}.min.js'></script>
 <script>
     hljs.highlightAll();
 </script>
