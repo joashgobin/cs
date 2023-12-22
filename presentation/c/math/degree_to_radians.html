@@ -1,35 +1,40 @@
-<!DOCTYPE html>
-    <html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>Code tree generator</title>
-        <link rel='stylesheet' href='/highlight/styles/default.min.css'>
-    </head>
-    <body>
-    <pre><code>
-    #include <stdio.h>
-#include <math.h>
+
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Code tree generator</title>
+    <link rel='stylesheet' href='/highlight/styles/base16/ros-pine.css'>
+</head>
+<body style='background-color:black'>
+<p style='color:darkgray'>c/math</p>
+<h2 style='color:orange'>degree_to_radians.c</h2>
+<pre>
+<code>
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
 #define PI acos(-1.0)
 
 int main(){
     float angle_in_degrees;
     int correct_inputs = 0;
     
-    do {printf("Please enter an angle to convert to radians:\n");
-        correct_inputs = scanf("%f",&angle_in_degrees);
+    do {printf(&quot;Please enter an angle to convert to radians:\n&quot;);
+        correct_inputs = scanf(&quot;%f&quot;,&amp;angle_in_degrees);
         fflush(stdin);
     }while (correct_inputs==0);
     
-    printf("The angle in radians is %f\n",PI*angle_in_degrees/180.0);
+    printf(&quot;The angle in radians is %f\n&quot;,PI*angle_in_degrees/180.0);
 } 
 
-    </code></pre>
-    <script src='/highlight/highlight.min.js'></script>
-    <script>
-        hljs.highlightAll();
-    </script>
-    </body>
-    </html>
-    
+
+</code>
+</pre>
+<script src='/highlight/highlight.js'></script>
+<script src='/highlight/languages/c.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
+</body>
+</html>

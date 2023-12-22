@@ -1,34 +1,39 @@
-<!DOCTYPE html>
-    <html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>Code tree generator</title>
-        <link rel='stylesheet' href='/highlight/styles/default.min.css'>
-    </head>
-    <body>
-    <pre><code>
-    #include <stdio.h>
+
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Code tree generator</title>
+    <link rel='stylesheet' href='/highlight/styles/base16/ros-pine.css'>
+</head>
+<body style='background-color:black'>
+<p style='color:darkgray'>c/constructs/conditional_constructs</p>
+<h2 style='color:orange'>if_else.c</h2>
+<pre>
+<code>
+#include &lt;stdio.h&gt;
 
 int main()
 {
     int age;
-    printf("Please enter your age: ");
-    scanf("%d",&age);
-    if(age>=18){
-        printf("You are an adult\n");
+    printf(&quot;Please enter your age: &quot;);
+    scanf(&quot;%d&quot;,&amp;age);
+    if(age&gt;=18){
+        printf(&quot;You are an adult\n&quot;);
     }else{
-        printf("You are not an adult as yet\n");
+        printf(&quot;You are not an adult as yet\n&quot;);
     }
     return 0;
 }
 
-    </code></pre>
-    <script src='/highlight/highlight.min.js'></script>
-    <script>
-        hljs.highlightAll();
-    </script>
-    </body>
-    </html>
-    
+
+</code>
+</pre>
+<script src='/highlight/highlight.js'></script>
+<script src='/highlight/languages/c.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
+</body>
+</html>

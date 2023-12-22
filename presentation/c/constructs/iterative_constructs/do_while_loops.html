@@ -1,38 +1,43 @@
-<!DOCTYPE html>
-    <html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>Code tree generator</title>
-        <link rel='stylesheet' href='/highlight/styles/default.min.css'>
-    </head>
-    <body>
-    <pre><code>
-    #include <stdio.h>
+
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Code tree generator</title>
+    <link rel='stylesheet' href='/highlight/styles/base16/ros-pine.css'>
+</head>
+<body style='background-color:black'>
+<p style='color:darkgray'>c/constructs/iterative_constructs</p>
+<h2 style='color:orange'>do_while_loops.c</h2>
+<pre>
+<code>
+#include &lt;stdio.h&gt;
 
 int main(){
     int i = 0;
 
     do{
-        printf("%d\n",i);
+        printf(&quot;%d\n&quot;,i);
         i++;
-    }while(i<10);
+    }while(i&lt;10);
     
     int ret,number;
     do{
-        printf("Please enter a valid number:\n");
-        ret = scanf("%d",&number);
+        printf(&quot;Please enter a valid number:\n&quot;);
+        ret = scanf(&quot;%d&quot;,&amp;number);
 
     }while(ret==0);
-    printf("Ghee thanks!!");
+    printf(&quot;Ghee thanks!!&quot;);
 }
 
-    </code></pre>
-    <script src='/highlight/highlight.min.js'></script>
-    <script>
-        hljs.highlightAll();
-    </script>
-    </body>
-    </html>
-    
+
+</code>
+</pre>
+<script src='/highlight/highlight.js'></script>
+<script src='/highlight/languages/c.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
+</body>
+</html>

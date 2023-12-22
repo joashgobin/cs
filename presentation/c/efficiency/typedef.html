@@ -1,23 +1,26 @@
-<!DOCTYPE html>
-    <html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>Code tree generator</title>
-        <link rel='stylesheet' href='/highlight/styles/default.min.css'>
-    </head>
-    <body>
-    <pre><code>
-    /* typedef can be used to create an alias for another
+
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Code tree generator</title>
+    <link rel='stylesheet' href='/highlight/styles/base16/ros-pine.css'>
+</head>
+<body style='background-color:black'>
+<p style='color:darkgray'>c/efficiency</p>
+<h2 style='color:orange'>typedef.c</h2>
+<pre>
+<code>
+/* typedef can be used to create an alias for another
  * datatype. We can use it to give more meaning to our
  * variable declarations without changing the underlying
  * functionality achieved
  * typedef helps us with readability and maintainability
  */
 
-#include <stdio.h>
-#include <string.h>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
 
 typedef int phone_number;
 typedef int integer;
@@ -41,23 +44,25 @@ typedef struct Person Person;
 
 int main(){
     Person person; 
-    strcpy(person.name,"John James");
+    strcpy(person.name,&quot;John James&quot;);
     person.age = 23;
     person.contact_number = 1234567;
     person.position.x = 0;
     person.position.y = 2;
-    printf("The person's name is %s\n",person.name);
-    printf("Their age is %d\n",person.age);
-    printf("Their phone number is %d\n",person.contact_number);
-    printf("Their current position is (%g, %g)\n",person.position.x,person.position.y);
+    printf(&quot;The person&#x27;s name is %s\n&quot;,person.name);
+    printf(&quot;Their age is %d\n&quot;,person.age);
+    printf(&quot;Their phone number is %d\n&quot;,person.contact_number);
+    printf(&quot;Their current position is (%g, %g)\n&quot;,person.position.x,person.position.y);
     return 0;
 }
 
-    </code></pre>
-    <script src='/highlight/highlight.min.js'></script>
-    <script>
-        hljs.highlightAll();
-    </script>
-    </body>
-    </html>
-    
+
+</code>
+</pre>
+<script src='/highlight/highlight.js'></script>
+<script src='/highlight/languages/c.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
+</body>
+</html>

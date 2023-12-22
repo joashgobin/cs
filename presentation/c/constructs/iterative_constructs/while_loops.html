@@ -1,31 +1,34 @@
-<!DOCTYPE html>
-    <html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>Code tree generator</title>
-        <link rel='stylesheet' href='/highlight/styles/default.min.css'>
-    </head>
-    <body>
-    <pre><code>
-    #include <stdio.h>
+
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Code tree generator</title>
+    <link rel='stylesheet' href='/highlight/styles/base16/ros-pine.css'>
+</head>
+<body style='background-color:black'>
+<p style='color:darkgray'>c/constructs/iterative_constructs</p>
+<h2 style='color:orange'>while_loops.c</h2>
+<pre>
+<code>
+#include &lt;stdio.h&gt;
 
 int main()
 {
     // write a while loop to 
     // print the numbers 0 to 5
     int i = 0;
-    while(i<=5){
-        printf("The value of i is %d\n",i);
+    while(i&lt;=5){
+        printf(&quot;The value of i is %d\n&quot;,i);
         i = i+1; // OR i+=1 OR i++
     }
 
     // write a while loop to 
     // print the first 10 multiples of 3
     int n = 0;
-    while(n<=10){
-        printf("%d x %d = %d\n",n,3,n*3);
+    while(n&lt;=10){
+        printf(&quot;%d x %d = %d\n&quot;,n,3,n*3);
         n+=1;
     }
 
@@ -35,23 +38,25 @@ int main()
     while(1){
         // ask for user input and 
         // use break when the PIN is correct
-        printf("Please enter your pin:\n");
-        scanf("%d",&pin);
+        printf(&quot;Please enter your pin:\n&quot;);
+        scanf(&quot;%d&quot;,&amp;pin);
         if (pin==1234){
-            printf("Correct pin!! You get a cookie...");
+            printf(&quot;Correct pin!! You get a cookie...&quot;);
             break;
         }else{
-            printf("Wrong pin bro...\n");
+            printf(&quot;Wrong pin bro...\n&quot;);
         }
     }
     return 0;
 }
 
-    </code></pre>
-    <script src='/highlight/highlight.min.js'></script>
-    <script>
-        hljs.highlightAll();
-    </script>
-    </body>
-    </html>
-    
+
+</code>
+</pre>
+<script src='/highlight/highlight.js'></script>
+<script src='/highlight/languages/c.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
+</body>
+</html>

@@ -1,41 +1,46 @@
-<!DOCTYPE html>
-    <html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>Code tree generator</title>
-        <link rel='stylesheet' href='/highlight/styles/default.min.css'>
-    </head>
-    <body>
-    <pre><code>
-    #include <stdio.h>
+
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Code tree generator</title>
+    <link rel='stylesheet' href='/highlight/styles/base16/ros-pine.css'>
+</head>
+<body style='background-color:black'>
+<p style='color:darkgray'>c/constructs/conditional_constructs</p>
+<h2 style='color:orange'>switch_case.c</h2>
+<pre>
+<code>
+#include &lt;stdio.h&gt;
 
 int main(){
     char grade;
-    printf("Please enter your grade: ");
-    scanf("%c",&grade);
+    printf(&quot;Please enter your grade: &quot;);
+    scanf(&quot;%c&quot;,&amp;grade);
 
     switch(grade){
-        case 'A':
-            printf("You did great work\n");
+        case &#x27;A&#x27;:
+            printf(&quot;You did great work\n&quot;);
             break;
-        case 'B':
-            printf("You did good work\n");
+        case &#x27;B&#x27;:
+            printf(&quot;You did good work\n&quot;);
             break;
-        case 'C':
-            printf("You can do better\n");
+        case &#x27;C&#x27;:
+            printf(&quot;You can do better\n&quot;);
             break;
         default:
-            printf("You need to work harder\n");
+            printf(&quot;You need to work harder\n&quot;);
     }
 }
 
-    </code></pre>
-    <script src='/highlight/highlight.min.js'></script>
-    <script>
-        hljs.highlightAll();
-    </script>
-    </body>
-    </html>
-    
+
+</code>
+</pre>
+<script src='/highlight/highlight.js'></script>
+<script src='/highlight/languages/c.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
+</body>
+</html>

@@ -1,37 +1,42 @@
-<!DOCTYPE html>
-    <html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>Code tree generator</title>
-        <link rel='stylesheet' href='/highlight/styles/default.min.css'>
-    </head>
-    <body>
-    <pre><code>
-    /* Doubles are 8 bytes (64 bits) whereas float are only 4 bytes
+
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Code tree generator</title>
+    <link rel='stylesheet' href='/highlight/styles/base16/ros-pine.css'>
+</head>
+<body style='background-color:black'>
+<p style='color:darkgray'>c/datatypes</p>
+<h2 style='color:orange'>double_datatype.c</h2>
+<pre>
+<code>
+/* Doubles are 8 bytes (64 bits) whereas float are only 4 bytes
  * 11 bits for the exponent, 1 bit for the sign
  * and 52 bits for the manstissa
  * This datatype ranges from 1.7E-308 to 1.7E+308
  * The format specifier is %g
  */
 
-#include <stdio.h>
-#include <math.h>
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
 #define PI acos(-1.0)
 
 int main(){
     double length = 0.7;
     double period = 2*PI*sqrt(length/9.81); 
     
-    printf("The period of a simple pendulum with length %g m is %g s",length,period);
+    printf(&quot;The period of a simple pendulum with length %g m is %g s&quot;,length,period);
 }
 
-    </code></pre>
-    <script src='/highlight/highlight.min.js'></script>
-    <script>
-        hljs.highlightAll();
-    </script>
-    </body>
-    </html>
-    
+
+</code>
+</pre>
+<script src='/highlight/highlight.js'></script>
+<script src='/highlight/languages/c.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
+</body>
+</html>

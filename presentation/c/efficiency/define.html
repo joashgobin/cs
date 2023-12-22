@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-    <html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>Code tree generator</title>
-        <link rel='stylesheet' href='/highlight/styles/default.min.css'>
-    </head>
-    <body>
-    <pre><code>
-    /* #define is used to define macros
+
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Code tree generator</title>
+    <link rel='stylesheet' href='/highlight/styles/base16/ros-pine.css'>
+</head>
+<body style='background-color:black'>
+<p style='color:darkgray'>c/efficiency</p>
+<h2 style='color:orange'>define.c</h2>
+<pre>
+<code>
+/* #define is used to define macros
  * The # means it is a preprocessor directive
  * Macros are identifiers which will be replaced
  * by their values/definitions before compilation
@@ -17,8 +20,8 @@
  * Macros can be object-like, chain, multi-line or function-like
  */
 
-#include <stdio.h>
-#include <math.h>
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
 
 // a macro for a constant
 #define g 9.81
@@ -27,24 +30,26 @@
 // a macro for an expression with arguments
 #define circle_area(r) (PI*r*r) 
 // macro with mutiple arguments
-#define max(a,b) ((a>b)?a:b)
+#define max(a,b) ((a&gt;b)?a:b)
 
 int main(){
     float radius = 0.5;
-    printf("The value of PI is %f\n",PI);
-    printf("The area of a circle with radius %f m is %f m^2\n",radius,circle_area(radius));
+    printf(&quot;The value of PI is %f\n&quot;,PI);
+    printf(&quot;The area of a circle with radius %f m is %f m^2\n&quot;,radius,circle_area(radius));
     double new_radius = 4;
-    printf("The area of a circle with radius %g m is %g m^2\n",new_radius,circle_area(new_radius));
-    printf("The maximum of %d and %d is %d\n",5,9,max(5,9));
+    printf(&quot;The area of a circle with radius %g m is %g m^2\n&quot;,new_radius,circle_area(new_radius));
+    printf(&quot;The maximum of %d and %d is %d\n&quot;,5,9,max(5,9));
 
     return  0;
 }
 
-    </code></pre>
-    <script src='/highlight/highlight.min.js'></script>
-    <script>
-        hljs.highlightAll();
-    </script>
-    </body>
-    </html>
-    
+
+</code>
+</pre>
+<script src='/highlight/highlight.js'></script>
+<script src='/highlight/languages/c.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
+</body>
+</html>

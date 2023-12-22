@@ -1,4 +1,6 @@
 import os
+import html
+from os.path import basename
 from colorama import init, Fore
 
 init(autoreset=True)
@@ -48,33 +50,49 @@ def create_file_tree_html(file_list):
     for file in file_list:
         create_html_file(file)
 
-def wrap_with_html_boilerplate(text):
-    start = """<!DOCTYPE html>
-    <html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>Code tree generator</title>
-        <link rel='stylesheet' href='/highlight/styles/default.min.css'>
-    </head>
-    <body>
-    <pre><code>
-    """
-    end = """
-    </code></pre>
-    <script src='/highlight/highlight.min.js'></script>
-    <script>
-        hljs.highlightAll();
-    </script>
-    </body>
-    </html>
-    """
-    return start+text+end
+def wrap_with_html_boilerplate(text,orig_file:str):
+    extension = os.path.splitext(orig_file)[1]
+    basename = os.path.basename(orig_file)
+    dir = orig_file.removesuffix(f"/{basename}").removeprefix("./")
+    hljs_lib = "c"
+    match(extension):
+        case '.py':
+            hljs_lib = 'python'
+
+    print(f"Using hljs library: {hljs_lib}.js")
+    start = f"""
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Code tree generator</title>
+    <link rel='stylesheet' href='/highlight/styles/base16/ros-pine.css'>
+</head>
+<body style='background-color:black'>
+<p style='color:darkgray'>{dir}</p>
+<h2 style='color:orange'>{basename}</h2>
+<pre>
+<code>
+"""
+    end = f"""
+
+</code>
+</pre>
+<script src='/highlight/highlight.js'></script>
+<script src='/highlight/languages/{hljs_lib}.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
+</body>
+</html>
+"""
+    return start+html.escape(text)+end
 
 def create_html_file(file_path):
     old_path = file_path
     new_path = os.path.splitext(file_path)[0]+".html"
+    ext = os.path.splitext(file_path)[1]
     new_path = new_path.replace("./","./presentation/")
     print_fancy(f"CREATE {new_path}")
     new_dir = os.path.dirname(new_path)
@@ -83,7 +101,7 @@ def create_html_file(file_path):
     
     with open(old_path,'r') as old_file:
         new_file = open(new_path,'w')
-        new_file.write(wrap_with_html_boilerplate(old_file.read()))
+        new_file.write(wrap_with_html_boilerplate(old_file.read(),old_path))
         new_file.close()
 
 
