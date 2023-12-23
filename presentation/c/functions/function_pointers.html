@@ -5,7 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Code Snippets</title>
-    <link rel='stylesheet' href='/highlight/styles/base16/ros-pine.css'>
+    <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
 </head>
 <body style='background-color:black'>
 <small style='color:darkgray'>c/functions</small>
@@ -35,12 +35,12 @@ struct Strategy{
 
 typedef struct Strategy Strategy;
 
-int diff(int x,int y){
-    return x-y;
-}
-
 int sum(int x,int y){
     return x+y;
+}
+
+int diff(int x,int y){
+    return x-y;
 }
 
 void use_strategy(Strategy strategy){
@@ -54,14 +54,16 @@ void do_calculation(int (*op)(int,int), int x, int y){
 int main(){
     // calls the sum function
     do_calculation(&amp;sum,3,4);
-    // does the same thing because the function&#x27;s name is sufficient to locate the function
+    // does the same thing because the function name is sufficient to locate it
     do_calculation(sum,3,4);
 
+    // create a strategy for addition
     Strategy addition;
     strcpy(addition.name,&quot;Addition&quot;);
     addition.operation = sum;
     use_strategy(addition);
 
+    // create a strategy for subtraction
     Strategy subtraction;
     strcpy(subtraction.name,&quot;Subtraction&quot;);
     subtraction.operation = diff;
@@ -74,8 +76,8 @@ int main(){
 
 </code>
 </pre>
-<script src='/highlight/highlight.min.js'></script>
-<script src='/highlight/languages/c.min.js'></script>
+<script src='/static/highlight/highlight.min.js'></script>
+<script src='/static/highlight/languages/c.min.js'></script>
 <script>
     hljs.highlightAll();
 </script>

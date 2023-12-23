@@ -21,12 +21,12 @@ struct Strategy{
 
 typedef struct Strategy Strategy;
 
-int diff(int x,int y){
-    return x-y;
-}
-
 int sum(int x,int y){
     return x+y;
+}
+
+int diff(int x,int y){
+    return x-y;
 }
 
 void use_strategy(Strategy strategy){
@@ -40,14 +40,16 @@ void do_calculation(int (*op)(int,int), int x, int y){
 int main(){
     // calls the sum function
     do_calculation(&sum,3,4);
-    // does the same thing because the function's name is sufficient to locate the function
+    // does the same thing because the function name is sufficient to locate it
     do_calculation(sum,3,4);
 
+    // create a strategy for addition
     Strategy addition;
     strcpy(addition.name,"Addition");
     addition.operation = sum;
     use_strategy(addition);
 
+    // create a strategy for subtraction
     Strategy subtraction;
     strcpy(subtraction.name,"Subtraction");
     subtraction.operation = diff;
