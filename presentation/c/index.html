@@ -5,7 +5,8 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Asynchronous Learning</title>
-    <link rel='stylesheet' href='/static/katex/katex.min.css'>
+    <!-- <link rel='stylesheet' href='/static/katex/katex.min.css'> -->
+    <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
     <link rel='stylesheet' href='/static/style.css'>
 </head>
 <body> 
@@ -15,6 +16,42 @@
 <p>Boilerplate is considered as the repetitive sections of code that developers have to type often.</p>
 <p>Examine the following snippet:</p>
 <p><a href="./hello.html">Hello world!!</a></p>
+<p>
+<small style='color:purple'>c/hello.c</small>
+<pre><code>
+#include &lt;stdio.h&gt;
+
+int main(){
+    printf(&quot;Hello world!&quot;);
+    return 0;
+}
+
+</code></pre>
+</p>
+<p>
+<small style='color:purple'>c/datatypes/double_datatype.c</small>
+<pre><code>
+/* Doubles are 8 bytes (64 bits) whereas float are only 4 bytes
+ * 11 bits for the exponent, 1 bit for the sign
+ * and 52 bits for the manstissa
+ * This datatype ranges from 1.7E-308 to 1.7E+308
+ * The format specifier is %g
+ */
+
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+#define PI acos(-1.0)
+
+int main(){
+    double length = 0.7;
+    double period = 2*PI*sqrt(length/9.81); 
+    
+    printf(&quot;The period of a simple pendulum with length %g m is %g s&quot;,length,period);
+}
+
+</code></pre>
+</p>
+<p>Answer the following questions:</p>
 <ul>
 <li>What would you consider to be C boilerplate? What is the <strong>stdio.h</strong> referring to?</li>
 <li>Is this header file necessary for every C program?</li>
@@ -23,10 +60,29 @@
 </ul>
 <h3>Math Formula Test</h3>
 <p>The following formula should be rendered using KaTex:</p>
-<p>$$x^2+5x+6=0$$</p>
-<p>Find the solutions for $x$.</p>
+<p>$$x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}$$</p>
+<p>The above formula can be used to find the roots of a quadratic equation (the solutions for $x$).</p>
+
+<script src='/static/highlight/highlight.min.js'></script>
+<script src='/static/highlight/languages/c.min.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
 
 
-<script src='/static/katex/katex.min.js'></script>
+<link rel="stylesheet" href="/static/katex/katex.min.css">
+<script defer="" src="/static/katex/katex.min.js"></script>
+<script defer="" src="/static/katex/contrib/auto-render.min.js" crossorigin="anonymous"
+onload="
+    renderMathInElement(
+        document.body,
+        {
+            delimiters: [
+                {left:'$$', right:'$$', display:true},
+                {left:'$', right:'$', display:false}
+            ]
+          }
+    );
+"></script>
 </body>
 </html>

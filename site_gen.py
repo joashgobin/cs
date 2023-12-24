@@ -1,4 +1,5 @@
 import os
+import re
 import shutil
 import marko
 import html
@@ -52,7 +53,7 @@ def create_file_tree_html(file_list):
     for file in file_list:
         create_html_file(file)
 
-def wrap_with_markdown_boilerplate(text):
+def wrap_with_markdown_boilerplate(text,path):
     
     start = f"""
 <!DOCTYPE html><html lang='en'>
@@ -62,19 +63,42 @@ def wrap_with_markdown_boilerplate(text):
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Asynchronous Learning</title>
     <!-- <link rel='stylesheet' href='/static/katex/katex.min.css'> -->
+    <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
     <link rel='stylesheet' href='/static/style.css'>
 </head>
 <body> 
 """
     end = f"""
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
-<script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
-<script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<link rel="stylesheet" href="/static/katex/katex.min.css">
+<script defer="" src="/static/katex/katex.min.js"></script>
+<script defer="" src="/static/katex/contrib/auto-render.min.js" crossorigin="anonymous"
+onload="
+    renderMathInElement(
+        document.body,
+        {{
+            delimiters: [
+                {{left:'$$', right:'$$', display:true}},
+                {{left:'$', right:'$', display:false}}
+            ]
+          }}
+    );
+"></script>
 </body>
 </html>
 """
-    return start+marko.convert(text)+end
+    s = marko.convert(text)
+    cur_dir = os.path.dirname(path)
+    result = re.sub(r"!\{\{(\S*)\}\}",lambda match:code_attachment(match,cur_dir+"/"),s)
+    deps = re.finditer(r"!\{\{(\S*)\}\}",s)
+    dep_string = ""
+    for match in deps:
+        dep = get_code_hljslib(os.path.splitext(os.path.basename(match.group(1)))[1])
+        if dep in dep_string:
+            continue
+        dep_string+=dep
+    print(f"Adding dep string: {dep_string}")
+    return start+result+dep_string+end
 
 def wrap_with_code_block_boilerplate(text,orig_file:str):
     extension = os.path.splitext(orig_file)[1]
@@ -115,6 +139,46 @@ def wrap_with_code_block_boilerplate(text,orig_file:str):
 """
     return start+html.escape(text)+end
 
+def code_attachment(match,cur_dir="some directory"):
+    link = cur_dir+match.group(1).removeprefix("./")
+    # return "<<"+match.group(1)+">>"
+    if os.path.exists(link)==False:
+        return f"<small style='color:red'>{link} not found...</small>"
+    # return f"File found: {link}"
+    return get_code_snippet(link)
+
+def get_code_snippet(file_path:str):
+    file = open(file_path,'r')
+    content = file.read()
+    file.close()
+    tag = f"""
+<small style='color:purple'>{file_path.removeprefix('./')}</small>
+<pre><code>
+{html.escape(content)}
+</code></pre>
+"""
+    return tag
+
+def get_code_hljslib(file_path):
+    extension = os.path.splitext(file_path)[1]
+    if extension=='.md':
+        print("No need for highlight js...")
+        return ""
+    hljs_lib = "c"
+    match(extension):
+        case '.py':
+            hljs_lib = 'python'
+    dep = f"""
+<script src='/static/highlight/highlight.min.js'></script>
+<script src='/static/highlight/languages/{hljs_lib}.min.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
+"""
+    return dep
+    
+    
+
 def create_html_file(file_path):
     base, ext = os.path.splitext(file_path)
     old_path = file_path
@@ -130,7 +194,7 @@ def create_html_file(file_path):
         new_file = open(new_path,'w')
         match(ext):
             case '.md':
-                new_file.write(wrap_with_markdown_boilerplate(old_file.read()))
+                new_file.write(wrap_with_markdown_boilerplate(old_file.read(),old_path))
             case _:
                 new_file.write(wrap_with_code_block_boilerplate(old_file.read(),old_path))
         new_file.close()

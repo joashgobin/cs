@@ -8,6 +8,11 @@ Examine the following snippet:
 
 [Hello world!!](./hello.html)
 
+!{{./hello.c}}
+
+!{{./datatypes/double_datatype.c}}
+
+Answer the following questions:
 - What would you consider to be C boilerplate? What is the **stdio.h** referring to?
 - Is this header file necessary for every C program?
 - What is the function *printf* used for?
@@ -16,6 +21,6 @@ Examine the following snippet:
 ### Math Formula Test
 The following formula should be rendered using KaTex:
 
-$$x^2+5x+6=0$$
+$$x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}$$
 
-Find the solutions for $x$.
+The above formula can be used to find the roots of a quadratic equation (the solutions for $x$).
