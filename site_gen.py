@@ -153,11 +153,20 @@ def get_code_snippet(file_path:str):
     file.close()
     tag = f"""
 <small style='color:purple'>{file_path.removeprefix('./')}</small>
-<pre><code>
+<pre><code class='{get_code_class(file_path)}'>
 {html.escape(content)}
 </code></pre>
 """
     return tag
+
+def get_code_class(file_path):
+    extension = os.path.splitext(file_path)[1]
+    hljs_lib = "c"
+    match(extension):
+        case '.py':
+            hljs_lib = 'python'
+    return hljs_lib
+
 
 def get_code_hljslib(file_path):
     extension = os.path.splitext(file_path)[1]
