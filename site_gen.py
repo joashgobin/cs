@@ -107,7 +107,7 @@ def create_file_tree_html(file_list):
     f.write(start)
     f.write(f"<h1>Lessons</h1>")
     f.write(f"<div class='links'><ul>{lesson_link_text}</ul></div>")
-    f.write(f"<h2>Code Snippets</h2>")
+    f.write(f"<h2>Code snippets</h2>")
     f.write(f"<div class='links'><ul>{snippet_link_text}</ul></div>")
     f.write(plain_end)
     f.close()
