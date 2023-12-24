@@ -9,7 +9,18 @@
     <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
     <link rel='stylesheet' href='/static/style.css'>
 </head>
-<body> 
+<body>
+
+<header style='position:fixed;top:0;left:0;margin:0px;padding:10px;width:100%;background-color:darkgrey;color:black;z-index:9999;'>
+    <span class='ribbon' style='text-align:center'>
+        <a href='/'>
+            <img src='/static/TeamLogo.png' height=50px>
+        </a>
+    </span>
+</header>
+<div style='height:70px'></div>
+
+<main>
 <h1>C Home</h1>
 <p>This is where all of the lessons on the C programming language reside.</p>
 <h2>Boilerplate</h2>
@@ -84,5 +95,12 @@ onload="
           }
     );
 "></script>
+</main>
+
+<hr>
+<footer style='padding:30px;font-size:0.9rem;background-color:darkgrey;color:black'>
+Generated using ChickenFryBytes Studios' static site generator
+</footer>
+
 </body>
 </html>

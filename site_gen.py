@@ -7,6 +7,24 @@ from colorama import init, Fore
 
 init(autoreset=True)
 
+page_header = """
+<header style='position:fixed;top:0;left:0;margin:0px;padding:10px;width:100%;background-color:darkgrey;color:black;z-index:9999;'>
+    <span class='ribbon' style='text-align:center'>
+        <a href='/'>
+            <img src='/static/TeamLogo.png' height=50px>
+        </a>
+    </span>
+</header>
+<div style='height:70px'></div>
+"""
+page_footer = """
+<hr>
+<footer style='padding:30px;font-size:0.9rem;background-color:darkgrey;color:black'>
+Generated using ChickenFryBytes Studios' static site generator
+</footer>
+"""
+
+
 def print_fancy(message,fore_color='green'):
     fore = Fore.GREEN
     match(fore_color):
@@ -66,7 +84,9 @@ def wrap_with_markdown_boilerplate(text,path):
     <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
     <link rel='stylesheet' href='/static/style.css'>
 </head>
-<body> 
+<body>
+{page_header}
+<main>
 """
     end = f"""
 
@@ -84,6 +104,8 @@ onload="
           }}
     );
 "></script>
+</main>
+{page_footer}
 </body>
 </html>
 """
