@@ -137,6 +137,8 @@ onload="
 </body>
 </html>
 """
+    path_trimmed = path.removeprefix("./content/").removesuffix(".md").replace("/"," > ").replace("_"," ")
+    path_display = f"<p style='darkgrey;font-size:0.6rem'>{path_trimmed}</p>"
     s = marko.convert(text)
     cur_dir = os.path.dirname(path)
     result = re.sub(r"!\{\{(\S*)\}\}",lambda match:code_attachment(match,cur_dir+"/"),s)
@@ -148,7 +150,7 @@ onload="
             continue
         dep_string+=dep
     print(f"Adding dep string: {dep_string}")
-    return start+result+dep_string+end
+    return start+path_display+result+dep_string+end
 
 def wrap_with_code_block_boilerplate(text,orig_file:str):
     extension = os.path.splitext(orig_file)[1]
