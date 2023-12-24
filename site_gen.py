@@ -280,7 +280,7 @@ def create_html_file(file_path):
         new_file.close()
 
 
-files = find_files_recursively()
+files = find_files_recursively("./content/")
 create_file_tree_html(files)
 declare_action("Site generation finished...")
 
