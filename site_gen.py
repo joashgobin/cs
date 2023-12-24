@@ -105,7 +105,6 @@ def create_file_tree_html(file_list):
         snippet_link_text+=f"<li>{link}</li>\n"
 
     f.write(start)
-    f.write(f"{page_header}")
     f.write(f"<h1>Lessons</h1>")
     f.write(f"<div class='links'><ul>{lesson_link_text}</ul></div>")
     f.write(f"<h2>Code Snippets</h2>")
