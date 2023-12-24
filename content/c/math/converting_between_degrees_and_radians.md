@@ -10,3 +10,6 @@ Take for example the code:
 
 !{{./degree_to_radians.c}}
 
+Conversely, we can convert from radians back to degrees by multiplying by $180\degree$ and dividing by $\pi$:
+$$\frac{\pi}{3}=\frac{\pi}{3}\times \frac{180\degree}{\pi}=60\degree$$
+

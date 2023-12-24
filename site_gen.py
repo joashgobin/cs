@@ -15,7 +15,7 @@ page_header = """
             <img src='/static/TeamLogo.png' height=50px>
         </a>
         <div style='width:20px'></div>
-        <p style='line-height:2;color:white;font-size:1.0rem;font-weight:700'>ChickenFryBytes Studios</p>
+        <p style='line-height:2;color:white;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
     </div>
 </header>
 <div style='height:70px'></div>

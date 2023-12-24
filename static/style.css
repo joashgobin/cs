@@ -76,8 +76,15 @@ pre,code{
 }
 
 a{
-    color:slategrey;
+    color:black;
+    opacity:0.8;
 }
+
+em{
+    color:steelblue;
+}
+
+strong{}
 
 button{
     padding:10px 20px;
