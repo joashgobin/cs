@@ -7,13 +7,16 @@ from colorama import init, Fore
 
 init(autoreset=True)
 
+
 page_header = """
 <header style='position:fixed;top:0;left:0;margin:0px;padding:10px;width:100%;background-color:darkgrey;color:black;z-index:9999;'>
-    <span class='ribbon' style='text-align:center'>
+    <div style='display:flex;align-items:center'>
         <a href='/'>
             <img src='/static/TeamLogo.png' height=50px>
         </a>
-    </span>
+        <div style='width:20px'></div>
+        <p style='line-height:2;color:white;font-size:1.0rem;font-weight:700'>ChickenFryBytes Studios</p>
+    </div>
 </header>
 <div style='height:70px'></div>
 """
@@ -22,6 +25,28 @@ page_footer = """
 <footer style='padding:30px;font-size:0.7rem;color:darkgrey'>
 Generated using ChickenFryBytes Studios' static site generator
 </footer>
+"""
+
+start = f"""
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Asynchronous Learning</title>
+    <!-- <link rel='stylesheet' href='/static/katex/katex.min.css'> -->
+    <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
+    <link rel='stylesheet' href='/static/style.css'>
+</head>
+<body>
+{page_header}
+<main>
+"""
+plain_end = f"""
+</main>
+{page_footer}
+</body>
+</html>
 """
 
 
@@ -56,6 +81,11 @@ def find_files_recursively(directory_path="."):
                 file_list.append(path)
     return file_list
 
+def get_readable_name(file_name:str):
+    spaced_text = file_name.replace("_"," ")
+    capitalized_text = ' '.join(word.capitalize() for word in spaced_text.split())
+    return capitalized_text
+
 def create_file_tree_html(file_list):
     # creating new list to use ./ instead of ./content/
     new_file_list = ["./"+file.removeprefix("./content/") for file in file_list]
@@ -65,42 +95,28 @@ def create_file_tree_html(file_list):
     os.makedirs("./content/",exist_ok=True)
     shutil.copytree("./static/","./presentation/static/",dirs_exist_ok=True)
     f = open("./presentation/index.html",'w')
-    lesson_link_list = [f"<a href='{os.path.splitext(file)[0]}.html'>{os.path.splitext(os.path.basename(file))[0]}</a>" for file in new_file_list if str(file).endswith(".md")]
+    lesson_link_list = [f"<a href='{os.path.splitext(file)[0]}.html'>{get_readable_name(os.path.splitext(os.path.basename(file))[0])}</a>" for file in new_file_list if str(file).endswith(".md")]
     snippet_link_list = [f"<a href='{os.path.splitext(file)[0]}.html'>{os.path.splitext(os.path.basename(file))[0]}</a>" for file in new_file_list if str(file).endswith(".md")==False]
     lesson_link_text = ""
     snippet_link_text = ""
     for link in lesson_link_list:
-        lesson_link_text+=f"{link}<br>\n"
+        lesson_link_text+=f"<li>{link}</li>\n"
     for link in snippet_link_list:
-        snippet_link_text+=f"{link}<br>\n"
+        snippet_link_text+=f"<li>{link}</li>\n"
 
+    f.write(start)
     f.write(f"{page_header}")
     f.write(f"<h1>Lessons</h1>")
-    f.write(f"<div class='links'>{lesson_link_text}</div>")
+    f.write(f"<div class='links'><ul>{lesson_link_text}</ul></div>")
     f.write(f"<h2>Code Snippets</h2>")
-    f.write(f"<div class='links'>{snippet_link_text}</div>")
-
+    f.write(f"<div class='links'><ul>{snippet_link_text}</ul></div>")
+    f.write(plain_end)
     f.close()
     for file in file_list:
         create_html_file(file)
 
 def wrap_with_markdown_boilerplate(text,path):
     
-    start = f"""
-<!DOCTYPE html><html lang='en'>
-<head>
-<meta charset='UTF-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Asynchronous Learning</title>
-    <!-- <link rel='stylesheet' href='/static/katex/katex.min.css'> -->
-    <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
-    <link rel='stylesheet' href='/static/style.css'>
-</head>
-<body>
-{page_header}
-<main>
-"""
     end = f"""
 
 <link rel="stylesheet" href="/static/katex/katex.min.css">
