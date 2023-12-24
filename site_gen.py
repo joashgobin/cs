@@ -96,7 +96,7 @@ def create_file_tree_html(file_list):
     shutil.copytree("./static/","./presentation/static/",dirs_exist_ok=True)
     f = open("./presentation/index.html",'w')
     lesson_link_list = [f"<a href='{os.path.splitext(file)[0]}.html'>{get_readable_name(os.path.splitext(os.path.basename(file))[0])}</a>" for file in new_file_list if str(file).endswith(".md")]
-    snippet_link_list = [f"<a href='{os.path.splitext(file)[0]}.html'>{os.path.splitext(os.path.basename(file))[0]}</a>" for file in new_file_list if str(file).endswith(".md")==False]
+    snippet_link_list = [f"<a href='{os.path.splitext(file)[0]}.html'>{os.path.basename(file)}</a>" for file in new_file_list if str(file).endswith(".md")==False]
     lesson_link_text = ""
     snippet_link_text = ""
     for link in lesson_link_list:

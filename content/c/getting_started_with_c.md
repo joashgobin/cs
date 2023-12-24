@@ -1,5 +1,5 @@
-# C Home
-This is where all of the lessons on the C programming language reside.
+# Getting Started With C
+This is the home base for the lessons on the C programming language.
 
 ## Boilerplate
 Boilerplate is considered as the repetitive sections of code that developers have to type often.
@@ -15,9 +15,3 @@ Answer the following questions:
 - What is the function *printf* used for?
 - Why do we use the " symbol before and after *Hello world!*?
 
-### Math Formula Test
-The following formula should be rendered using KaTex:
-
-$$x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}$$
-
-The above formula can be used to find the roots of a quadratic equation (the solutions for $x$).
