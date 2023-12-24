@@ -19,7 +19,7 @@ page_header = """
 """
 page_footer = """
 <hr>
-<footer style='padding:30px;font-size:0.9rem;background-color:darkgrey;color:black'>
+<footer style='padding:30px;font-size:0.7rem;color:darkgrey'>
 Generated using ChickenFryBytes Studios' static site generator
 </footer>
 """
@@ -37,7 +37,7 @@ def print_fancy(message,fore_color='green'):
 def declare_action(action):
     print_fancy(action,'yellow')
 
-target_folders = ["c/","python/"]
+target_folders = ["content/"]
 
 def find_files_recursively(directory_path="."):
 
@@ -57,15 +57,28 @@ def find_files_recursively(directory_path="."):
     return file_list
 
 def create_file_tree_html(file_list):
+    # creating new list to use ./ instead of ./content/
+    new_file_list = ["./"+file.removeprefix("./content/") for file in file_list]
+    # print(new_file_list)
     declare_action("Creating home page...")
     os.makedirs("./presentation/",exist_ok=True)
+    os.makedirs("./content/",exist_ok=True)
     shutil.copytree("./static/","./presentation/static/",dirs_exist_ok=True)
     f = open("./presentation/index.html",'w')
-    link_list = [f"<a href='{os.path.splitext(file)[0]}.html'>{os.path.splitext(os.path.basename(file))[0]}</a>" for file in file_list]
-    link_text = ""
-    for link in link_list:
-        link_text+=f"{link}<br>\n"
-    f.write(f"<div class='links'>{link_text}</div>")
+    lesson_link_list = [f"<a href='{os.path.splitext(file)[0]}.html'>{os.path.splitext(os.path.basename(file))[0]}</a>" for file in new_file_list if str(file).endswith(".md")]
+    snippet_link_list = [f"<a href='{os.path.splitext(file)[0]}.html'>{os.path.splitext(os.path.basename(file))[0]}</a>" for file in new_file_list if str(file).endswith(".md")==False]
+    lesson_link_text = ""
+    snippet_link_text = ""
+    for link in lesson_link_list:
+        lesson_link_text+=f"{link}<br>\n"
+    for link in snippet_link_list:
+        snippet_link_text+=f"{link}<br>\n"
+
+    f.write(f"{page_header}")
+    f.write(f"<h1>Lessons</h1>")
+    f.write(f"<div class='links'>{lesson_link_text}</div>")
+    f.write(f"<h2>Code Snippets</h2>")
+    f.write(f"<div class='links'>{snippet_link_text}</div>")
 
     f.close()
     for file in file_list:
@@ -174,10 +187,10 @@ def get_code_snippet(file_path:str):
     content = file.read()
     file.close()
     tag = f"""
-<small style='color:purple'>{file_path.removeprefix('./')}</small>
 <pre><code class='{get_code_class(file_path)}'>
 {html.escape(content)}
 </code></pre>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a href='/{file_path.removeprefix("./content/").replace(os.path.splitext(file_path)[1],".html")}' target='_blank' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599;</a>       {file_path.removeprefix('./content/')}</strong>
 """
     return tag
 
@@ -215,7 +228,7 @@ def create_html_file(file_path):
     old_path = file_path
     new_path = os.path.splitext(file_path)[0]+".html"
     ext = os.path.splitext(file_path)[1]
-    new_path = new_path.replace("./","./presentation/")
+    new_path = new_path.replace("./content/","./presentation/")
     print_fancy(f"CREATE {new_path}")
     new_dir = os.path.dirname(new_path)
     print(f"Creating directory: {new_dir}")

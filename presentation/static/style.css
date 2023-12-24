@@ -34,6 +34,9 @@ h6{color:var(--text-title-h6);}
 h1,h2,h3,h4,h5,h6{
     font-weight:bold;
     /*color:slategrey;*/
+    padding-bottom:0;
+    margin-bottom:0;
+    line-height:0.9;
 }
 
 h1:before,h2:before,h3:before,h4:before,h5:before,h6:before{
@@ -46,17 +49,17 @@ content:" •"
 
 h1{font-size:2.5rem;}
 h2{font-size:2.2rem;}
-h3{font-size:2.1rem;}
-h4{font-size:2.1rem;}
-h5{font-size:2rem;}
-h6{font-size:2rem;}
+h3{font-size:2.0rem;}
+h4{font-size:2.0rem;}
+h5{font-size:1.9rem;}
+h6{font-size:1.8rem;}
 
 p{
     line-height:1.6;
     margin-bottom:20px;
 }
 
-pre{
+pre,code{
     border-radius:10px;
 }
 

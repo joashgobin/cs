@@ -26,9 +26,7 @@
 <h2>Boilerplate</h2>
 <p>Boilerplate is considered as the repetitive sections of code that developers have to type often.</p>
 <p>Examine the following snippet:</p>
-<p><a href="./hello.html">Hello world!!</a></p>
 <p>
-<small style='color:purple'>c/hello.c</small>
 <pre><code class='c'>
 #include &lt;stdio.h&gt;
 
@@ -38,33 +36,12 @@ int main(){
 }
 
 </code></pre>
-</p>
-<p>
-<small style='color:purple'>c/datatypes/double_datatype.c</small>
-<pre><code class='c'>
-/* Doubles are 8 bytes (64 bits) whereas float are only 4 bytes
- * 11 bits for the exponent, 1 bit for the sign
- * and 52 bits for the manstissa
- * This datatype ranges from 1.7E-308 to 1.7E+308
- * The format specifier is %g
- */
-
-#include &lt;stdio.h&gt;
-#include &lt;math.h&gt;
-#define PI acos(-1.0)
-
-int main(){
-    double length = 0.7;
-    double period = 2*PI*sqrt(length/9.81); 
-    
-    printf(&quot;The period of a simple pendulum with length %g m is %g s&quot;,length,period);
-}
-
-</code></pre>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a href='/c/hello.html' target='_blank' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599;</a>       c/hello.c</strong>
 </p>
 <p>Answer the following questions:</p>
 <ul>
-<li>What would you consider to be C boilerplate? What is the <strong>stdio.h</strong> referring to?</li>
+<li>What would you consider to be C boilerplate?</li>
+<li>What is the <strong>stdio.h</strong> referring to?</li>
 <li>Is this header file necessary for every C program?</li>
 <li>What is the function <em>printf</em> used for?</li>
 <li>Why do we use the &quot; symbol before and after <em>Hello world!</em>?</li>
@@ -98,7 +75,7 @@ onload="
 </main>
 
 <hr>
-<footer style='padding:30px;font-size:0.9rem;background-color:darkgrey;color:black'>
+<footer style='padding:30px;font-size:0.7rem;color:darkgrey'>
 Generated using ChickenFryBytes Studios' static site generator
 </footer>
 

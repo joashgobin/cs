@@ -21,32 +21,26 @@
 <div style='height:70px'></div>
 
 <main>
-<h1>Converting between Degrees and Radians</h1>
-<p>In order to convert degrees to radians, multiply the angle in degrees by $\pi$ and divide by $180\degree$:</p>
-<p>$$45\degree = 45\degree \times \frac{\pi}{180\degree} \
-=\frac{\pi}{4}
-$$</p>
-<p>Take for example the code:</p>
+<h1>Introduction</h1>
+<p>This article will guide you on the basics of our static site generator.</p>
+<p>You include equations:</p>
+<p>$$T=2\pi = \sqrt{\frac{l}{g}}$$</p>
+<p>You can include code snippets:</p>
 <p>
 <pre><code class='c'>
 #include &lt;stdio.h&gt;
-#include &lt;math.h&gt;
-#define PI acos(-1.0)
 
-int main(){
-    float angle_in_degrees;
-    int correct_inputs = 0;
-
-    do {printf(&quot;Please enter an angle to convert to radians:\n&quot;);
-        correct_inputs = scanf(&quot;%f&quot;,&amp;angle_in_degrees);
-        fflush(stdin);
-    }while (correct_inputs==0);
-    
-    printf(&quot;The angle in radians is %f\n&quot;,PI*angle_in_degrees/180.0);
-} 
+int main(void)
+{
+    int i;
+    for(i=0;i&lt;10;i++){
+        printf(&quot;The value of i is %d\n&quot;,i);
+    }
+    return 0;
+}
 
 </code></pre>
-<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a href='/c/math/degree_to_radians.html' target='_blank' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599;</a>       c/math/degree_to_radians.c</strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a href='/c/constructs/iterative_constructs/for_loops.html' target='_blank' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599;</a>       c/constructs/iterative_constructs/for_loops.c</strong>
 </p>
 
 <script src='/static/highlight/highlight.min.js'></script>
