@@ -208,7 +208,7 @@ def to_bible_verse(match):
         vnum = bible.get_verse_number(verse_id)
         vtext = bible.get_verse_text(verse_id)
         compiled_text+=f"<blockquote><span style='font-size:0.7rem'>{vnum} </span>{vtext}</blockquote>"
-    return f"<div style='border:2px solid purple;border-radius:10px;padding:20px'><p style='color:purple'>{text}</p>"+compiled_text+"</div>"
+    return f"<div style='border:2px solid purple;border-radius:10px;padding:20px'><p style='color:purple;padding-top:0;margin-top:0'>{text}</p>"+compiled_text+"</div>"
 
 def to_code_attachment(match,cur_dir="some directory"):
     link = cur_dir+match.group(1).removeprefix("./")
