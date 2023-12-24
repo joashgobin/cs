@@ -138,7 +138,7 @@ onload="
 </html>
 """
     path_trimmed = path.removeprefix("./content/").removesuffix(".md").replace("/"," > ").replace("_"," ")
-    path_display = f"<p style='darkgrey;font-size:0.6rem'>{path_trimmed}</p>"
+    path_display = f"<p style='darkgrey;opacity:0.5;font-size:0.6rem'>{path_trimmed}</p>"
     s = marko.convert(text)
     cur_dir = os.path.dirname(path)
     result = re.sub(r"!\{\{(\S*)\}\}",lambda match:code_attachment(match,cur_dir+"/"),s)
