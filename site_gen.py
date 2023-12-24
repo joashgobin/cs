@@ -4,6 +4,7 @@ import shutil
 import marko
 import html
 from colorama import init, Fore
+import pythonbible as bible
 
 init(autoreset=True)
 
@@ -48,6 +49,45 @@ plain_end = f"""
 </body>
 </html>
 """
+
+def wrap_with_code_block_boilerplate(text,orig_file:str):
+    extension = os.path.splitext(orig_file)[1]
+    basename = os.path.basename(orig_file)
+    dir = orig_file.removesuffix(f"/{basename}").removeprefix("./")
+    hljs_lib = "c"
+    match(extension):
+        case '.py':
+            hljs_lib = 'python'
+
+    print(f"Using hljs library: {hljs_lib}.min.js")
+    start = f"""
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Code Snippets</title>
+    <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
+</head>
+<body style='background-color:black'>
+<small style='color:darkgray'>{dir}</small>
+<h2 style='color:orange'>{basename}</h2>
+<pre>
+<code class='{hljs_lib}'>
+"""
+    end = f"""
+
+</code>
+</pre>
+<script src='/static/highlight/highlight.min.js'></script>
+<script src='/static/highlight/languages/{hljs_lib}.min.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
+</body>
+</html>
+"""
+    return start+html.escape(text)+end
 
 
 def print_fancy(message,fore_color='green'):
@@ -141,7 +181,10 @@ onload="
     path_display = f"<p style='darkgrey;opacity:0.5;font-size:0.6rem'>{path_trimmed}</p>"
     s = marko.convert(text)
     cur_dir = os.path.dirname(path)
-    result = re.sub(r"!\{\{(\S*)\}\}",lambda match:code_attachment(match,cur_dir+"/"),s)
+
+    result = re.sub(r"!\{\{(\S*)\}\}",lambda match:to_code_attachment(match,cur_dir+"/"),s)
+    result = re.sub(r"!bible\{\{\s*(.*?)\s*\}\}",to_bible_verse,result)
+    
     deps = re.finditer(r"!\{\{(\S*)\}\}",s)
     dep_string = ""
     for match in deps:
@@ -152,46 +195,22 @@ onload="
     print(f"Adding dep string: {dep_string}")
     return start+path_display+result+dep_string+end
 
-def wrap_with_code_block_boilerplate(text,orig_file:str):
-    extension = os.path.splitext(orig_file)[1]
-    basename = os.path.basename(orig_file)
-    dir = orig_file.removesuffix(f"/{basename}").removeprefix("./")
-    hljs_lib = "c"
-    match(extension):
-        case '.py':
-            hljs_lib = 'python'
+def to_bible_verse(match):
+    text = match.group(1)
+    refs = bible.get_references(text)
+    compiled_text = ""
 
-    print(f"Using hljs library: {hljs_lib}.min.js")
-    start = f"""
-<!DOCTYPE html><html lang='en'>
-<head>
-<meta charset='UTF-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Code Snippets</title>
-    <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
-</head>
-<body style='background-color:black'>
-<small style='color:darkgray'>{dir}</small>
-<h2 style='color:orange'>{basename}</h2>
-<pre>
-<code class='{hljs_lib}'>
-"""
-    end = f"""
+    if len(refs)==0:
+        return "No Bible verse references found..."
+    
+    verse_ids = bible.convert_references_to_verse_ids(refs)
+    for verse_id in verse_ids:
+        vnum = bible.get_verse_number(verse_id)
+        vtext = bible.get_verse_text(verse_id)
+        compiled_text+=f"<blockquote><span style='font-size:0.7rem'>{vnum} </span>{vtext}</blockquote>"
+    return f"<div style='border:2px solid purple;border-radius:10px;padding:20px'><p style='color:purple'>{text}</p>"+compiled_text+"</div>"
 
-</code>
-</pre>
-<script src='/static/highlight/highlight.min.js'></script>
-<script src='/static/highlight/languages/{hljs_lib}.min.js'></script>
-<script>
-    hljs.highlightAll();
-</script>
-</body>
-</html>
-"""
-    return start+html.escape(text)+end
-
-def code_attachment(match,cur_dir="some directory"):
+def to_code_attachment(match,cur_dir="some directory"):
     link = cur_dir+match.group(1).removeprefix("./")
     # return "<<"+match.group(1)+">>"
     if os.path.exists(link)==False:
@@ -263,4 +282,5 @@ def create_html_file(file_path):
 
 files = find_files_recursively()
 create_file_tree_html(files)
+declare_action("Site generation finished...")
 
