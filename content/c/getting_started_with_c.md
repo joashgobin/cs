@@ -1,4 +1,4 @@
-# Getting Started With C
+# Getting Started with C
 This is the home base for the lessons on the C programming language.
 
 ## Boilerplate
