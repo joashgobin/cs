@@ -65,5 +65,24 @@ onload="
 Generated using ChickenFryBytes Studios' static site generator
 </footer>
 
+<script>
+
+var copybuttons = document.queryselectorall('.copy_code');
+var codeblocks = document.queryselectorall('.code_block');
+
+copybuttons.foreach(function(button, index){
+    button.addeventlistener('click',function(event){
+        event.preventdefault();
+        var codetext = codeblocks[index].queryselector('code').innertext;
+        navigator.clipboard.writetext(codetext).then(function() {
+            alert('code copied to clipboard!');
+        })
+        catch(function(error) {
+            console.error('could not copy text: ', error);
+        });
+ });
+});
+
+    </script>
 </body>
 </html>

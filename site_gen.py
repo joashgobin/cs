@@ -156,6 +156,26 @@ def create_file_tree_html(file_list):
 
 def wrap_with_markdown_boilerplate(text,path):
     
+    copy_functionality = r"""
+
+var copybuttons = document.queryselectorall('.copy_code');
+var codeblocks = document.queryselectorall('.code_block');
+
+copybuttons.foreach(function(button, index){
+    button.addeventlistener('click',function(event){
+        event.preventdefault();
+        var codetext = codeblocks[index].queryselector('code').innertext;
+        navigator.clipboard.writetext(codetext).then(function() {
+            alert('code copied to clipboard!');
+        })
+        catch(function(error) {
+            console.error('could not copy text: ', error);
+        });
+ });
+});
+
+    """
+
     end = f"""
 
 <link rel="stylesheet" href="/static/katex/katex.min.css">
@@ -174,6 +194,7 @@ onload="
 "></script>
 </main>
 {page_footer}
+<script>{copy_functionality}</script>
 </body>
 </html>
 """
@@ -223,10 +244,11 @@ def get_code_snippet(file_path:str):
     content = file.read()
     file.close()
     tag = f"""
-<pre><code class='{get_code_class(file_path)}'>
+<pre><code class='{get_code_class(file_path)} code_block'>
 {html.escape(content)}
 </code></pre>
-<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a href='/{file_path.removeprefix("./content/").replace(os.path.splitext(file_path)[1],".html")}' target='_blank' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599;</a>       {file_path.removeprefix('./content/')}</strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>{file_path.removeprefix('./content/')}  <a href='/{file_path.removeprefix("./content/").replace(os.path.splitext(file_path)[1],".html")}' target='_blank' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a></strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a class='copy_code' href='#' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a></strong>
 """
     return tag
 

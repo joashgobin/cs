@@ -26,10 +26,10 @@
 <p style='darkgrey;opacity:0.5;font-size:0.6rem'>c > getting started with c</p><h1>Getting Started with C</h1>
 <p>This is the home base for the lessons on the C programming language.</p>
 <h2>Boilerplate</h2>
-<p>Boilerplate is considered as the repetitive sections of code that developers have to type often.</p>
-<p>Examine the following snippet:</p>
+<p>Boilerplate is used to refer to the repetitive sections of code that developers have to type with litte to no variation.</p>
+<p>Examine the following C code snippet:</p>
 <p>
-<pre><code class='c'>
+<pre><code class='c code_block'>
 #include &lt;stdio.h&gt;
 
 int main(){
@@ -38,7 +38,8 @@ int main(){
 }
 
 </code></pre>
-<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a href='/c/hello.html' target='_blank' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599;</a>       c/hello.c</strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/hello.c  <a href='/c/hello.html' target='_blank' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a></strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a class='copy_code' href='#' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a></strong>
 </p>
 <p>Answer the following questions:</p>
 <ul>
@@ -77,5 +78,24 @@ onload="
 Generated using ChickenFryBytes Studios' static site generator
 </footer>
 
+<script>
+
+var copybuttons = document.queryselectorall('.copy_code');
+var codeblocks = document.queryselectorall('.code_block');
+
+copybuttons.foreach(function(button, index){
+    button.addeventlistener('click',function(event){
+        event.preventdefault();
+        var codetext = codeblocks[index].queryselector('code').innertext;
+        navigator.clipboard.writetext(codetext).then(function() {
+            alert('code copied to clipboard!');
+        })
+        catch(function(error) {
+            console.error('could not copy text: ', error);
+        });
+ });
+});
+
+    </script>
 </body>
 </html>

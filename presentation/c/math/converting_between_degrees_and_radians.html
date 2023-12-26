@@ -30,7 +30,7 @@
 $$</p>
 <p>Take for example the code:</p>
 <p>
-<pre><code class='c'>
+<pre><code class='c code_block'>
 #include &lt;stdio.h&gt;
 #include &lt;math.h&gt;
 #define PI acos(-1.0)
@@ -39,7 +39,7 @@ int main(){
     float angle_in_degrees;
     int correct_inputs = 0;
 
-    do {printf(&quot;Please enter an angle to convert to radians:\n&quot;);
+    do {printf(&quot;Please enter an angle in degrees to convert to radians:\n&quot;);
         correct_inputs = scanf(&quot;%f&quot;,&amp;angle_in_degrees);
         fflush(stdin);
     }while (correct_inputs==0);
@@ -48,10 +48,25 @@ int main(){
 } 
 
 </code></pre>
-<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a href='/c/math/degree_to_radians.html' target='_blank' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599;</a>       c/math/degree_to_radians.c</strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/math/degree_to_radians.c  <a href='/c/math/degree_to_radians.html' target='_blank' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a></strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a class='copy_code' href='#' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a></strong>
 </p>
 <p>Conversely, we can convert from radians back to degrees by multiplying by $180\degree$ and dividing by $\pi$:
 $$\frac{\pi}{3}=\frac{\pi}{3}\times \frac{180\degree}{\pi}=60\degree$$</p>
+<h4>Challenge</h4>
+<p>Convert the following angles to radians:</p>
+<ul>
+<li>$45\degree$</li>
+<li>$360\degree$</li>
+<li>$-135\degree$</li>
+</ul>
+<p>Convert the following angles to degrees:</p>
+<ul>
+<li>$\frac{\pi}{4}\ rad$</li>
+<li>$3\pi \ rad$</li>
+<li>$\frac{-\pi}{5}\ rad$</li>
+</ul>
+<p>Rewrite the C code above to convert an angle in radians, provided by the user, back to degrees.</p>
 
 <script src='/static/highlight/highlight.min.js'></script>
 <script src='/static/highlight/languages/c.min.js'></script>
@@ -81,5 +96,24 @@ onload="
 Generated using ChickenFryBytes Studios' static site generator
 </footer>
 
+<script>
+
+var copybuttons = document.queryselectorall('.copy_code');
+var codeblocks = document.queryselectorall('.code_block');
+
+copybuttons.foreach(function(button, index){
+    button.addeventlistener('click',function(event){
+        event.preventdefault();
+        var codetext = codeblocks[index].queryselector('code').innertext;
+        navigator.clipboard.writetext(codetext).then(function() {
+            alert('code copied to clipboard!');
+        })
+        catch(function(error) {
+            console.error('could not copy text: ', error);
+        });
+ });
+});
+
+    </script>
 </body>
 </html>

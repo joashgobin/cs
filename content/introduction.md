@@ -7,9 +7,9 @@ This project should help students to partake in **mastery learning**. It is *not
 This article will show you the basic features of the NibbleSprouts static site generator. Articles are written in a *modified markdown syntax* and **converted to html** when the site is generated.
 
 ### Typesetting
-You can include equations. The MathML rendering is handled by *$\KaTeX$*. It supports inline mode e.g. $\sin{x}$ and a display mode:
+You can include equations. The MathML rendering is handled by *$\KaTeX$*. It supports inline mode e.g. $\sin{x}$ and display mode:
 
-$$T=2\pi = \sqrt{\frac{l}{g}}$$
+$$T=2\pi \sqrt{\frac{l}{g}}$$
 
 This feature makes representing mathematical concepts easier.
 
