@@ -1,4 +1,5 @@
 import os
+import hashlib
 import re
 import shutil
 import marko
@@ -157,22 +158,14 @@ def create_file_tree_html(file_list):
 def wrap_with_markdown_boilerplate(text,path):
     
     copy_functionality = r"""
-
-var copybuttons = document.queryselectorall('.copy_code');
-var codeblocks = document.queryselectorall('.code_block');
-
-copybuttons.foreach(function(button, index){
-    button.addeventlistener('click',function(event){
-        event.preventdefault();
-        var codetext = codeblocks[index].queryselector('code').innertext;
-        navigator.clipboard.writetext(codetext).then(function() {
-            alert('code copied to clipboard!');
-        })
-        catch(function(error) {
-            console.error('could not copy text: ', error);
+    function copyToClipboard(id){
+        var copyText = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(copyText).then(function(){
+            console.log("Copied "+id+" to clipboard");        
+        }).catch(function(error){
+            console.log("Error copying "+id+" to clipboard; Error: "+error);        
         });
- });
-});
+    }
 
     """
 
@@ -243,14 +236,19 @@ def get_code_snippet(file_path:str):
     file = open(file_path,'r')
     content = file.read()
     file.close()
+    file_id = file_path.replace("./content/","").replace("/","-")
     tag = f"""
-<pre><code class='{get_code_class(file_path)} code_block'>
+<pre><code class='{get_code_class(file_path)}' id='{file_id}'>
 {html.escape(content)}
 </code></pre>
 <strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>{file_path.removeprefix('./content/')}  <a href='/{file_path.removeprefix("./content/").replace(os.path.splitext(file_path)[1],".html")}' target='_blank' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a></strong>
-<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a class='copy_code' href='#' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a></strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a href='#{file_id}' onclick='copyToClipboard("{file_id}")' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a></strong>
+
 """
     return tag
+
+def get_hash(input_string):
+    return hashlib.sha256(input_string.encode()).hexdigest()
 
 def get_code_class(file_path):
     extension = os.path.splitext(file_path)[1]

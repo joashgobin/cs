@@ -30,7 +30,7 @@
 $$</p>
 <p>Take for example the code:</p>
 <p>
-<pre><code class='c code_block'>
+<pre><code class='c' id='c-math-degree_to_radians.c'>
 #include &lt;stdio.h&gt;
 #include &lt;math.h&gt;
 #define PI acos(-1.0)
@@ -49,7 +49,8 @@ int main(){
 
 </code></pre>
 <strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/math/degree_to_radians.c  <a href='/c/math/degree_to_radians.html' target='_blank' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a></strong>
-<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a class='copy_code' href='#' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a></strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a href='#c-math-degree_to_radians.c' onclick='copyToClipboard("c-math-degree_to_radians.c")' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a></strong>
+
 </p>
 <p>Conversely, we can convert from radians back to degrees by multiplying by $180\degree$ and dividing by $\pi$:
 $$\frac{\pi}{3}=\frac{\pi}{3}\times \frac{180\degree}{\pi}=60\degree$$</p>
@@ -97,22 +98,14 @@ Generated using ChickenFryBytes Studios' static site generator
 </footer>
 
 <script>
-
-var copybuttons = document.queryselectorall('.copy_code');
-var codeblocks = document.queryselectorall('.code_block');
-
-copybuttons.foreach(function(button, index){
-    button.addeventlistener('click',function(event){
-        event.preventdefault();
-        var codetext = codeblocks[index].queryselector('code').innertext;
-        navigator.clipboard.writetext(codetext).then(function() {
-            alert('code copied to clipboard!');
-        })
-        catch(function(error) {
-            console.error('could not copy text: ', error);
+    function copyToClipboard(id){
+        var copyText = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(copyText).then(function(){
+            console.log("Copied "+id+" to clipboard");        
+        }).catch(function(error){
+            console.log("Error copying "+id+" to clipboard; Error: "+error);        
         });
- });
-});
+    }
 
     </script>
 </body>

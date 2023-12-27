@@ -51,22 +51,14 @@ Generated using ChickenFryBytes Studios' static site generator
 </footer>
 
 <script>
-
-var copybuttons = document.queryselectorall('.copy_code');
-var codeblocks = document.queryselectorall('.code_block');
-
-copybuttons.foreach(function(button, index){
-    button.addeventlistener('click',function(event){
-        event.preventdefault();
-        var codetext = codeblocks[index].queryselector('code').innertext;
-        navigator.clipboard.writetext(codetext).then(function() {
-            alert('code copied to clipboard!');
-        })
-        catch(function(error) {
-            console.error('could not copy text: ', error);
+    function copyToClipboard(id){
+        var copyText = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(copyText).then(function(){
+            console.log("Copied "+id+" to clipboard");        
+        }).catch(function(error){
+            console.log("Error copying "+id+" to clipboard; Error: "+error);        
         });
- });
-});
+    }
 
     </script>
 </body>

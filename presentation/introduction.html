@@ -36,7 +36,7 @@ This project should help students to partake in <strong>mastery learning</strong
 <h3>Code snippets</h3>
 <p>You can include code snippets. The syntax highlighting theme used is rose-pine (via <strong>highlight js</strong>):</p>
 <p>
-<pre><code class='c code_block'>
+<pre><code class='c' id='c-constructs-iterative_constructs-for_loops.c'>
 #include &lt;stdio.h&gt;
 
 int main(void)
@@ -50,7 +50,8 @@ int main(void)
 
 </code></pre>
 <strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/constructs/iterative_constructs/for_loops.c  <a href='/c/constructs/iterative_constructs/for_loops.html' target='_blank' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a></strong>
-<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a class='copy_code' href='#' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a></strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a href='#c-constructs-iterative_constructs-for_loops.c' onclick='copyToClipboard("c-constructs-iterative_constructs-for_loops.c")' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a></strong>
+
 </p>
 <p>This feature was added as a way to include code directly from the user's device without them having to copy and paste it manually. The little arrow can be clicked to open the code snippet in a new tab.</p>
 <h3>Bible verses</h3>
@@ -97,22 +98,14 @@ Generated using ChickenFryBytes Studios' static site generator
 </footer>
 
 <script>
-
-var copybuttons = document.queryselectorall('.copy_code');
-var codeblocks = document.queryselectorall('.code_block');
-
-copybuttons.foreach(function(button, index){
-    button.addeventlistener('click',function(event){
-        event.preventdefault();
-        var codetext = codeblocks[index].queryselector('code').innertext;
-        navigator.clipboard.writetext(codetext).then(function() {
-            alert('code copied to clipboard!');
-        })
-        catch(function(error) {
-            console.error('could not copy text: ', error);
+    function copyToClipboard(id){
+        var copyText = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(copyText).then(function(){
+            console.log("Copied "+id+" to clipboard");        
+        }).catch(function(error){
+            console.log("Error copying "+id+" to clipboard; Error: "+error);        
         });
- });
-});
+    }
 
     </script>
 </body>
