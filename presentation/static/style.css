@@ -37,8 +37,10 @@ h6{color:var(--text-title-h6);}
 h1,h2,h3,h4,h5,h6{
     font-weight:bold;
     /*color:slategrey;*/
-    padding-bottom:20;
-    margin-bottom:20;
+    padding-top:0;
+    margin-top:50px;
+    padding-bottom:0;
+    margin-bottom:0;
     line-height:0.9;
 }
 
@@ -49,6 +51,15 @@ h1:before,h2:before,h3:before,h4:before,h5:before,h6:before{
 h1:after,h2:after,h3:after,h4:after,h5:after,h6:after{
     content:" •"
 }
+
+p{
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+h1,h2,h3,h4,h5,h6,p,ul{
+}
+
 
 h1{font-size:2.5rem;}
 h2{font-size:2.2rem;}
@@ -67,11 +78,6 @@ li::before{
     content:"\279C  ";
     color:darkgrey;
     opacity:0.5;
-}
-
-p{
-    line-height:1.6;
-    margin-bottom:20px;
 }
 
 pre,code{

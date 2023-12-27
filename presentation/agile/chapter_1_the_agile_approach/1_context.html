@@ -1,0 +1,114 @@
+
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Asynchronous Learning</title>
+    <!-- <link rel='stylesheet' href='/static/katex/katex.min.css'> -->
+    <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
+    <link rel='stylesheet' href='/static/style.css'>
+</head>
+<body>
+
+<header style='position:fixed;top:0;left:0;margin:0px;padding:10px;width:100%;background-color:darkgrey;color:black;z-index:9999;'>
+    <div style='display:flex;align-items:center'>
+        <a href='/'>
+            <img src='/static/TeamLogo.png' height=50px>
+        </a>
+        <div style='width:20px'></div>
+        <p style='line-height:2;color:white;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
+    </div>
+</header>
+<div style='height:70px'></div>
+
+<main>
+<p style='darkgrey;opacity:0.5;font-size:0.6rem'>agile > chapter 1 the agile approach > 1 context</p><h1>Context</h1>
+<h2>Why is it called agile</h2>
+<p>We prefer to agile project management as agile because of its ability to adapt.
+Agile management embraces change.</p>
+<h2>Reasons for its success</h2>
+<p>The traditional project management methodologies:</p>
+<ul>
+<li>are too rigid</li>
+<li>do not cater for changes in requirements along the way</li>
+<li>favour <em>information coolers</em> such as <strong>Gantt charts</strong> which require a lot of
+technical knowledge to prepare</li>
+<li>need all requirements to be finalized before starting</li>
+<li>produce TLDR documents at the end of each stage of production</li>
+</ul>
+<h3>The agile principles</h3>
+<p>These are the four(4) principles upon which all of agile management is built:</p>
+<ol>
+<li>People and their experiences over rigid processes</li>
+<li>Tangible and usable products over extensive documentation</li>
+<li>Collaboration with client over contracts</li>
+<li>Adaptation to change over a rigid plan</li>
+</ol>
+<p>The latter in each pair is not unnecessary but it is not as important as the former.
+For example, having a working product is more important than a manual but we still need
+to produce a manual (a document describing how the software should be used).</p>
+<h2>Agile methodologies</h2>
+<p>These are the result of applying the agile principles. It is not necessary to use only
+one methodology as one may have its strengths in dealing with certain situations compared to another.</p>
+<h3>Examples of agile methodologies</h3>
+<p>Some agile methodologies are:</p>
+<ul>
+<li>scrum</li>
+<li>kanban</li>
+<li>extreme programming (XP)</li>
+<li>lean</li>
+</ul>
+<h2>Advantages of the agile approach</h2>
+<p>With the agile approach, the team:</p>
+<ul>
+<li>expects change</li>
+<li>favours <em>information radiators</em> such as <strong>kanban boards</strong> which require little to
+no training in order to use</li>
+<li>allows for project commencement without large amounts of information being known</li>
+<li>only produces documents that will help improve the progress of the project</li>
+</ul>
+<h2>Areas where we apply agile</h2>
+<p>These include but are not limited to:</p>
+<ul>
+<li>research projects</li>
+<li>data science</li>
+<li>software development</li>
+<li>construction e.g. lean construction</li>
+</ul>
+
+
+<link rel="stylesheet" href="/static/katex/katex.min.css">
+<script defer="" src="/static/katex/katex.min.js"></script>
+<script defer="" src="/static/katex/contrib/auto-render.min.js" crossorigin="anonymous"
+onload="
+    renderMathInElement(
+        document.body,
+        {
+            delimiters: [
+                {left:'$$', right:'$$', display:true},
+                {left:'$', right:'$', display:false}
+            ]
+          }
+    );
+"></script>
+</main>
+
+<hr>
+<footer style='padding:30px;font-size:0.7rem;color:darkgrey'>
+Generated using ChickenFryBytes Studios' static site generator
+</footer>
+
+<script>
+    function copyToClipboard(id){
+        var copyText = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(copyText).then(function(){
+            console.log("Copied "+id+" to clipboard");        
+        }).catch(function(error){
+            console.log("Error copying "+id+" to clipboard; Error: "+error);        
+        });
+    }
+
+    </script>
+</body>
+</html>
