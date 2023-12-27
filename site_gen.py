@@ -236,13 +236,16 @@ def get_code_snippet(file_path:str):
     file = open(file_path,'r')
     content = file.read()
     file.close()
-    file_id = file_path.replace("./content/","").replace("/","-")
+    file_id = os.path.basename(file_path)
     tag = f"""
 <pre><code class='{get_code_class(file_path)}' id='{file_id}'>
 {html.escape(content)}
 </code></pre>
-<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>{file_path.removeprefix('./content/')}  <a href='/{file_path.removeprefix("./content/").replace(os.path.splitext(file_path)[1],".html")}' target='_blank' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a></strong>
-<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'><a href='#{file_id}' onclick='copyToClipboard("{file_id}")' style='width:18px;border:2px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a></strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>
+    <a href='/{file_path.removeprefix("./content/").replace(os.path.splitext(file_path)[1],".html")}' target='_blank' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a>
+    <a href='#{file_id}' onclick='copyToClipboard("{file_id}")' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a>
+</strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>{file_path.removeprefix('./content/')} </strong>
 
 """
     return tag
