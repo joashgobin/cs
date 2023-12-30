@@ -4,7 +4,7 @@
 <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <meta http-equiv="refresh" content="3">
+    
     <title>Asynchronous Learning</title>
     <!-- <link rel='stylesheet' href='/static/katex/katex.min.css'> -->
     <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
@@ -12,17 +12,17 @@
 </head>
 <body>
 
-<header style='position:fixed;top:0;left:0;margin:0px;padding:10px;width:100%;background-color:darkgrey;color:black;z-index:9999;'>
+<header style='position:fixed;top:0;left:0;margin:0px;padding:4px;width:100%;background-color:darkgrey;color:black;z-index:9999;'>
     <div style='display:flex;align-items:center'>
         <div style='width:10px'></div>
         <a href='/'>
-            <img src='/static/TeamLogo.png' height=50px>
+            <img src='/static/TeamLogo.png' height=40px>
         </a>
         <div style='width:20px'></div>
-        <p style='line-height:2;color:white;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
+        <p style='line-height:1.2;color:#f4f4f4;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
     </div>
 </header>
-<div style='height:70px'></div>
+<div style='height:40px'></div>
 
 <main>
 <p style='darkgrey;opacity:0.5;font-size:0.6rem'>c > constructs > iterative constructs > iterative constructs</p><h1>Iterative Constructs</h1>
@@ -34,7 +34,7 @@ common iterative constructs:</p>
 <li>while loops</li>
 <li>do-while loops</li>
 </ul>
-<p>Iterative constructs can be bounded (e.g. <strong>for loops</strong>) or unbounded (<strong>while and do-while loops</strong>).</p>
+<p>Iterative constructs can be bounded (e.g. <strong>for loops</strong>) or unbounded (<strong>while</strong> and <strong>do-while loops</strong>).</p>
 <h2>For loops</h2>
 <p>The <strong>for loop</strong> is a bounded loop. This is because we can tell how many times it will
 be executed before termination. We can know the number of iterations from how we construct the for loop.
@@ -139,57 +139,7 @@ int main(){
 <strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/constructs/iterative_constructs/do_while_loops.c </strong>
 
 </p>
-<h3>Infinite loops</h3>
-<p>These are loops that have the potential to run forever.</p>
-<h3>Empty loops</h3>
-<p>These are loops that do no effective work in the program. They may happen by accident
-if we do not take care in how we write our code (usually by putting curly braces in
-the wrong place).</p>
-<h2>The goto directive</h2>
-<p>Looping behaviour can be achieved by the use of C's goto directive. We place a label
-before a section of code and tell the computer to <em>go to</em> that section where the label is.
-This can be used to achieve a more readable form of the Euclidean algorithm:
-
-<pre><code class='c' id='goto_euclidean_algorithm.c'>
-#include &lt;stdio.h&gt;
-
-int main(){
-    int original_a=14,original_b=12344;
-    int a=original_a,b=original_b,quot,rem;
-    
-    // declaring label called &#x27;start&#x27;
-    start:
-    quot = b/a;
-    rem = b%a;
-    printf(&quot;%d = %d x %d + %d\n&quot;,b,quot,a,rem);
-    
-    if (rem==0){
-        printf(&quot;The HCF of %d and %d is %d\n&quot;,original_a,original_b,a);
-    }
-    else{
-        b = a;
-        a = rem;
-        // jumping back to the &#x27;start&#x27; label
-        goto start;
-    }
-    return 0;
-}
-
-</code></pre>
-<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>
-    <a href='/c/constructs/iterative_constructs/goto_euclidean_algorithm.html' target='_blank' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a>
-    <a href='#goto_euclidean_algorithm.c' onclick='copyToClipboard("goto_euclidean_algorithm.c")' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a>
-</strong>
-<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/constructs/iterative_constructs/goto_euclidean_algorithm.c </strong>
-
-</p>
-<p>Notice that we do not declare any variables after the label. The algorithm is based on the fact that for an equation:
-$$b=qa+r$$
-the highest common factor (HCF) of <strong>b</strong> and <strong>a</strong> is the HCF of <strong>a</strong> and <strong>r</strong>
-$$HCF(b,a)=HCF(a,r)$$
-The algorithm is terminated when we get the HCF of <strong>a</strong> and <em>a remainder of <strong>0</strong></em>:
-$$HCF(a,0)=\color{royalblue}a$$
-This <strong>a</strong> is the HCF of the two numbers we started with.</p>
+<p><a href="./iterative_constructs_part_2.html">The lesson on loops continues here</a></p>
 
 <script src='/static/highlight/highlight.min.js'></script>
 <script src='/static/highlight/languages/c.min.js'></script>

@@ -6,7 +6,7 @@ common iterative constructs:
 - while loops
 - do-while loops
 
-Iterative constructs can be bounded (e.g. **for loops**) or unbounded (**while and do-while loops**).
+Iterative constructs can be bounded (e.g. **for loops**) or unbounded (**while** and **do-while loops**).
 
 ## For loops
 The **for loop** is a bounded loop. This is because we can tell how many times it will
@@ -34,25 +34,4 @@ A do-while loop will *always run at least once* because the condition is checked
 the end of each iteration.
 !{{./do_while_loops.c}}
 
-### Infinite loops
-These are loops that have the potential to run forever.
-
-
-### Empty loops
-These are loops that do no effective work in the program. They may happen by accident 
-if we do not take care in how we write our code (usually by putting curly braces in
-the wrong place).
-
-## The goto directive
-Looping behaviour can be achieved by the use of C's goto directive. We place a label
-before a section of code and tell the computer to *go to* that section where the label is. 
-This can be used to achieve a more readable form of the Euclidean algorithm:
-!{{./goto_euclidean_algorithm.c}}
-
-Notice that we do not declare any variables after the label. The algorithm is based on the fact that for an equation:
-$$b=qa+r$$
-the highest common factor (HCF) of **b** and **a** is the HCF of **a** and **r**
-$$HCF(b,a)=HCF(a,r)$$
-The algorithm is terminated when we get the HCF of **a** and *a remainder of **0***:
-$$HCF(a,0)=\color{royalblue}a$$
-This **a** is the HCF of the two numbers we started with.
+[The lesson on loops continues here](./iterative_constructs_part_2.md)

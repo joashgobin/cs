@@ -16,17 +16,17 @@ refresh = not args.no_refresh
 init(autoreset=True)
 
 page_header = """
-<header style='position:fixed;top:0;left:0;margin:0px;padding:10px;width:100%;background-color:darkgrey;color:black;z-index:9999;'>
+<header style='position:fixed;top:0;left:0;margin:0px;padding:4px;width:100%;background-color:darkgrey;color:black;z-index:9999;'>
     <div style='display:flex;align-items:center'>
         <div style='width:10px'></div>
         <a href='/'>
-            <img src='/static/TeamLogo.png' height=50px>
+            <img src='/static/TeamLogo.png' height=40px>
         </a>
         <div style='width:20px'></div>
-        <p style='line-height:2;color:white;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
+        <p style='line-height:1.2;color:#f4f4f4;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
     </div>
 </header>
-<div style='height:70px'></div>
+<div style='height:40px'></div>
 """
 page_footer = """
 <hr>

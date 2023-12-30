@@ -1,0 +1,161 @@
+
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    
+    <title>Asynchronous Learning</title>
+    <!-- <link rel='stylesheet' href='/static/katex/katex.min.css'> -->
+    <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
+    <link rel='stylesheet' href='/static/style.css'>
+</head>
+<body>
+
+<header style='position:fixed;top:0;left:0;margin:0px;padding:4px;width:100%;background-color:darkgrey;color:black;z-index:9999;'>
+    <div style='display:flex;align-items:center'>
+        <div style='width:10px'></div>
+        <a href='/'>
+            <img src='/static/TeamLogo.png' height=40px>
+        </a>
+        <div style='width:20px'></div>
+        <p style='line-height:1.2;color:#f4f4f4;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
+    </div>
+</header>
+<div style='height:40px'></div>
+
+<main>
+<p style='darkgrey;opacity:0.5;font-size:0.6rem'>c > constructs > iterative constructs > iterative constructs part 2</p><h1>Iterative Constructs Part 2</h1>
+<p>Here is some more information on how we use iterative constructs.</p>
+<h2>Infinite loops</h2>
+<p>These are loops that have the potential to run forever.
+
+<pre><code class='c' id='infinite_loop.c'>
+#include &lt;stdio.h&gt;
+
+int main(){
+    while(1){
+        printf(&quot;I wonder when this is gonna be done...\n&quot;);
+    }
+    return 0;
+}
+
+</code></pre>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>
+    <a href='/c/constructs/iterative_constructs/infinite_loop.html' target='_blank' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a>
+    <a href='#infinite_loop.c' onclick='copyToClipboard("infinite_loop.c")' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a>
+</strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/constructs/iterative_constructs/infinite_loop.c </strong>
+
+</p>
+<h2>Empty loops</h2>
+<p>These are loops that do no effective work in the program. They may happen by accident
+if we do not take care in how we write our code (usually by putting curly braces in
+the wrong place).
+
+<pre><code class='c' id='empty_loop.c'>
+#include &lt;stdio.h&gt;
+
+int main(){
+    printf(&quot;Running an empty loop...\n&quot;);
+    for (int i=0;i&lt;=1000;i++){}
+    printf(&quot;The loop is now finished executing...&quot;);
+    return 0;
+}
+
+</code></pre>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>
+    <a href='/c/constructs/iterative_constructs/empty_loop.html' target='_blank' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a>
+    <a href='#empty_loop.c' onclick='copyToClipboard("empty_loop.c")' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a>
+</strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/constructs/iterative_constructs/empty_loop.c </strong>
+
+</p>
+<h2>The goto directive</h2>
+<p>Looping behaviour can be achieved by the use of C's goto directive. We place a label
+before a section of code and tell the computer to <em>go to</em> that section where the label is. </p>
+<h3>The Euclidean algorithm</h3>
+<p>This can be used to achieve a more readable form of the Euclidean algorithm:
+
+<pre><code class='c' id='goto_euclidean_algorithm.c'>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int original_a=14,original_b=12344;
+    int a=original_a,b=original_b,quot,rem;
+    
+    // declaring label called &#x27;start&#x27;
+    start:
+    quot = b/a;
+    rem = b%a;
+    printf(&quot;%d = %d x %d + %d\n&quot;,b,quot,a,rem);
+    
+    if (rem==0){
+        printf(&quot;The HCF of %d and %d is %d\n&quot;,original_a,original_b,a);
+    }
+    else{
+        b = a;
+        a = rem;
+        // jumping back to the &#x27;start&#x27; label
+        goto start;
+    }
+    return 0;
+}
+
+</code></pre>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>
+    <a href='/c/constructs/iterative_constructs/goto_euclidean_algorithm.html' target='_blank' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a>
+    <a href='#goto_euclidean_algorithm.c' onclick='copyToClipboard("goto_euclidean_algorithm.c")' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a>
+</strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/constructs/iterative_constructs/goto_euclidean_algorithm.c </strong>
+
+</p>
+<p>Notice that we do not declare any variables after the label. The algorithm is based on the fact that for an equation:
+$$b=qa+r$$
+the highest common factor (HCF) of <strong>b</strong> and <strong>a</strong> is the HCF of <strong>a</strong> and <strong>r</strong>
+$$HCF(b,a)=HCF(a,r)$$
+The algorithm is terminated when we get the HCF of <strong>a</strong> and <em>a remainder of <strong>0</strong></em>:
+$$HCF(a,0)=\color{royalblue}a$$
+This <strong>a</strong> is the HCF of the two numbers we started with.</p>
+
+<script src='/static/highlight/highlight.min.js'></script>
+<script src='/static/highlight/languages/c.min.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
+
+
+<link rel="stylesheet" href="/static/katex/katex.min.css">
+<script defer="" src="/static/katex/katex.min.js"></script>
+<script defer="" src="/static/katex/contrib/auto-render.min.js" crossorigin="anonymous"
+onload="
+    renderMathInElement(
+        document.body,
+        {
+            delimiters: [
+                {left:'$$', right:'$$', display:true},
+                {left:'$', right:'$', display:false}
+            ]
+          }
+    );
+"></script>
+</main>
+
+<hr>
+<footer style='padding:30px;font-size:0.7rem;color:darkgrey'>
+Generated using ChickenFryBytes Studios' static site generator
+</footer>
+
+<script>
+    function copyToClipboard(id){
+        var copyText = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(copyText).then(function(){
+            console.log("Copied "+id+" to clipboard");        
+        }).catch(function(error){
+            console.log("Error copying "+id+" to clipboard; Error: "+error);        
+        });
+    }
+
+    </script>
+</body>
+</html>
