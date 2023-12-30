@@ -1,0 +1,234 @@
+
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="refresh" content="3">
+    <title>Asynchronous Learning</title>
+    <!-- <link rel='stylesheet' href='/static/katex/katex.min.css'> -->
+    <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
+    <link rel='stylesheet' href='/static/style.css'>
+</head>
+<body>
+
+<header style='position:fixed;top:0;left:0;margin:0px;padding:10px;width:100%;background-color:darkgrey;color:black;z-index:9999;'>
+    <div style='display:flex;align-items:center'>
+        <div style='width:10px'></div>
+        <a href='/'>
+            <img src='/static/TeamLogo.png' height=50px>
+        </a>
+        <div style='width:20px'></div>
+        <p style='line-height:2;color:white;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
+    </div>
+</header>
+<div style='height:70px'></div>
+
+<main>
+<p style='darkgrey;opacity:0.5;font-size:0.6rem'>c > constructs > iterative constructs > iterative constructs</p><h1>Iterative Constructs</h1>
+<p>When we are solving a problem, we may want to repeat a section (block) of our code.
+This is achieved through the use of <em>iterative constructs</em>. In C, we have three (3)
+common iterative constructs:</p>
+<ul>
+<li>for loops</li>
+<li>while loops</li>
+<li>do-while loops</li>
+</ul>
+<p>Iterative constructs can be bounded (e.g. <strong>for loops</strong>) or unbounded (<strong>while and do-while loops</strong>).</p>
+<h2>For loops</h2>
+<p>The <strong>for loop</strong> is a bounded loop. This is because we can tell how many times it will
+be executed before termination. We can know the number of iterations from how we construct the for loop.
+
+<pre><code class='c' id='for_loops.c'>
+#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int i;
+    for(i=0;i&lt;10;i++){
+        printf(&quot;The value of i is %d\n&quot;,i);
+    }
+    return 0;
+}
+
+</code></pre>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>
+    <a href='/c/constructs/iterative_constructs/for_loops.html' target='_blank' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a>
+    <a href='#for_loops.c' onclick='copyToClipboard("for_loops.c")' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a>
+</strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/constructs/iterative_constructs/for_loops.c </strong>
+
+</p>
+<h2>While loops</h2>
+<p>The <strong>while loop</strong> is a type of unbounded iteration. This is because its execution is not
+terminated when a certain number of iterations are finished but rather when a condition is met.
+This means that a while loop and run 10 or 1000 or an infinite number of times based on if the condition is met.</p>
+<p>The while loop checks the condition <em>before executing the block of code</em>. This means
+that it is possible for the contents of a while loop to never be executed.
+
+<pre><code class='c' id='while_loops.c'>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int i = 0;
+    while(i&lt;=5){
+        printf(&quot;The value of i is %d\n&quot;,i);
+        i = i+1; // OR i+=1 OR i++
+    }
+
+    int pin;
+    while(1){
+        printf(&quot;Please enter your pin:\n&quot;);
+        scanf(&quot;%d&quot;,&amp;pin);
+        if (pin==1234){
+            printf(&quot;Correct pin!! You get a cookie...&quot;);
+            break;
+        }else{
+            printf(&quot;Wrong pin bro...\n&quot;);
+        }
+    }
+    return 0;
+}
+
+</code></pre>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>
+    <a href='/c/constructs/iterative_constructs/while_loops.html' target='_blank' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a>
+    <a href='#while_loops.c' onclick='copyToClipboard("while_loops.c")' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a>
+</strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/constructs/iterative_constructs/while_loops.c </strong>
+
+</p>
+<h4>Challenge</h4>
+<ul>
+<li>Write a while loop to print the multiples of 3 from 0 to 30</li>
+<li>Write a while loop to print the factors of 21</li>
+<li>Write a while loop to print the numbers 0 to 20 excluding 3 and 7</li>
+<li>Write a while loop which will count from 1 to a number input by the user only if that
+number is positive</li>
+</ul>
+<h2>Do-while loops</h2>
+<p>A do-while loop will <em>always run at least once</em> because the condition is checked at
+the end of each iteration.
+
+<pre><code class='c' id='do_while_loops.c'>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int i = 0;
+
+    do{
+        printf(&quot;%d\n&quot;,i);
+        i++;
+    }while(i&lt;10);
+    
+    int ret,number;
+    do{
+        printf(&quot;Please enter a valid number:\n&quot;);
+        ret = scanf(&quot;%d&quot;,&amp;number);
+
+    }while(ret==0);
+    printf(&quot;Ghee thanks!!&quot;);
+}
+
+</code></pre>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>
+    <a href='/c/constructs/iterative_constructs/do_while_loops.html' target='_blank' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a>
+    <a href='#do_while_loops.c' onclick='copyToClipboard("do_while_loops.c")' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a>
+</strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/constructs/iterative_constructs/do_while_loops.c </strong>
+
+</p>
+<h3>Infinite loops</h3>
+<p>These are loops that have the potential to run forever.</p>
+<h3>Empty loops</h3>
+<p>These are loops that do no effective work in the program. They may happen by accident
+if we do not take care in how we write our code (usually by putting curly braces in
+the wrong place).</p>
+<h2>The goto directive</h2>
+<p>Looping behaviour can be achieved by the use of C's goto directive. We place a label
+before a section of code and tell the computer to <em>go to</em> that section where the label is.
+This can be used to achieve a more readable form of the Euclidean algorithm:
+
+<pre><code class='c' id='goto_euclidean_algorithm.c'>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int original_a=14,original_b=12344;
+    int a=original_a,b=original_b,quot,rem;
+    
+    // declaring label called &#x27;start&#x27;
+    start:
+    quot = b/a;
+    rem = b%a;
+    printf(&quot;%d = %d x %d + %d\n&quot;,b,quot,a,rem);
+    
+    if (rem==0){
+        printf(&quot;The HCF of %d and %d is %d\n&quot;,original_a,original_b,a);
+    }
+    else{
+        b = a;
+        a = rem;
+        // jumping back to the &#x27;start&#x27; label
+        goto start;
+    }
+    return 0;
+}
+
+</code></pre>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>
+    <a href='/c/constructs/iterative_constructs/goto_euclidean_algorithm.html' target='_blank' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a>
+    <a href='#goto_euclidean_algorithm.c' onclick='copyToClipboard("goto_euclidean_algorithm.c")' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a>
+</strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/constructs/iterative_constructs/goto_euclidean_algorithm.c </strong>
+
+</p>
+<p>Notice that we do not declare any variables after the label. The algorithm is based on the fact that for an equation:
+$$b=qa+r$$
+the highest common factor (HCF) of <strong>b</strong> and <strong>a</strong> is the HCF of <strong>a</strong> and <strong>r</strong>
+$$HCF(b,a)=HCF(a,r)$$
+The algorithm is terminated when we get the HCF of <strong>a</strong> and <em>a remainder of <strong>0</strong></em>:
+$$HCF(a,0)=\color{royalblue}a$$
+This <strong>a</strong> is the HCF of the two numbers we started with.</p>
+
+<script src='/static/highlight/highlight.min.js'></script>
+<script src='/static/highlight/languages/c.min.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
+
+
+<link rel="stylesheet" href="/static/katex/katex.min.css">
+<script defer="" src="/static/katex/katex.min.js"></script>
+<script defer="" src="/static/katex/contrib/auto-render.min.js" crossorigin="anonymous"
+onload="
+    renderMathInElement(
+        document.body,
+        {
+            delimiters: [
+                {left:'$$', right:'$$', display:true},
+                {left:'$', right:'$', display:false}
+            ]
+          }
+    );
+"></script>
+</main>
+
+<hr>
+<footer style='padding:30px;font-size:0.7rem;color:darkgrey'>
+Generated using ChickenFryBytes Studios' static site generator
+</footer>
+
+<script>
+    function copyToClipboard(id){
+        var copyText = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(copyText).then(function(){
+            console.log("Copied "+id+" to clipboard");        
+        }).catch(function(error){
+            console.log("Error copying "+id+" to clipboard; Error: "+error);        
+        });
+    }
+
+    </script>
+</body>
+</html>

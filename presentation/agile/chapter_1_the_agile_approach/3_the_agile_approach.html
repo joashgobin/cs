@@ -1,0 +1,97 @@
+
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="refresh" content="3">
+    <title>Asynchronous Learning</title>
+    <!-- <link rel='stylesheet' href='/static/katex/katex.min.css'> -->
+    <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
+    <link rel='stylesheet' href='/static/style.css'>
+</head>
+<body>
+
+<header style='position:fixed;top:0;left:0;margin:0px;padding:10px;width:100%;background-color:darkgrey;color:black;z-index:9999;'>
+    <div style='display:flex;align-items:center'>
+        <div style='width:10px'></div>
+        <a href='/'>
+            <img src='/static/TeamLogo.png' height=50px>
+        </a>
+        <div style='width:20px'></div>
+        <p style='line-height:2;color:white;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
+    </div>
+</header>
+<div style='height:70px'></div>
+
+<main>
+<p style='darkgrey;opacity:0.5;font-size:0.6rem'>agile > chapter 1 the agile approach > 3 the agile approach</p><h1>The Agile Approach</h1>
+<p>The agile approach has many features which differ from the traditional approach.</p>
+<h2>De-centralized management</h2>
+<p>There is no dedicated project manager in agile. The team assigns the work to members
+as it sees fit. They do not depend on or wait for a single person to organize and assign
+tasks.</p>
+<h2>Welcoming change</h2>
+<p>Agile projects adapt to change rather than work to avoid them. What delivers business
+value to the customer is subject to change so it is wiser to have an approach that caters for
+deviations than one that expends resources to prevent deviations.</p>
+<h2>Focus on people</h2>
+<p>The knowledge and experiences of the people involved in the project are what drive
+the project forward. Even the completion of the project is understood as the delivery
+of more and more business value to the customer. Completion is not just checking off boxes.</p>
+<h2>Iterations and increments</h2>
+<p>Meeting the requirements of the customer is achieved through short repetitions (<em>iterations</em>), each
+iteration either serving to increase (<em>increment</em>) the business value of the product or, in the case
+of the work done not giving desirable results, to give the team useful insights as to where
+to take the project instead.</p>
+<h2>Quick return on investment (ROI)</h2>
+<p>Because agile projects produce a partial product early, ROI happens very early and
+throughout the lifetime of the project. This ROI may not be in the form of income but rather
+the tangible deliverable itself. The product can be validated and used to improve
+future iterations. Work itself is an investment so having a system where at most a few
+days of work is wasted compared to a year is better. Work saved is money saved.</p>
+<h2>Small teams</h2>
+<p>A team leader is not necessary in agile. The work is organized and completed by the team.
+Dedicated management is absent so our teams remain small. The smaller groups formed within the
+team will also be based on how individuals will need to communicate daily thus these groups
+will be smaller.</p>
+<h2>Lower risk</h2>
+<p>If small and frequent iterations are made on the product and feedback is gained from the client
+frequently, any wasteful work will be minimized and we will eliminate the chances of
+the final product being undesirable to the client/target demographic.</p>
+
+
+<link rel="stylesheet" href="/static/katex/katex.min.css">
+<script defer="" src="/static/katex/katex.min.js"></script>
+<script defer="" src="/static/katex/contrib/auto-render.min.js" crossorigin="anonymous"
+onload="
+    renderMathInElement(
+        document.body,
+        {
+            delimiters: [
+                {left:'$$', right:'$$', display:true},
+                {left:'$', right:'$', display:false}
+            ]
+          }
+    );
+"></script>
+</main>
+
+<hr>
+<footer style='padding:30px;font-size:0.7rem;color:darkgrey'>
+Generated using ChickenFryBytes Studios' static site generator
+</footer>
+
+<script>
+    function copyToClipboard(id){
+        var copyText = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(copyText).then(function(){
+            console.log("Copied "+id+" to clipboard");        
+        }).catch(function(error){
+            console.log("Error copying "+id+" to clipboard; Error: "+error);        
+        });
+    }
+
+    </script>
+</body>
+</html>

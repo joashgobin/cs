@@ -6,13 +6,19 @@ import marko
 import html
 from colorama import init, Fore
 import pythonbible as bible
+import argparse
+
+parser = argparse.ArgumentParser(description="Build static site")
+parser.add_argument('--no-refresh',action='store_true',help='Disable frequent webpage refresh')
+args = parser.parse_args()
+refresh = not args.no_refresh
 
 init(autoreset=True)
-
 
 page_header = """
 <header style='position:fixed;top:0;left:0;margin:0px;padding:10px;width:100%;background-color:darkgrey;color:black;z-index:9999;'>
     <div style='display:flex;align-items:center'>
+        <div style='width:10px'></div>
         <a href='/'>
             <img src='/static/TeamLogo.png' height=50px>
         </a>
@@ -35,6 +41,7 @@ start = f"""
 <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    {'<meta http-equiv="refresh" content="3">' if refresh else ''}
     <title>Asynchronous Learning</title>
     <!-- <link rel='stylesheet' href='/static/katex/katex.min.css'> -->
     <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
@@ -193,7 +200,8 @@ onload="
 """
     path_trimmed = path.removeprefix("./content/").removesuffix(".md").replace("/"," > ").replace("_"," ")
     path_display = f"<p style='darkgrey;opacity:0.5;font-size:0.6rem'>{path_trimmed}</p>"
-    s = marko.convert(text)
+    s = re.sub(r"\[.*?\]\((.*?.md)\)",to_html_link,text)
+    s = marko.convert(s)
     cur_dir = os.path.dirname(path)
 
     result = re.sub(r"!\{\{(\S*)\}\}",lambda match:to_code_attachment(match,cur_dir+"/"),s)
@@ -206,8 +214,14 @@ onload="
         if dep in dep_string:
             continue
         dep_string+=dep
-    print(f"Adding dep string: {dep_string}")
+    # print(f"Adding dep string: {dep_string}")
     return start+path_display+result+dep_string+end
+
+def to_html_link(match):
+    prev_link:str = match.group(1)
+    # print(f"Converting .md link to .html: {prev_link}")
+    new_link = prev_link.removesuffix(".md")+".html"
+    return match.group(0).replace(prev_link,new_link)
 
 def to_bible_verse(match):
     text = match.group(1)
@@ -290,7 +304,7 @@ def create_html_file(file_path):
     new_path = new_path.replace("./content/","./presentation/")
     print_fancy(f"CREATE {new_path}")
     new_dir = os.path.dirname(new_path)
-    print(f"Creating directory: {new_dir}")
+    # print(f"Creating directory: {new_dir}")
     os.makedirs(new_dir,exist_ok=True)
     
     with open(old_path,'r') as old_file:
@@ -305,5 +319,5 @@ def create_html_file(file_path):
 
 files = find_files_recursively("./content/")
 create_file_tree_html(files)
-declare_action("Site generation finished...")
+declare_action(f"Site generation finished ({'refresh' if refresh else 'no refresh'})")
 

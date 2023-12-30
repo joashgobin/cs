@@ -69,15 +69,19 @@ h5{font-size:1.9rem;}
 h6{font-size:1.8rem;}
 
 ul{
-    list-style-type:none;
+    /*list-style-type:none;
     margin-left:0;
-    padding-left:0;
+    padding-left:10;*/
 }
 
-li::before{
-    content:"\279C  ";
+li::marker{
+    opacity:0.3;
+}
+
+ul li::before{
+    /*content:"\279C  ";
     color:darkgrey;
-    opacity:0.5;
+    opacity:0.5;*/
 }
 
 pre,code{

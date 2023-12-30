@@ -1,9 +1,11 @@
 # Context
-
+The agile approach to project management resulted from a desire to move away from 
+traditional methodologies which were unable to match the ever-evolving nature of 
+various industries.
 
 ## Why is it called agile
 We prefer to agile project management as agile because of its ability to adapt.
-Agile management embraces change.
+*Agile* management *embraces change*.
 
 ## Reasons for its success
 The traditional project management methodologies:
