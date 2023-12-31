@@ -72,6 +72,6 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 - **Ctrl+u** - Delete entire line before cursor
 
 ## Command mode
-- **:*+command*** - Run *command*
+- **:*command*** - Run *command*
 - **:set spell** - Turn spell check on
 - **:set nospell** - Turn spell check off
