@@ -75,8 +75,10 @@ or yanked (y)</li>
 <li><strong>t<em>char</em></strong> - Jump to position just before next instance of <em>char</em> in current line</li>
 <li><strong>T<em>char</em></strong> - Jump to position just before previous instance of <em>char</em> in current line</li>
 <li><strong>; and ,</strong> - Cycle between <em>char</em> selected using <strong>f</strong>,<strong>F</strong>,<strong>t</strong> or <strong>T</strong></li>
+<li><strong>di<em>char</em></strong> - Delete in between <em>char</em></li>
 <li><strong>ci<em>char</em></strong> - Delete all text between instances of <em>char</em> in the current line and place the cursor in between
 and enter Insert mode; The text must be enclosed by two instances of the <em>char</em></li>
+<li><strong>yi<em>char</em></strong> - Yank everything in between <em>char</em></li>
 </ul>
 <h3>Vertical movement and actions</h3>
 <ul>
@@ -88,6 +90,26 @@ and enter Insert mode; The text must be enclosed by two instances of the <em>cha
 <ul>
 <li><strong>/<em>string</em>+enter</strong> - Jump to first instance of <em>string</em> in the current file</li>
 <li><strong>n</strong> - cycle through search results</li>
+</ul>
+<h3>Placing the cursor relative to the window</h3>
+<ul>
+<li><strong>L</strong> - Place the cursor low</li>
+<li><strong>M</strong> - Place the cursor middle</li>
+<li><strong>H</strong> - Place the cursor high</li>
+<li><strong>Ctrl+d</strong> - Shift the cursor down half a screen</li>
+<li><strong>Ctrl+u</strong> - Shift the cursor up half a screen</li>
+</ul>
+<h2>Insert mode</h2>
+<ul>
+<li><strong>Ctrl+o+Normal mode command</strong> - Run a command as if in Normal mode but remain in Insert mode</li>
+<li><strong>Ctrl+w</strong> - Delete previous word</li>
+<li><strong>Ctrl+u</strong> - Delete entire line before cursor</li>
+</ul>
+<h2>Command mode</h2>
+<ul>
+<li><strong>:<em>+command</em></strong> - Run <em>command</em></li>
+<li><strong>:set spell</strong> - Turn spell check on</li>
+<li><strong>:set nospell</strong> - Turn spell check off</li>
 </ul>
 
 

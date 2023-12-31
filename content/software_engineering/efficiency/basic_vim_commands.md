@@ -45,8 +45,10 @@ or yanked (y)
 - **t*char*** - Jump to position just before next instance of *char* in current line
 - **T*char*** - Jump to position just before previous instance of *char* in current line
 - **; and ,** - Cycle between *char* selected using **f**,**F**,**t** or **T**
+- **di*char*** - Delete in between *char*
 - **ci*char*** - Delete all text between instances of *char* in the current line and place the cursor in between
 and enter Insert mode; The text must be enclosed by two instances of the *char*
+- **yi*char*** - Yank everything in between *char*
 
 ### Vertical movement and actions
 - **gg** - Go to first line of file
@@ -57,4 +59,19 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 - **/*string*+enter** - Jump to first instance of *string* in the current file
 - **n** - cycle through search results
 
+### Placing the cursor relative to the window
+- **L** - Place the cursor low
+- **M** - Place the cursor middle
+- **H** - Place the cursor high
+- **Ctrl+d** - Shift the cursor down half a screen
+- **Ctrl+u** - Shift the cursor up half a screen
 
+## Insert mode
+- **Ctrl+o+Normal mode command** - Run a command as if in Normal mode but remain in Insert mode
+- **Ctrl+w** - Delete previous word
+- **Ctrl+u** - Delete entire line before cursor
+
+## Command mode
+- **:*+command*** - Run *command*
+- **:set spell** - Turn spell check on
+- **:set nospell** - Turn spell check off
