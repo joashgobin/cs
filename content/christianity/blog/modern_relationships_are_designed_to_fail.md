@@ -2,7 +2,7 @@
 
 ## The world
 The beliefs of the people around us and the riches and pleasures offered by those people
-can influence our views on commmitment.
+can influence our views on commitment.
 
 ## The flesh
 
