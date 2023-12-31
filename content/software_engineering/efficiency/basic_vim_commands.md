@@ -15,11 +15,20 @@ The following commands are used in normal mode.
 - **l** - Move cursor right
 
 
-### Deleting and replacing
+### Deleting, replacing and fixing changes
 - **x** - delete character under cursor
 - **r*char*** - replace character under cursor with *char*
 - **dd** - delete current line
 - **cc** - change current line
+- **u** - Undo last change
+- **Ctrl+r** - Redo last change
+- **U** - Fix entire line
+
+### Copying and pasting
+- **yy** - Yank current line
+- **p** - Paste last yanked or deleted text
+- **Shift+v** - Enter Visual line mode and highlight the current line; This text can then be deleted (d or x)
+or yanked (y)
 
 ### Horizontal movement and actions
 - **_** - Jump to first non-white space character in current line

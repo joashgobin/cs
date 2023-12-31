@@ -42,12 +42,22 @@
 <li><strong>k</strong> - Move cursor up</li>
 <li><strong>l</strong> - Move cursor right</li>
 </ul>
-<h3>Deleting and replacing</h3>
+<h3>Deleting, replacing and fixing changes</h3>
 <ul>
 <li><strong>x</strong> - delete character under cursor</li>
 <li><strong>r<em>char</em></strong> - replace character under cursor with <em>char</em></li>
 <li><strong>dd</strong> - delete current line</li>
 <li><strong>cc</strong> - change current line</li>
+<li><strong>u</strong> - Undo last change</li>
+<li><strong>Ctrl+r</strong> - Redo last change</li>
+<li><strong>U</strong> - Fix entire line</li>
+</ul>
+<h3>Copying and pasting</h3>
+<ul>
+<li><strong>yy</strong> - Yank current line</li>
+<li><strong>p</strong> - Paste last yanked or deleted text</li>
+<li><strong>Shift+v</strong> - Enter Visual line mode and highlight the current line; This text can then be deleted (d or x)
+or yanked (y)</li>
 </ul>
 <h3>Horizontal movement and actions</h3>
 <ul>
