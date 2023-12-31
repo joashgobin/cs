@@ -24,4 +24,11 @@ which, due to the high probability of change, will probably never happen. Agile'
 adaptability helps us to adjust the product to what will bring the most business value.
 
 ## Synergy in the agile approach
+The term *digital transformation* is used to describe change through the use of technology.
+The rapid advancement of technology in the past few decades has shown us how unpredictable
+the world around us can be. *Lean management* is an approach where we focus on minimizing
+wastage. By not working with very rigid plan that resists change, we increase the project's agility and
+by extension minimize the waste generated.
 
+Thus the agile approach and lean management complement each other (they form a synergy)
+in this unpredictable age of digital transformation.
