@@ -16,5 +16,13 @@ distant goal (*the scope*) but rather change the end-goal based on the time and 
 to the team. The total value delivered (the scope) will be optimized in this way.
 
 ## Principles of agile management
-
-
+- Planning is dispersed throughout the project lifetime instead of being restricted to
+the beginning
+- Requirements do not need to be too detailed in order for the team to start working
+- Collaboration with the client is valued because it is the client who determines what
+has busines value and what doesn't
+- Student's syndrome is never an issue because the work is distributed evenly instead of
+at the end of the project lifetime
+- Paralysis by analysis is avoided because we need the requirements to be just clear enough
+in order to start. We do not obsess over whether or not we have enough information before
+we start
