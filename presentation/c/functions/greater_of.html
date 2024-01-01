@@ -1,0 +1,39 @@
+
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Code Snippets</title>
+    <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
+</head>
+<body style='background-color:black'>
+<small style='color:darkgray'>content/c/functions</small>
+<h2 style='color:orange'>greater_of.c</h2>
+<pre>
+<code class='c'>
+#include &lt;stdio.h&gt;
+
+int greater_of(int x, int y){
+    if (x&gt;y){
+        return x;
+    }
+    return y;
+}
+
+int main(){
+    int a=3,b=17;
+    printf(&quot;The greater of %d and %d is %d\n&quot;,a,b,greater_of(a,b));
+    return 0;
+}
+
+
+</code>
+</pre>
+<script src='/static/highlight/highlight.min.js'></script>
+<script src='/static/highlight/languages/c.min.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
+</body>
+</html>

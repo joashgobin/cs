@@ -18,3 +18,6 @@ be achieved in C:
 The return value of a function takes the place of the function when the function passes 
 the execution back to the main() function (or whichever function called it). Thus in this 
 example, the code *f(x)* is replaced by the value of f(x) and this is stored as y in the loop;
+
+Here is an example of a function that returns the larger of two integers:
+!{{./greater_of.c}}

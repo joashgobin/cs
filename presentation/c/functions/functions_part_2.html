@@ -88,6 +88,32 @@ int main(){
 <p>The return value of a function takes the place of the function when the function passes
 the execution back to the main() function (or whichever function called it). Thus in this
 example, the code <em>f(x)</em> is replaced by the value of f(x) and this is stored as y in the loop;</p>
+<p>Here is an example of a function that returns the larger of two integers:
+
+<pre><code class='c' id='greater_of.c'>
+#include &lt;stdio.h&gt;
+
+int greater_of(int x, int y){
+    if (x&gt;y){
+        return x;
+    }
+    return y;
+}
+
+int main(){
+    int a=3,b=17;
+    printf(&quot;The greater of %d and %d is %d\n&quot;,a,b,greater_of(a,b));
+    return 0;
+}
+
+</code></pre>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>
+    <a href='/c/functions/greater_of.html' target='_blank' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a>
+    <a href='#greater_of.c' onclick='copyToClipboard("greater_of.c")' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a>
+</strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/functions/greater_of.c </strong>
+
+</p>
 
 <script src='/static/highlight/highlight.min.js'></script>
 <script src='/static/highlight/languages/c.min.js'></script>
