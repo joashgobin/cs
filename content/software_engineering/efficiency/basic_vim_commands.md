@@ -39,7 +39,7 @@ or yanked (y)
 - **a** - Enter Insert mode and start inserting after current cursor position
 - **A** - Enter Insert mode and start inserting after the last character in current line
 - **s** - Delete the character under the cursor and Enter Insert mode
-- **S** - Change the current line; If the current line is empty, enter Insert mode and indent to where Vim infers that the cursor should be in the current line 
+- **S** - Change the current line and indent to where Vim infers that the cursor should be in the current line 
 - **o*char*** - Jump to next line and enter Insert Mode
 - **O*char*** - Jump to previous line and enter Insert mode
 - **f*char*** - Jump to position of first instance of *char* in current line
@@ -77,3 +77,6 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 - **:*command*** - Run *command*
 - **:set spell** - Turn spell check on
 - **:set nospell** - Turn spell check off
+
+## Visual mode
+- **=** - Indent highlighted text

@@ -4,7 +4,7 @@
 <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <meta http-equiv="refresh" content="3">
+    
     <title>Asynchronous Learning</title>
     <!-- <link rel='stylesheet' href='/static/katex/katex.min.css'> -->
     <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
@@ -35,13 +35,105 @@ code is nested, the text we need to navigate horizontally grows to be unmanageab
 </ul>
 <h2>Extraction</h2>
 <p>Here we extract a block of code and place it within a function. We then call that function
-from where the code block used to be.</p>
+from where the code block used to be.
+
+<pre><code class='c' id='extraction.c'>
+#include &lt;stdio.h&gt;
+
+// checking feature extracted out as function
+void even_or_odd(int x){
+    if (x%2==0){
+        printf(&quot;%d is even\n&quot;,x);
+    }else{
+        printf(&quot;%d is even\n&quot;,x);
+    }
+}
+
+int main(){
+
+    // no extraction
+    for (int x=0;x&lt;10;x++){
+        if (x%2==0){
+            printf(&quot;%d is even\n&quot;,x);
+        }else{
+            printf(&quot;%d is even\n&quot;,x);
+        }
+    }
+
+    // with extraction
+    for (int x=0;x&lt;10;x++){
+        even_or_odd(x);
+    }
+    return 0;
+}
+
+</code></pre>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>
+    <a href='/c/efficiency/extraction.html' target='_blank' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a>
+    <a href='#extraction.c' onclick='copyToClipboard("extraction.c")' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a>
+</strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/efficiency/extraction.c </strong>
+
+</p>
 <h2>Inversion</h2>
 <p>Here we write <em>guard clauses</em> instead of nesting a bunch of conditional statements. We
 place the most common behaviour and place <em>condition checks</em> before it to prevent (guard) unwanted states
-from reaching that common behaviour. </p>
+from reaching that common behaviour.</p>
 <p>We place the guard clauses <strong>before</strong> the common behaviour
 because the code is executed from top to bottom.</p>
+<p>
+<pre><code class='c' id='guard_clause.c'>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int age;
+    printf(&quot;Please enter your age: &quot;);
+    scanf(&quot;%d&quot;,&amp;age);
+
+    // no inversion
+    if (age&gt;=18){
+        printf(&quot;You are an adult\n&quot;);
+        if (age&gt;=65){
+            printf(&quot;You are also a senior citizen\n&quot;);
+        }
+    }
+    else{
+        printf(&quot;You are not an adult\n&quot;);
+    }
+    
+    // with inversion
+    if (age&gt;=65){
+        printf(&quot;You are an adult\n&quot;);
+        printf(&quot;You are also a senior citizen\n&quot;);
+        return 0;
+    }
+    if (age&gt;=18){
+        printf(&quot;You are an adult\n&quot;);
+        return 0;
+    }
+    
+    printf(&quot;You are not an adult\n&quot;);
+
+    return 0;
+}
+
+</code></pre>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>
+    <a href='/c/efficiency/guard_clause.html' target='_blank' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#8599; Open</a>
+    <a href='#guard_clause.c' onclick='copyToClipboard("guard_clause.c")' style='width:18px;border:5px solid #007BFF;border-radius:5px;color:white;background-color:#007BFF;text-decoration:none'>&#128203; Copy</a>
+</strong>
+<strong style='color:darkgrey;margin-bottom:0;padding-bottom:0;font-size:0.7rem'>c/efficiency/guard_clause.c </strong>
+
+</p>
+<p>Notice that we cater for the exceptions (when the person is at least 65 and when the
+person is at least 18). We use <em>return</em> to prevent the code from ever reaching the
+<strong>printf(&quot;You are not an adult\n&quot;)</strong>.</p>
+
+<script src='/static/highlight/highlight.min.js'></script>
+<script src='/static/highlight/languages/c.min.js'></script>
+<script>
+    hljs.highlightAll();
+</script>
 
 
 <link rel="stylesheet" href="/static/katex/katex.min.css">

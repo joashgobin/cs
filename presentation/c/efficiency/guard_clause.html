@@ -12,6 +12,39 @@
 <h2 style='color:orange'>guard_clause.c</h2>
 <pre>
 <code class='c'>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int age;
+    printf(&quot;Please enter your age: &quot;);
+    scanf(&quot;%d&quot;,&amp;age);
+
+    // no inversion
+    if (age&gt;=18){
+        printf(&quot;You are an adult\n&quot;);
+        if (age&gt;=65){
+            printf(&quot;You are also a senior citizen\n&quot;);
+        }
+    }
+    else{
+        printf(&quot;You are not an adult\n&quot;);
+    }
+    
+    // with inversion
+    if (age&gt;=65){
+        printf(&quot;You are an adult\n&quot;);
+        printf(&quot;You are also a senior citizen\n&quot;);
+        return 0;
+    }
+    if (age&gt;=18){
+        printf(&quot;You are an adult\n&quot;);
+        return 0;
+    }
+    
+    printf(&quot;You are not an adult\n&quot;);
+
+    return 0;
+}
 
 
 </code>
