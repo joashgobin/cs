@@ -38,6 +38,8 @@ or yanked (y)
 - **I** - Enter Insert mode and start inserting at the first non-white space character in current line
 - **a** - Enter Insert mode and start inserting after current cursor position
 - **A** - Enter Insert mode and start inserting after the last character in current line
+- **s** - Delete the character under the cursor and Enter Insert mode
+- **S** - Change the current line; If the current line is empty, enter Insert mode and indent to where Vim infers that the cursor should be in the current line 
 - **o*char*** - Jump to next line and enter Insert Mode
 - **O*char*** - Jump to previous line and enter Insert mode
 - **f*char*** - Jump to position of first instance of *char* in current line
