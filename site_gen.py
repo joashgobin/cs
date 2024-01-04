@@ -67,7 +67,7 @@ def wrap_with_code_block_boilerplate(text,orig_file:str):
         case '.py':
             hljs_lib = 'python'
 
-    print(f"Using hljs library: {hljs_lib}.min.js")
+    #print(f"Using hljs library: {hljs_lib}.min.js")
     start = f"""
 <!DOCTYPE html><html lang='en'>
 <head>

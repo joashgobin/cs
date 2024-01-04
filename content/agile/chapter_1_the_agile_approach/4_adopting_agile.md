@@ -1,6 +1,5 @@
 # Adopting Agile
-This article is a case for the adoption of the agile appro
-ach.
+This article is a case for the adoption of the agile approach.
 
 ## What agile brings to a project
 Business value is seen very quickly in the agile approach.

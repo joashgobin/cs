@@ -1,5 +1,5 @@
 # Functions
-These are resuable sections of code. They can be built-in or user-defined. Functions
+These are reusable sections of code. They can be built-in or user-defined. Functions
 allow us to write code that can be modified in one place and change the effect in 
 multiple sections. Functions are also sometimes referred to as routines because of 
 how we use them to group a set of related steps under a single name. A function in C

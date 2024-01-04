@@ -4,7 +4,7 @@
 <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <meta http-equiv="refresh" content="3">
+    
     <title>Asynchronous Learning</title>
     <!-- <link rel='stylesheet' href='/static/katex/katex.min.css'> -->
     <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
@@ -90,8 +90,13 @@ and enter Insert mode; The text must be enclosed by two instances of the <em>cha
 </ul>
 <h3>Finding stuff</h3>
 <ul>
-<li><strong>/<em>string</em>+enter</strong> - Jump to first instance of <em>string</em> in the current file</li>
+<li><strong>/<em>string</em>+enter</strong> - Jump to next instance of <em>string</em> in the current file</li>
+<li><strong>?<em>string</em>+enter</strong> - Jump to previous instance of <em>string</em> in the current file</li>
 <li><strong>n</strong> - cycle through search results</li>
+<li><strong>]s</strong> - Jump to next misspelled word</li>
+<li><strong>[s</strong> - Jump to previous misspelled word</li>
+<li><strong>zg</strong> - Add current word to Vim's dictionary</li>
+<li><strong>zw</strong> - Remove current word from Vim's dictionary</li>
 </ul>
 <h3>Placing the cursor relative to the window</h3>
 <ul>

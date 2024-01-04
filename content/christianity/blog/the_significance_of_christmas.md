@@ -12,7 +12,7 @@ into that creation so that He may redeem some. Christ became a curse for our sak
 
 !bible{{Galatians 3:13}}
 
-He paid the greatest of prices, serving as the propitiation for our sins (*penal substitionary atonement*), and He gives us salvation as a free gift:
+He paid the greatest of prices, serving as the propitiation for our sins (*penal substitutionary atonement*), and He gives us salvation as a free gift:
 
 !bible{{Ephesians 2:8-9}}
 

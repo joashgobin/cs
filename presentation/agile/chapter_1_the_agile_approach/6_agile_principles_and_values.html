@@ -1,0 +1,90 @@
+
+<!DOCTYPE html><html lang='en'>
+<head>
+<meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    
+    <title>Asynchronous Learning</title>
+    <!-- <link rel='stylesheet' href='/static/katex/katex.min.css'> -->
+    <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
+    <link rel='stylesheet' href='/static/style.css'>
+</head>
+<body>
+
+<header style='position:fixed;top:0;left:0;margin:0px;padding:4px;width:100%;background-color:darkgrey;color:black;z-index:9999;'>
+    <div style='display:flex;align-items:center'>
+        <div style='width:10px'></div>
+        <a href='/'>
+            <img src='/static/TeamLogo.png' height=40px>
+        </a>
+        <div style='width:20px'></div>
+        <p style='line-height:1.2;color:#f4f4f4;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
+    </div>
+</header>
+<div style='height:40px'></div>
+
+<main>
+<p style='darkgrey;opacity:0.5;font-size:0.6rem'>agile > chapter 1 the agile approach > 6 agile principles and values</p><h1>Agile Principles and Values</h1>
+<p>There are 4 core values and 12 basic principles in the agile approach to project management.</p>
+<h2>Core values</h2>
+<p>The 4 core values of agile are:</p>
+<ul>
+<li>People and interactions over processes and tools</li>
+<li>Deliverable products over exhaustive documentation</li>
+<li>Collaboration between client and sponsor over contracts</li>
+<li>Embracing change over following a plan</li>
+</ul>
+<h2>Agile Principles</h2>
+<p>The 12 principles in the agile manifesto are:</p>
+<ol>
+<li>Our highest priority is to satisfy the customer through the early and continuous delivery of valuable software.</li>
+<li>Welcome changing requirements, even late in development. Agile processes harness change for the customer’s competitive advantage.</li>
+<li>Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.</li>
+<li>Business people and developers must work together daily throughout the project.</li>
+<li>Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.</li>
+<li>The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.</li>
+<li>Working software is the primary measure of progress.</li>
+<li>Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.</li>
+<li>Continuous attention to technical excellence and good design enhances agility.</li>
+<li>Simplicity – the art of maximizing the amount of work not done – is essential.</li>
+<li>The best architectures, requirements, and designs emerge from self-organizing teams.</li>
+<li>At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.</li>
+</ol>
+<p>Credits: <a href="https://www.agilealliance.org/agile101/12-principles-behind-the-agile-manifesto/">Agile Alliance</a></p>
+
+
+<link rel="stylesheet" href="/static/katex/katex.min.css">
+<script defer="" src="/static/katex/katex.min.js"></script>
+<script defer="" src="/static/katex/contrib/auto-render.min.js" crossorigin="anonymous"
+onload="
+    renderMathInElement(
+        document.body,
+        {
+            delimiters: [
+                {left:'$$', right:'$$', display:true},
+                {left:'$', right:'$', display:false}
+            ]
+          }
+    );
+"></script>
+</main>
+
+<hr>
+<footer style='padding:30px;font-size:0.7rem;color:darkgrey'>
+Generated using ChickenFryBytes Studios' static site generator
+</footer>
+
+<script>
+    function copyToClipboard(id){
+        var copyText = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(copyText).then(function(){
+            console.log("Copied "+id+" to clipboard");        
+        }).catch(function(error){
+            console.log("Error copying "+id+" to clipboard; Error: "+error);        
+        });
+    }
+
+    </script>
+</body>
+</html>

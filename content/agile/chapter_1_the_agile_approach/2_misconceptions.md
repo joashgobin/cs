@@ -30,7 +30,7 @@ A minimum viable product (MVP) delivers more business value than no product.
 
 ## The value gained from agile
 A partial product can be used to attract sponsors and to encourage investors and stakeholders, can be tested and validated,
-allows us to take the project in a differet direction in the case of the current state
+allows us to take the project in a different direction in the case of the current state
 being undesirable to the client.
 
 By focusing on business value first, we can have a project that welcomes change rather than

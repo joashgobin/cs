@@ -20,7 +20,7 @@ to the team. The total value delivered (the scope) will be optimized in this way
 the beginning
 - Requirements do not need to be too detailed in order for the team to start working
 - Collaboration with the client is valued because it is the client who determines what
-has busines value and what doesn't
+has business value and what doesn't
 - Student's syndrome is never an issue because the work is distributed evenly instead of
 at the end of the project lifetime
 - Paralysis by analysis is avoided because we need the requirements to be just clear enough

@@ -58,8 +58,13 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 - **:*line_number*** - Jump to line number *line_number*
 
 ### Finding stuff
-- **/*string*+enter** - Jump to first instance of *string* in the current file
+- **/*string*+enter** - Jump to next instance of *string* in the current file
+- **?*string*+enter** - Jump to previous instance of *string* in the current file
 - **n** - cycle through search results
+- **]s** - Jump to next misspelled word
+- **[s** - Jump to previous misspelled word
+- **zg** - Add current word to Vim's dictionary
+- **zw** - Remove current word from Vim's dictionary
 
 ### Placing the cursor relative to the window
 - **L** - Place the cursor low
