@@ -29,5 +29,5 @@ aspect of the traditional approach might be seen as a drawback
 - Transitioning from traditional to agile might be incur some costs
 - Everyone might not agree with this change in approach
 - Some modern agile practices do take quite some time to learn and adopt
-- Changing over to an agile approach might backfire and result in team members having
+- Changing over to an agile approach too quickly might backfire and result in team members having
 little appreciation for agile practices

@@ -57,8 +57,8 @@ is that this implementation can be done using a for loop or a while loop or a go
 Regardless of the way we do the implementation, the code **count_to(1500)** will
 always do exactly that - *count to 1500*.
 
-Our coding should move towards being declarative (telling the computer what to do)
-instead of always being procedural (telling the computer how to do it). The current *n*
+Our coding style should move towards being **declarative** (telling the computer what to do)
+instead of always being *imperative* (telling the computer how to do it). The current *n*
 lines of code should make the next *n* lines of code easier to write.
 
 ##### printf()
