@@ -33,7 +33,8 @@ The following commands are used in normal mode.
 
 ### Copying and pasting
 - **yy** - Yank current line
-- **p** - Paste last yanked or deleted text
+- **p** - Paste last yanked or deleted text after cursor
+- **P** - Paste last yanked or deleted text before cursor
 - **Shift+v** - Enter Visual line mode and highlight the current line; This text can then be deleted (d or x)
 or yanked (y)
 
