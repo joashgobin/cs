@@ -7,12 +7,12 @@ Two techniques we use to reduce nesting are:
 - Inversion
 
 ## Extraction
-Here we extract a block of code and place it within a function. We then call that function
+In extraction, we extract a block of code and place it within a function. We then call that function
 from where the code block used to be.
 !{{./extraction.c}}
 
 ## Inversion
-Here we write *guard clauses* instead of nesting a bunch of conditional statements. We
+In inversion, we write *guard clauses* instead of nesting a bunch of conditional statements. We
 place the most common behaviour and place *condition checks* before it to prevent (guard) unwanted states
 from reaching that common behaviour.
 
