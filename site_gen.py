@@ -154,7 +154,7 @@ def create_file_tree_html(file_list):
 
     f.write(start)
     f.write("<h1>Welcome Home</h1>")
-    f.write("<p>This is where your journey begins. It is our hope that you will learn something valuable from this website. Project NibbleSprouts is an attempt to provide a scalable STEM education to students across the globe for free.</p>")
+    f.write("<p>This is where your journey begins. It is our hope that you will learn something valuable from this website. <em>Project NibbleSprouts</em> is an attempt to provide a scalable STEM education to students across the globe for free.</p>")
     f.write(f"<h2>Lessons</h2>")
     f.write(f"<div class='links'><ul>{lesson_link_text}</ul></div>")
     f.write(f"<h2>Code snippets</h2>")
