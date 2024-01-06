@@ -16,7 +16,7 @@ Looping behaviour can be achieved by the use of C's goto directive. We place a l
 before a section of code and tell the computer to *go to* that section where the label is. 
 
 ### The Euclidean algorithm
-This can be used to achieve a more readable form of the Euclidean algorithm:
+The goto directive can be used to write a more readable form of the Euclidean algorithm:
 !{{./goto_euclidean_algorithm.c}}
 
 Notice that we do not declare any variables after the label. The algorithm is based on the fact that for an equation:
