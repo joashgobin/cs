@@ -69,8 +69,8 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 - **?*string*+enter** - Jump to previous instance of *string* in the current file
 - * - Search forwards for word (bounded) under cursor
 - g* - Search forwards for word (unbounded) under cursor
-- *#* - Search backwards for word (bounded) under cursor
-- *g#* - Search backwards for word (unbounded) under cursor
+- **#** - Search backwards for word (bounded) under cursor
+- **g#** - Search backwards for word (unbounded) under cursor
 - **n** - cycle forwards through search results; reversed for ?
 - **N** - cycle backwards through search results; reversed for ?
 - **]s** - Jump to next misspelled word
