@@ -7,7 +7,8 @@ Erik Wilde has a video (!video{{}}) in which he mentions five (5) styles of Appl
 - Event-based
 
 ## Remote Procedure Call APIs
-
+An example of this is the Godot Game Engine's Multiplayer API. The host and clients can
+make remote procedure calls to specific functions defined by the developer.
 
 ## Resource APIs
 

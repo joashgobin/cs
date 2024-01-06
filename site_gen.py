@@ -153,7 +153,9 @@ def create_file_tree_html(file_list):
         snippet_link_text+=f"<li>{link}</li>\n"
 
     f.write(start)
-    f.write(f"<h1>Lessons</h1>")
+    f.write("<h1>Welcome Home</h1>")
+    f.write("<p>This is where your journey begins. It is our hope that you will learn something valuable from this website. Project NibbleSprouts is an attempt to provide a scalable STEM education to students across the globe for free.</p>")
+    f.write(f"<h2>Lessons</h2>")
     f.write(f"<div class='links'><ul>{lesson_link_text}</ul></div>")
     f.write(f"<h2>Code snippets</h2>")
     f.write(f"<div class='links'><ul>{snippet_link_text}</ul></div>")
@@ -293,8 +295,6 @@ def get_code_hljslib(file_path):
 </script>
 """
     return dep
-    
-    
 
 def create_html_file(file_path):
     base, ext = os.path.splitext(file_path)
