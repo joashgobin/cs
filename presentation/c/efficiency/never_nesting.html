@@ -34,7 +34,7 @@ code is nested, the text we need to navigate horizontally grows to be unmanageab
 <li>Inversion</li>
 </ul>
 <h2>Extraction</h2>
-<p>Here we extract a block of code and place it within a function. We then call that function
+<p>In extraction, we extract a block of code and place it within a function. We then call that function
 from where the code block used to be.
 
 <pre><code class='c' id='extraction.c'>
@@ -76,7 +76,7 @@ int main(){
 
 </p>
 <h2>Inversion</h2>
-<p>Here we write <em>guard clauses</em> instead of nesting a bunch of conditional statements. We
+<p>In inversion, we write <em>guard clauses</em> instead of nesting a bunch of conditional statements. We
 place the most common behaviour and place <em>condition checks</em> before it to prevent (guard) unwanted states
 from reaching that common behaviour.</p>
 <p>We place the guard clauses <strong>before</strong> the common behaviour

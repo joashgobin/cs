@@ -41,13 +41,21 @@
 <li><strong>j</strong> - Move cursor down</li>
 <li><strong>k</strong> - Move cursor up</li>
 <li><strong>l</strong> - Move cursor right</li>
+<li><strong>w</strong> - Move cursor to the beginning of the next word, defined by non-white space character</li>
+<li><strong>W</strong> - Move cursor to the beginning of the next word, defined by white space character</li>
+<li><strong>b</strong> - Move cursor to the beginning of the previous word, defined by non-white space character</li>
+<li><strong>B</strong> - Move cursor to the beginning of the previous word, defined by white space character</li>
+<li><strong>e</strong> - Move cursor to the next end of word, defined by non-white space character</li>
+<li><strong>E</strong> - Move cursor to the next end of word, defined by white space character</li>
 </ul>
 <h3>Deleting, replacing and fixing changes</h3>
 <ul>
-<li><strong>x</strong> - delete character under cursor</li>
-<li><strong>r<em>char</em></strong> - replace character under cursor with <em>char</em></li>
-<li><strong>dd</strong> - delete current line</li>
-<li><strong>cc</strong> - change current line</li>
+<li><strong>x</strong> - Delete character under cursor</li>
+<li><strong>r<em>char</em></strong> - Replace character under cursor with <em>char</em></li>
+<li><strong>dd</strong> - Delete current line</li>
+<li><strong>D</strong> - Delete to the end of the current line</li>
+<li><strong>cc</strong> - Change current line</li>
+<li><strong>C</strong> - Delete to the end of the current line and enter Insert mode</li>
 <li><strong>u</strong> - Undo last change</li>
 <li><strong>Ctrl+r</strong> - Redo last change</li>
 <li><strong>U</strong> - Fix entire line</li>
@@ -70,8 +78,6 @@ or yanked (y)</li>
 <li><strong>A</strong> - Enter Insert mode and start inserting after the last character in current line</li>
 <li><strong>s</strong> - Delete the character under the cursor and Enter Insert mode</li>
 <li><strong>S</strong> - Change the current line and indent to where Vim infers that the cursor should be in the current line </li>
-<li><strong>o<em>char</em></strong> - Jump to next line and enter Insert Mode</li>
-<li><strong>O<em>char</em></strong> - Jump to previous line and enter Insert mode</li>
 <li><strong>f<em>char</em></strong> - Jump to position of first instance of <em>char</em> in current line</li>
 <li><strong>F<em>char</em></strong> - Jump to position of previous instance of <em>char</em> in current line</li>
 <li><strong>t<em>char</em></strong> - Jump to position just before next instance of <em>char</em> in current line</li>
@@ -87,12 +93,27 @@ and enter Insert mode; The text must be enclosed by two instances of the <em>cha
 <li><strong>gg</strong> - Go to first line of file</li>
 <li><strong>G</strong> - Go to last line of file</li>
 <li><strong>:<em>line_number</em></strong> - Jump to line number <em>line_number</em></li>
+<li><strong>o<em>char</em></strong> - Jump to next line and enter Insert Mode</li>
+<li><strong>O<em>char</em></strong> - Jump to previous line and enter Insert mode</li>
 </ul>
 <h3>Finding stuff</h3>
 <ul>
 <li><strong>/<em>string</em>+enter</strong> - Jump to next instance of <em>string</em> in the current file</li>
 <li><strong>?<em>string</em>+enter</strong> - Jump to previous instance of <em>string</em> in the current file</li>
-<li><strong>n</strong> - cycle through search results</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>Search forwards for word (bounded) under cursor</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>g* - Search forwards for word (unbounded) under cursor</li>
+<li><em>#</em> - Search backwards for word (bounded) under cursor</li>
+<li><em>g#</em> - Search backwards for word (unbounded) under cursor</li>
+<li><strong>n</strong> - cycle forwards through search results; reversed for ?</li>
+<li><strong>N</strong> - cycle backwards through search results; reversed for ?</li>
 <li><strong>]s</strong> - Jump to next misspelled word</li>
 <li><strong>[s</strong> - Jump to previous misspelled word</li>
 <li><strong>zg</strong> - Add current word to Vim's dictionary</li>
@@ -111,6 +132,7 @@ and enter Insert mode; The text must be enclosed by two instances of the <em>cha
 <li><strong>Ctrl+o+Normal mode command</strong> - Run a command as if in Normal mode but remain in Insert mode</li>
 <li><strong>Ctrl+w</strong> - Delete previous word</li>
 <li><strong>Ctrl+u</strong> - Delete entire line before cursor</li>
+<li><strong>Ctrl+[</strong> - Exit out of Insert mode to the left of the cursor</li>
 </ul>
 <h2>Command mode</h2>
 <ul>

@@ -13,13 +13,20 @@ The following commands are used in normal mode.
 - **j** - Move cursor down
 - **k** - Move cursor up
 - **l** - Move cursor right
-
+- **w** - Move cursor to the beginning of the next word, defined by non-white space character
+- **W** - Move cursor to the beginning of the next word, defined by white space character
+- **b** - Move cursor to the beginning of the previous word, defined by non-white space character
+- **B** - Move cursor to the beginning of the previous word, defined by white space character
+- **e** - Move cursor to the next end of word, defined by non-white space character
+- **E** - Move cursor to the next end of word, defined by white space character
 
 ### Deleting, replacing and fixing changes
-- **x** - delete character under cursor
-- **r*char*** - replace character under cursor with *char*
-- **dd** - delete current line
-- **cc** - change current line
+- **x** - Delete character under cursor
+- **r*char*** - Replace character under cursor with *char*
+- **dd** - Delete current line
+- **D** - Delete to the end of the current line
+- **cc** - Change current line
+- **C** - Delete to the end of the current line and enter Insert mode
 - **u** - Undo last change
 - **Ctrl+r** - Redo last change
 - **U** - Fix entire line
@@ -40,8 +47,6 @@ or yanked (y)
 - **A** - Enter Insert mode and start inserting after the last character in current line
 - **s** - Delete the character under the cursor and Enter Insert mode
 - **S** - Change the current line and indent to where Vim infers that the cursor should be in the current line 
-- **o*char*** - Jump to next line and enter Insert Mode
-- **O*char*** - Jump to previous line and enter Insert mode
 - **f*char*** - Jump to position of first instance of *char* in current line
 - **F*char*** - Jump to position of previous instance of *char* in current line
 - **t*char*** - Jump to position just before next instance of *char* in current line
@@ -56,11 +61,18 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 - **gg** - Go to first line of file
 - **G** - Go to last line of file
 - **:*line_number*** - Jump to line number *line_number*
+- **o*char*** - Jump to next line and enter Insert Mode
+- **O*char*** - Jump to previous line and enter Insert mode
 
 ### Finding stuff
 - **/*string*+enter** - Jump to next instance of *string* in the current file
 - **?*string*+enter** - Jump to previous instance of *string* in the current file
-- **n** - cycle through search results
+- * - Search forwards for word (bounded) under cursor
+- g* - Search forwards for word (unbounded) under cursor
+- *#* - Search backwards for word (bounded) under cursor
+- *g#* - Search backwards for word (unbounded) under cursor
+- **n** - cycle forwards through search results; reversed for ?
+- **N** - cycle backwards through search results; reversed for ?
 - **]s** - Jump to next misspelled word
 - **[s** - Jump to previous misspelled word
 - **zg** - Add current word to Vim's dictionary
@@ -77,6 +89,7 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 - **Ctrl+o+Normal mode command** - Run a command as if in Normal mode but remain in Insert mode
 - **Ctrl+w** - Delete previous word
 - **Ctrl+u** - Delete entire line before cursor
+- **Ctrl+[** - Exit out of Insert mode to the left of the cursor
 
 ## Command mode
 - **:*command*** - Run *command*
