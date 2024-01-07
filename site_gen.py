@@ -145,20 +145,20 @@ def create_file_tree_html(file_list):
     f = open("./presentation/index.html",'w')
     lesson_link_list = [f"<a href='{os.path.splitext(file)[0]}.html'>{get_readable_name(os.path.splitext(os.path.basename(file))[0])}</a>" for file in new_file_list if str(file).endswith(".md")]
     snippet_link_list = [f"<a href='{os.path.splitext(file)[0]}.html'>{os.path.basename(file)}</a>" for file in new_file_list if str(file).endswith(".md")==False]
-    lesson_link_text = ""
-    snippet_link_text = ""
-    for link in lesson_link_list:
-        lesson_link_text+=f"<li>{link}</li>\n"
-    for link in snippet_link_list:
-        snippet_link_text+=f"<li>{link}</li>\n"
 
     f.write(start)
     f.write("<h1>Welcome Home</h1>")
     f.write("<p>This is where your journey begins. It is our hope that you will learn something valuable from this website. <em>Project NibbleSprouts</em> is an attempt to provide a scalable STEM education to students across the globe for free.</p>")
     f.write(f"<h2>Lessons ({len(lesson_link_list)})</h2>")
-    f.write(f"<div class='links'><ul>{lesson_link_text}</ul></div>")
+    f.write(f"<div class='links'><ul>")
+    for link in lesson_link_list:
+        f.write(f"<li>{link}</li>\n")
+    f.write("</ul></div>")
     f.write(f"<h2>Code snippets ({len(snippet_link_list)})</h2>")
-    f.write(f"<div class='links'><ul>{snippet_link_text}</ul></div>")
+    for link in snippet_link_list:
+        f.write(f"<li>{link}</li>\n")
+    f.write(f"<div class='links'><ul>");
+    f.write("</ul></div>")
     f.write(plain_end)
     f.close()
     for file in file_list:
