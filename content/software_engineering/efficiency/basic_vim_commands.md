@@ -19,6 +19,9 @@ The following commands are used in normal mode.
 - **B** - Move cursor to the beginning of the previous word, defined by white space character
 - **e** - Move cursor to the next end of word, defined by non-white space character
 - **E** - Move cursor to the next end of word, defined by white space character
+- **_** - Move to the first non-white space character in current line
+- **0** - Move to the zeroth character in current line
+- **$** - Move to the end of current line
 
 ### Deleting, replacing and fixing changes
 - **x** - Delete character under cursor
@@ -37,6 +40,8 @@ The following commands are used in normal mode.
 - **P** - Paste last yanked or deleted text before cursor
 - **Shift+v** - Enter Visual line mode and highlight the current line; This text can then be deleted (d or x)
 or yanked (y)
+- **Ctrl+v** - Enter visual block mode
+- **I** - Insert at the beginning of selected each line in the visual block
 
 ### Horizontal movement and actions
 - **_** - Jump to first non-white space character in current line
