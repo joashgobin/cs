@@ -1,4 +1,4 @@
-# Generating truth tables
+# Generating Truth Tables
 We can use C's built-in logical operators for **NOT**, **OR** and **AND** in order to generate truth tables for
 compound logical statements. An implication is logically equivalent to taking the negation
 of the first proposition OR the second:
