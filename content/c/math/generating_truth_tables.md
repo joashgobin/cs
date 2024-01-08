@@ -1,7 +1,7 @@
 # Generating Truth Tables
 We can use C's built-in logical operators for **NOT**, **OR** and **AND** in order to generate truth tables for
-compound logical statements. An implication is logically equivalent to taking the negation
-of the first proposition OR the second:
+compound logical statements. An *implication* is logically equivalent to taking the negation
+of the first proposition (the hypothesis/antecedent) OR the second (the consequent/conclusion/result):
 
 $$p\rightarrow q\equiv \neg p\lor q$$
 
