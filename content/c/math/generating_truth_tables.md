@@ -10,7 +10,7 @@ We can thus write functions to return the result of each logical operation:
 
 #### Challenge
 Modify the code above to display the following compound propositions:
-- $$\neg p \land \neg q$$
-- $$\neg p \rightarrow \neg q$$ (inverse)
-- $$q \rightarrow p$$ (converse)
-- $$\neg q \rightarrow \neg p$$ (contrapositive)
+- $\neg p \land \neg q$
+- $\neg p \rightarrow \neg q$ (inverse)
+- $q \rightarrow p$ (converse)
+- $\neg q \rightarrow \neg p$ (contrapositive)
