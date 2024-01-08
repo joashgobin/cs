@@ -1,17 +1,21 @@
 #include <stdio.h>
 
+// not p
 int not(int p){
     return !p;
 }
 
+// p or q
 int or(int p,int q){
     return p||q;
 }
 
+// p and q
 int and(int p,int q){
     return p&&q;
 }
 
+// p implies q
 int implies(int p,int q){
     return !p||q;
 }
