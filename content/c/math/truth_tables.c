@@ -24,8 +24,8 @@ int main(){
     printf("p\tq\tnot p\tnot q\tp or q\tp and q\tp->q\tp->~q");
     printf("\n----------------------------------------------------------------\n");
     for (int n=0;n<4;n++){
-        int p = n/2;
-        int q = n%2;
+        int p = (n>>1)&1;
+        int q = n&1;
         printf("%d\t%d\t",p,q);
         printf("%d\t",not(p));
         printf("%d\t",not(q));
