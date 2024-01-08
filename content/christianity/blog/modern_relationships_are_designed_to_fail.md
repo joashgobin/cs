@@ -7,5 +7,5 @@ can influence our views on commitment.
 ## The flesh
 
 ## The devil
-The god of this age has ensured that there is a culture that both hates God's ideals
+The "*god of this age*" has ensured that there is a culture that both hates God's ideals
 and breeds degeneracy.

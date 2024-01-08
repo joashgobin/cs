@@ -17,16 +17,18 @@ int implies(int p,int q){
 }
 
 int main(){
-    printf("p\tq\tnot p\tp or q\tp and q\tp->q");
-    printf("\n-------------------------------------------------\n");
+    printf("p\tq\tnot p\tnot q\tp or q\tp and q\tp->q\tp->~q");
+    printf("\n----------------------------------------------------------------\n");
     for (int n=0;n<4;n++){
         int p = n/2;
         int q = n%2;
         printf("%d\t%d\t",p,q);
         printf("%d\t",not(p));
+        printf("%d\t",not(q));
         printf("%d\t",or(p,q));
         printf("%d\t",and(p,q));
-        printf("%d",implies(p,q));
+        printf("%d\t",implies(p,q));
+        printf("%d",implies(p,not(q)));
         printf("\n");
     }
     return 0;
