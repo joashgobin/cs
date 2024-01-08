@@ -155,9 +155,9 @@ def create_file_tree_html(file_list):
         f.write(f"<li>{link}</li>\n")
     f.write("</ul></div>")
     f.write(f"<h2>Code snippets ({len(snippet_link_list)})</h2>")
+    f.write(f"<div class='links'><ul>");
     for link in snippet_link_list:
         f.write(f"<li>{link}</li>\n")
-    f.write(f"<div class='links'><ul>");
     f.write("</ul></div>")
     f.write(plain_end)
     f.close()
