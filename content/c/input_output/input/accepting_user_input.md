@@ -1,5 +1,5 @@
 # Accepting User Input
-In C, we can use the function scanf()* to accept values from the user.
+In C, we can use the function *scanf()* to accept values from the user.
 There are other functions, some of which we will address later on.
 
 The basic format for using scanf() is:
