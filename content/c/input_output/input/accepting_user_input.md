@@ -15,6 +15,6 @@ We use the **ampersand (&)** to specify that we want to use the **address (memor
 In this case, the variable is age. *Scanf()* requires the address of the variable in order to change its value.
 This is unlike printf() which takes a copy of the variable (no ampersand is needed in order to get a copy).
 
-## Printing the memory address of a variable
+### Printing the memory address of a variable
 It is good to know the placeholder/format specifier to print memory addresses in C:
 !{{./displaying_memory_addresses.c}}

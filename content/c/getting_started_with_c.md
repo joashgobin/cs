@@ -2,7 +2,7 @@
 This is the home base for the lessons on the C programming language.
 
 ## Boilerplate
-Boilerplate is used to refer to the repetitive sections of code that developers have to type with litte to no variation.
+Boilerplate is used to refer to the repetitive sections of code that developers have to type with little to no variation.
 
 Examine the following C code snippet:
 

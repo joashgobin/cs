@@ -23,15 +23,21 @@ that it is possible for the contents of a while loop to never be executed.
 !{{./while_loops.c}}
 
 #### Challenge
-- Write a while loop to print the multiples of 3 from 0 to 30
-- Write a while loop to print the factors of 21
-- Write a while loop to print the numbers 0 to 20 excluding 3 and 7
-- Write a while loop which will count from 1 to a number input by the user only if that
+- Write a program to print the multiples of 3 from 0 to 30
+- Write a program to print the factors of 21
+- Write a program to print the numbers 0 to 20 excluding 3 and 7
+- Write a program which will count from 1 to a number input by the user only if that
 number is positive
 
 ## Do-while loops
 A do-while loop will *always run at least once* because the condition is checked at
 the end of each iteration.
 !{{./do_while_loops.c}}
+
+#### Challenge
+- Write a program that repeats until the user enters the correct password
+- Write a program that asks the user to say true or false to an inequality of the form **a>b**
+where **a** and **b** are randomly generated. The program ends when the user gives the wrong truth value
+- Write a program to find all of the factors of a natural number input by the user
 
 [The lesson on loops continues here](./iterative_constructs_part_2.md)
