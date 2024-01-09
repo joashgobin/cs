@@ -5,7 +5,7 @@ int main(){
     printf("Please enter your age: ");
     scanf("%d",&age);
 
-    // no inversion
+    // without inversion
     if (age>=18){
         printf("You are an adult\n");
         if (age>=65){

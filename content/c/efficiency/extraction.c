@@ -11,7 +11,7 @@ void even_or_odd(int x){
 
 int main(){
 
-    // no extraction
+    // without extraction
     for (int x=0;x<10;x++){
         if (x%2==0){
             printf("%d is even\n",x);
