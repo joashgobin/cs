@@ -6,7 +6,7 @@ int main(){
         if (i%2==0){
             continue;
         }
-        // not executed if the number is even
+        // not executed if the i is even
         printf("%d is odd\n",i);
     }
     printf("The loop has finished\n");
