@@ -12,6 +12,6 @@
 int main(){
     double length = 0.7;
     double period = 2*PI*sqrt(length/9.81); 
-    
     printf("The period of a simple pendulum with length %g m is %g s",length,period);
+    return 0;
 }
