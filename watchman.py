@@ -10,8 +10,9 @@ class WatchMan(FileSystemEventHandler):
         if event.is_directory:
             return
         elif event.event_type == 'created':
-            subprocess.call(["python","site_gen.py"])
-            print("File created")
+            # subprocess.call(["python","site_gen.py"])
+            # print("File created")
+            pass
         elif event.event_type == 'modified':
             subprocess.call(["python","site_gen.py"])
             print('File modified')

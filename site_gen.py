@@ -124,7 +124,7 @@ def find_files_recursively(directory_path="."):
             if "__pycache__" in path:
                 continue
             cf = [fo for fo in target_folders if path.startswith("./"+fo)]
-            print_fancy(f"ALLOW {path}") if len(cf)>0 else print_fancy(f"REJECT {path}",'red')
+            # print_fancy(f"ALLOW {path}") if len(cf)>0 else print_fancy(f"REJECT {path}",'red')
             if len(cf)>0:
                 file_list.append(path)
     return file_list
@@ -302,7 +302,7 @@ def create_html_file(file_path):
     new_path = os.path.splitext(file_path)[0]+".html"
     ext = os.path.splitext(file_path)[1]
     new_path = new_path.replace("./content/","./presentation/")
-    print_fancy(f"CREATE {new_path}")
+    # print_fancy(f"CREATE {new_path}")
     new_dir = os.path.dirname(new_path)
     # print(f"Creating directory: {new_dir}")
     os.makedirs(new_dir,exist_ok=True)

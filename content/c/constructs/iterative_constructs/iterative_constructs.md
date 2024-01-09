@@ -13,6 +13,11 @@ The **for loop** is a bounded loop. This is because we can tell how many times i
 be executed before termination. We can know the number of iterations from how we construct the for loop.
 !{{./for_loops.c}}
 
+#### Challenge
+- Write a program that prints the squares of all the natural numbers from 1 to 20
+- Write a program that prints the numbers from 1 to 30 and tells user which ones are even and which are odd
+- Write a program that prints the multiples of 3 from 0 to 30
+
 ## While loops
 The **while loop** is a type of unbounded iteration. This is because its execution is not 
 terminated when a certain number of iterations are finished but rather when a condition is met.
@@ -23,10 +28,9 @@ that it is possible for the contents of a while loop to never be executed.
 !{{./while_loops.c}}
 
 #### Challenge
-- Write a program to print the multiples of 3 from 0 to 30
-- Write a program to print the factors of 21
-- Write a program to print the numbers 0 to 20 excluding 3 and 7
-- Write a program which will count from 1 to a number input by the user only if that
+- Write a program that prints the factors of 21
+- Write a program that prints the numbers 0 to 20 excluding 3 and 7
+- Write a program that will count from 1 to a number input by the user only if that
 number is positive
 
 ## Do-while loops
@@ -38,6 +42,6 @@ the end of each iteration.
 - Write a program that repeats until the user enters the correct password
 - Write a program that asks the user to say true or false to an inequality of the form **a>b**
 where **a** and **b** are randomly generated. The program ends when the user gives the wrong truth value
-- Write a program to find all of the factors of a natural number input by the user
+- Write a program that finds all of the factors of a natural number input by the user
 
 [The lesson on loops continues here](./iterative_constructs_part_2.md)

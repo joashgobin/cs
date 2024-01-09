@@ -1,11 +1,27 @@
 # Iterative Constructs Part 2
 Here is some more information on how we use iterative constructs.
 
-## Infinite loops
+## Continue and break
+We can use the **continue** and **break** directives in order to control how a loop operates.
+
+*Continue* is used to tell the computer to immediately jump to the next iteration of the loop.
+If there is any code after this directive used then that code is ignored. In the following code,
+if the number is even then the loop will be advanced to the next iteration instead running the next line
+**printf("%d is odd\n",i)**:
+!{{./continue_in_loop.c}}
+
+*Break* is used to tell the computer to exit the loop completely. In the following code, the loop
+is exited when **i** becomes 7:
+!{{./break_out_of_loop.c}}
+
+## Special types of loops
+The following are special types of loops we have in C.
+
+### Infinite loops
 These are loops that have the potential to run forever.
 !{{./infinite_loop.c}}
 
-## Empty loops
+### Empty loops
 These are loops that do no effective work in the program. They may happen by accident 
 if we do not take care in how we write our code (usually by putting curly braces in
 the wrong place).
