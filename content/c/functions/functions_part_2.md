@@ -21,3 +21,5 @@ example, the code *f(x)* is replaced by the value of f(x) and this is stored as 
 
 Here is an example of a function that returns the larger of two integers:
 !{{./greater_of.c}}
+
+

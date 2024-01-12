@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-double f(int input){
-    double output = input*input;
-    return output;
+double f(int x){
+    double y = x*x+5*x+6;
+    return y;
 }
 
 int main(){
