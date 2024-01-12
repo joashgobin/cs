@@ -2,10 +2,10 @@
 Here is some more information on how we use iterative constructs.
 
 ## Continue and break
-We can use the **continue** and **break** directives in order to control how a loop operates.
+We can use the **continue** and **break** statements in order to control how a loop operates.
 
 *Continue* is used to tell the computer to immediately jump to the next iteration of the loop.
-If there is any code after this directive used then that code is ignored. In the following code,
+If there is any code after this statement used then that code is ignored. In the following code,
 if the number is even then the loop will be advanced to the next iteration instead running the next line
 **printf("%d is odd\n",i)**:
 !{{./continue_in_loop.c}}
@@ -27,12 +27,12 @@ if we do not take care in how we write our code (usually by putting curly braces
 the wrong place).
 !{{./empty_loop.c}}
 
-## The goto directive
-Looping behaviour can be achieved by the use of C's goto directive. We place a label
+## The goto statement
+Looping behaviour can be achieved by the use of C's goto statement. We place a label
 before a section of code and tell the computer to *go to* that section where the label is. 
 
 ### The Euclidean algorithm
-The goto directive can be used to write a more readable form of the Euclidean algorithm:
+The goto statement can be used to write a more readable form of the Euclidean algorithm:
 !{{./goto_euclidean_algorithm.c}}
 
 Notice that we do not declare any variables after the label. The algorithm is based on the fact that for an equation:
