@@ -23,4 +23,4 @@ as Christian tell us we have to do something in order to be saved, Christ appear
 
 Through Christ we have been made righteous so for this Christmas season, take it easy with 
 the shopping list and the payslip. We have a much greater reason to rejoice, one 
-that doesn't require your checkbook or birth certificate.
+that doesn't require your checkbook or even a birth certificate.
