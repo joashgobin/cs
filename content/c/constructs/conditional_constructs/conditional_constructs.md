@@ -6,7 +6,11 @@ In C, we have two (2) main conditional constructs:
 - Switch-case statements
 
 ## If-Else
+These are used to create multiple branching paths in our code. **Only one** branch
+is executed if its condition is satisfied and all branches following it are ignored.
 !{{./if_else.c}}
 
 ## Switch-case
+In this statement, it is possible for all branches to run if we do not place the **break** statement
+at the end of each case:
 !{{./switch_case.c}}
