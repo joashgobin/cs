@@ -7,7 +7,7 @@ In C, we have two (2) main conditional constructs:
 
 ## If-Else
 These are used to create multiple branching paths in our code. **Only one** branch
-is executed if its condition is satisfied and all branches following it are ignored.
+is executed if its condition is satisfied. All branches following it are ignored.
 !{{./if_else.c}}
 
 ## Switch-case
