@@ -8,6 +8,7 @@ maximize the business value that can be delivered by the work team.
 may want
 - A **backlog** is the list of requirements that need to be completed in order to deliver business value
 - The *purpose of the backlog* is to measure the value created not the work done
+- We *complete tasks* in order to **fulfill requirements**
 - There is no project manager so the work team can organize their own activities based on 
 the capabilities and availability of group members
 - This backlog will change as the project progresses - because we need just enough information in order to
