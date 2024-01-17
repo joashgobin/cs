@@ -6,7 +6,7 @@ We can use the **continue** and **break** statements in order to control how a l
 
 *Continue* is used to tell the computer to immediately jump to the next iteration of the loop.
 If there is any code after this statement used then that code is ignored. In the following code,
-if the number is even then the loop will be advanced to the next iteration instead running the next line
+if the number is even then the loop will be advanced to the next iteration instead of running the next line
 **printf("%d is odd\n",i)**:
 !{{./continue_in_loop.c}}
 
