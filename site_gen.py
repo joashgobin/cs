@@ -166,49 +166,48 @@ def create_file_tree_html(file_list):
 
 def wrap_with_markdown_boilerplate(text,path):
     
-    copy_functionality = r"""
+    copy_functionality = r"""<script>
     function copyToClipboard(id){
-        var copyText = document.getElementById(id).innerText;
-        navigator.clipboard.writeText(copyText).then(function(){
-            console.log("Copied "+id+" to clipboard");        
-        }).catch(function(error){
-            console.log("Error copying "+id+" to clipboard; Error: "+error);        
-        });
-    }
-
+            var copyText = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(copyText).then(function(){
+                console.log("Copied "+id+" to clipboard");        
+                }).catch(function(error){
+                    console.log("Error copying "+id+" to clipboard; Error: "+error);        
+                    });
+                }
+</script>
     """
-
-    end = f"""
+    katex_functionality = f"""
 
 <link rel="stylesheet" href="/static/katex/katex.min.css">
 <script defer="" src="/static/katex/katex.min.js"></script>
 <script defer="" src="/static/katex/contrib/auto-render.min.js" crossorigin="anonymous"
 onload="
     renderMathInElement(
-        document.body,
-        {{
-            delimiters: [
-                {{left:'$$', right:'$$', display:true}},
-                {{left:'$', right:'$', display:false}}
-            ]
-          }}
-    );
+            document.body,
+            {{
+                delimiters: [
+                    {{left:'$$', right:'$$', display:true}},
+                    {{left:'$', right:'$', display:false}}
+                    ]
+                }}
+            );
 "></script>
-</main>
-{page_footer}
-<script>{copy_functionality}</script>
-</body>
-</html>
-"""
+
+    """
+
     path_trimmed = path.removeprefix("./content/").removesuffix(".md").replace("/"," > ").replace("_"," ")
     path_display = f"<p style='darkgrey;opacity:0.5;font-size:0.6rem'>{path_trimmed}</p>"
     s = re.sub(r"\[.*?\]\((.*?.md)\)",to_html_link,text)
     s = marko.convert(s)
     cur_dir = os.path.dirname(path)
 
+    # substituting for code snippets
     result = re.sub(r"!\{\{(\S*)\}\}",lambda match:to_code_attachment(match,cur_dir+"/"),s)
+    # substituting for Bible verses
     result = re.sub(r"!bible\{\{\s*(.*?)\s*\}\}",to_bible_verse,result)
     
+    # finding code snippet dependencies to include in html body
     deps = re.finditer(r"!\{\{(\S*)\}\}",s)
     dep_string = ""
     for match in deps:
@@ -216,6 +215,16 @@ onload="
         if dep in dep_string:
             continue
         dep_string+=dep
+
+
+    end = f"""
+{katex_functionality if '$' in text else ""}
+</main>
+{page_footer}
+{copy_functionality if dep_string!="" else ""}
+</body>
+</html>
+    """
     # print(f"Adding dep string: {dep_string}")
     return start+path_display+result+dep_string+end
 
