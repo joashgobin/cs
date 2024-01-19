@@ -16,7 +16,7 @@ refresh = not args.no_refresh
 init(autoreset=True)
 
 page_header = """
-<header style='position:fixed;top:0;left:0;margin:0px;padding:4px;width:100%;background-color:darkgrey;color:black;z-index:9999;'>
+<header style='position:fixed;top:0;left:0;margin:0px;padding:4px;width:100%;background-color:#143e73;color:black;z-index:9999;'>
     <div style='display:flex;align-items:center'>
         <div style='width:10px'></div>
         <a href='/'>
