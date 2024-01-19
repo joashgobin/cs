@@ -199,7 +199,7 @@ onload="
     """
 
     path_trimmed = path.removeprefix("./content/").removesuffix(".md").replace("/"," > ").replace("_"," ")
-    path_display = f"<p style='darkgrey;opacity:0.5;font-size:0.6rem'>{path_trimmed}</p>"
+    path_display = f"<p style='color:darkgrey;opacity:0.8;font-size:0.6rem'>{path_trimmed}</p>"
     s = re.sub(r"\[.*?\]\((.*?.md)\)",to_html_link,text)
     s = marko.convert(s)
     cur_dir = os.path.dirname(path)
