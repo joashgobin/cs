@@ -20,7 +20,7 @@ page_header = """
     <div style='display:flex;align-items:center'>
         <div style='width:10px'></div>
         <a href='/'>
-            <img src='/static/TeamLogo.png' height=40px>
+            <img src='/static/TeamLogo.png' alt="ChickenFryBytes Studios Logo" height=40px>
         </a>
         <div style='width:20px'></div>
         <p style='line-height:1.2;color:#f4f4f4;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
