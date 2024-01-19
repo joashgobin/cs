@@ -4,8 +4,8 @@ recommended that you know how to transpose and factorize comfortably. Knowing ab
 and logarithmic functions is also useful.
 
 In order to become better at Mathematics, we need to care about the language used. 
-New students often take the terminology used for granted and this cripples them 
-in the long run. The fancy phrase *derivative of the product of two trigonometrical functions* sounds 
+New students often take the terminology for granted and this cripples them 
+in the long run. For example, the fancy phrase *derivative of the product of two trigonometrical functions* sounds 
 intimidating at first but with a little extra care we can easily learn to write 
 it into mathematical notation:
 $$\frac{d}{dx}(\sin{x}\cos{x})$$
