@@ -20,7 +20,7 @@ page_header = """
     <div style='display:flex;align-items:center'>
         <div style='width:10px'></div>
         <a href='/'>
-            <img src='/static/TeamLogo.png' alt="ChickenFryBytes Studios Logo" height=40px>
+            <img src='/static/TeamLogo.png' alt="ChickenFryBytes Studios Logo" height=40px width=40px>
         </a>
         <div style='width:20px'></div>
         <p style='line-height:1.2;color:#f4f4f4;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
@@ -42,6 +42,7 @@ start = f"""
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     {'<meta http-equiv="refresh" content="3">' if refresh else ''}
+    <meta name='description' content='Content generated for the ChickenFryBytes Studios NibbleSprouts Project'>
     <title>Asynchronous Learning</title>
     <!-- <link rel='stylesheet' href='/static/katex/katex.min.css'> -->
     <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
@@ -74,7 +75,8 @@ def wrap_with_code_block_boilerplate(text,orig_file:str):
 <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Code Snippets</title>
+    <meta name='description' content='Code Snippet from the ChickenFryBytes Studios NibbleSprouts Project'>
+    <title>Code Snippet</title>
     <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
 </head>
 <body style='background-color:black'>
