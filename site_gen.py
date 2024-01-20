@@ -182,8 +182,8 @@ def wrap_with_markdown_boilerplate(text,path):
     katex_functionality = f"""
 
 <link rel="stylesheet" href="/static/katex/katex.min.css">
-<script defer="" src="/static/katex/katex.min.js"></script>
-<script defer="" src="/static/katex/contrib/auto-render.min.js" crossorigin="anonymous"
+<script defer src="/static/katex/katex.min.js"></script>
+<script defer src="/static/katex/contrib/auto-render.min.js" crossorigin="anonymous"
 onload="
     renderMathInElement(
             document.body,
