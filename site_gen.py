@@ -16,14 +16,14 @@ refresh = not args.no_refresh
 init(autoreset=True)
 
 page_header = """
-<header style='position:fixed;top:0;left:0;margin:0px;padding:4px;width:100%;background-color:#143e73;color:black;z-index:9999;'>
+<header style='position:fixed;top:0;left:0;margin:0px;padding:4px;width:100%;background-color:#192734;color:black;z-index:9999;'>
     <div style='display:flex;align-items:center'>
         <div style='width:10px'></div>
         <a href='/'>
             <img src='/static/TeamLogo.png' alt="ChickenFryBytes Studios Logo" height=40px width=40px>
         </a>
         <div style='width:20px'></div>
-        <p style='line-height:1.2;color:#f4f4f4;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
+        <p style='line-height:1.2;color:darkgray;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
     </div>
 </header>
 <div style='height:40px'></div>
@@ -249,7 +249,7 @@ def to_bible_verse(match):
         vnum = bible.get_verse_number(verse_id)
         vtext = bible.get_verse_text(verse_id)
         compiled_text+=f"<blockquote><span style='font-size:0.7rem'>{vnum} </span>{vtext}</blockquote>"
-    return f"<div style='border:2px solid purple;border-radius:10px;padding:20px'><p style='color:purple;padding-top:0;margin-top:0'>{text}</p>"+compiled_text+"</div>"
+    return f"<div style='border:2px solid #BF40BF;border-radius:10px;padding:20px'><strong style='color:#BF40BF;padding-top:0;margin-top:0'>{text}</strong>"+compiled_text+"</div>"
 
 def to_code_attachment(match,cur_dir="some directory"):
     link = cur_dir+match.group(1).removeprefix("./")

@@ -1,5 +1,6 @@
 # Getting Started with C
-This is the home base for the lessons on the C programming language.
+This is the start of the lessons on the C programming language. C is a compiled, statically-typed,
+procedural language.
 
 ## Boilerplate
 Boilerplate is used to refer to the repetitive sections of code that developers have to type with little to no variation.
@@ -8,6 +9,8 @@ Examine the following C code snippet:
 
 !{{./hello.c}}
 
+
+#### Challenge
 Answer the following questions:
 - What would you consider to be C boilerplate?
 - What is the **stdio.h** referring to?

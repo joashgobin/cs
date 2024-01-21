@@ -15,7 +15,7 @@ is exited when **i** becomes 7:
 !{{./break_out_of_loop.c}}
 
 ## Special types of loops
-The following are special types of loops.
+The following are special classifications for loops.
 
 ### Infinite loops
 These are loops that have the potential to run forever.

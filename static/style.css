@@ -1,23 +1,38 @@
 :root{
     --text-normal:              #1A2023;
     --text-faint:               #c2c2c2;
-    --text-title-h1:            #e34646;/*#d94123;*/
-    --text-title-h2:            #D49335;
+    --text-title-h1:            #d43535;/*#d94123;*/
+    --text-title-h2:            #d47735;
     --text-title-h3:            #c4be43;
     --text-title-h4:            #288248;/*#058231;*/
     --text-title-h5:            #2f3d99;/*#172899;*/
-    --text-title-h6:		    purple;
+    --text-title-h6:		    #BF40BF;
+    --charcoal: #36454F;
+    --dark-bluegray: #192734;
+    --darker-bluegray: #06090c;
+    --very-darkgray: #1e1e1e;
  }
 
 *{
     box-sizing:border-box;
 }
 
+@font-face{
+    font-family: headingFont;
+    src: url("./artbrush/Artbrush.ttf");
+}
+
+@font-face{
+    font-family: regularFont;
+    src: url("./GeneralSans_Complete/Fonts/WEB/fonts/GeneralSans-Regular.woff2");
+}
+
 body{
-    font-family:Arial, sans-serif;
+    /*font-family:Arial, sans-serif;*/
     line-height:1.6;
-    color:#333;
-    background-color:#f4f4f4;
+    color:#f4f4f4;/*#333;*/
+    background-color:var(--darker-bluegray);/*#f4f4f4;*/
+    font-family: regularFont,Arial,sans-serif;
 }
 
 main{
@@ -35,13 +50,15 @@ h5{color:var(--text-title-h5);}
 h6{color:var(--text-title-h6);}
 
 h1,h2,h3,h4,h5,h6{
-    font-weight:bold;
+    /*font-weight:bold;*/
     /*color:slategrey;*/
     padding-top:0;
     margin-top:50px;
     padding-bottom:0;
     margin-bottom:0;
     line-height:0.9;
+    font-family: headingFont,Arial,sans-serif;
+    letter-spacing:1px;
 }
 
 h1:before,h2:before,h3:before,h4:before,h5:before,h6:before{
@@ -49,7 +66,7 @@ h1:before,h2:before,h3:before,h4:before,h5:before,h6:before{
 }
 
 h1:after,h2:after,h3:after,h4:after,h5:after,h6:after{
-    content:" •"
+    /*content:" •"*/
 }
 
 p{
@@ -94,7 +111,7 @@ pre,code{
 }
 
 a{
-    color:black;
+    color:azure;
     opacity:0.8;
 }
 
@@ -104,10 +121,12 @@ a{
 }*/
 
 em{
-    color:steelblue;
+    color:skyblue;
 }
 
-strong{}
+strong{
+    color:white;
+}
 
 button{
     padding:10px 20px;
