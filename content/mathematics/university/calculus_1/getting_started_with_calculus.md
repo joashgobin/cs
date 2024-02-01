@@ -1,6 +1,6 @@
 # Getting Started with Calculus
 Calculus uses quite a few of the skills and concepts learnt from Algebra. It is 
-recommended that you know how to transpose and factorize comfortably. Knowing about polynomial, rational, exponential 
+recommended that you know how to **transpose** and **factorize** comfortably. Knowing about polynomial, rational, exponential 
 and logarithmic functions is also useful.
 
 In order to become better at Mathematics, we need to care about the language used. 

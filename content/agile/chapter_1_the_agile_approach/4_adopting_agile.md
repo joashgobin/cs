@@ -5,7 +5,7 @@ This article is a case for the adoption of the agile approach.
 Business value is seen very quickly in the agile approach.
 
 ### Product visibility
-We can have a deliverables from very early in the project. These will be visible to
+We can have deliverables from very early in the project. These will be visible to
 project stakeholders and clients.
 
 ### Tangible deliverables
@@ -26,7 +26,7 @@ adaptability helps us to adjust the product to what will bring the most business
 The term *digital transformation* is used to describe change through the use of technology.
 The rapid advancement of technology in the past few decades has shown us how unpredictable
 the world around us can be. *Lean management* is an approach where we focus on minimizing
-wastage. By not working with very rigid plan that resists change, we increase the project's agility and
+wastage. By not working with a very rigid plan that resists change, we increase the project's agility and
 by extension minimize the waste generated.
 
 Thus the agile approach and lean management complement each other (they form a synergy)

@@ -22,7 +22,7 @@ This feature was added as a way to include code directly from the user's device 
 
 ### Bible verses
 Bible verses are accessible thanks to the **pythonbible** package and can be added by 
-specifying book, chapter and verse:
+specifying book chapter and verse:
 !bible{{John 3:16}}
 
 You can also insert multiple verses:

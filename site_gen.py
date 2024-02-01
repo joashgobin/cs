@@ -248,7 +248,7 @@ def to_bible_verse(match):
     for verse_id in verse_ids:
         vnum = bible.get_verse_number(verse_id)
         vtext = bible.get_verse_text(verse_id)
-        compiled_text+=f"<blockquote><span style='font-size:0.7rem'>{vnum} </span>{vtext}</blockquote>"
+        compiled_text+=f"<blockquote><span style='font-size:0.8rem;opacity:0.5'>{vnum} </span>{vtext}</blockquote>"
     return f"<div style='border:2px solid #BF40BF;border-radius:10px;padding:20px'><strong style='color:#BF40BF;padding-top:0;margin-top:0'>{text}</strong>"+compiled_text+"</div>"
 
 def to_code_attachment(match,cur_dir="some directory"):

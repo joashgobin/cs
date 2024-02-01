@@ -20,7 +20,7 @@ int main(){
     printf("We found %d a's in \"%s\"\n",count,word);
 
     // traversing the string in reverse
-    printf("The reversed word is ");
+    printf("The reverse of the word is ");
     for (int i=strlen(word)-1;i>=0;i--){
         printf("%c",word[i]);
     }

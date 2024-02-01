@@ -13,4 +13,18 @@ type array_name[number_of_values];
 We can *populate* an integer array by including the values in curly braces:
 !{{./populating_an_integer_array.c}}
 
+!{{./traversing_an_integer_array.c}}
 
+## Strings (character arrays)
+An array of characters is known as a **string**. We can declare a string using double quotations:
+```c
+char name[10] = "John Doe";
+```
+We do not need to specify the number of characters if we use the double quotations:
+
+```c
+char name[] = "John Doe";
+```
+
+We can traverse a string:
+!{{./traversing_a_string.c}}

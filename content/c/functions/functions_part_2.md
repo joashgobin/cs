@@ -11,7 +11,7 @@ The function doesn't accept any values but it does return a string.
 is the string being returned.
 
 ## Functions with both arguments and return values
-When we do functions in algebra we have an input (x) and a return value (y). This can
+When we use functions in Algebra we have an input ($x$) and a return value ($y$). This can
 be achieved in C:
 !{{./f_of_x.c}}
 

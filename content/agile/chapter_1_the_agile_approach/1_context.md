@@ -4,7 +4,7 @@ traditional methodologies which were unable to match the ever-evolving nature of
 various industries.
 
 ## Why is it called agile
-We prefer to agile project management as agile because of its ability to adapt.
+We refer to agile project management as **agile** because of its ability to adapt.
 *Agile* management *embraces change*.
 
 ## Reasons for its success
@@ -23,9 +23,9 @@ These are the four(4) principles upon which all of agile management is built:
 3. Collaboration with client over contracts
 4. Adaptation to change over a rigid plan
 
-The latter in each pair is not unnecessary but it is not as important as the former. 
-For example, having a working product is more important than a manual but we still need
-to produce a manual (a document describing how the software should be used).
+In each pair, the latter item is not unnecessary but it is not as important as the former. 
+For example, having a working product is more important than a manual (documentation) but we still need
+to produce a manual (a document describing how the product should be used).
 
 ## Agile methodologies
 These are the result of applying the agile principles. It is not necessary to use only
@@ -54,3 +54,4 @@ These include but are not limited to:
 - software development
 - construction e.g. lean construction
 
+[Next lesson](./2_misconceptions.md)
