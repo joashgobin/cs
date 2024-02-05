@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-    int original_a=14,original_b=12344;
+    int original_a=14,original_b=1234412323;
     int a=original_a,b=original_b,quot,rem;
     
     // declaring label called 'start'

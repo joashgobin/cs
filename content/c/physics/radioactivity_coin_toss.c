@@ -18,7 +18,7 @@ int throw_count;
 //function to keep the program busy for a fraction of a second
 void tiny_pause(){
     int sum = 0;
-    for (int i=0;i<=100000000;i++){
+    for (int i=0;i<=50000000;i++){
         sum+=i;
     }
 }

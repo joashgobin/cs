@@ -83,6 +83,8 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 - **[s** - Jump to previous misspelled word
 - **zg** - Add current word to Vim's dictionary
 - **zw** - Remove current word from Vim's dictionary
+- **z=** - Open a list of word suggestions for the current word
+- **1z=** - Replace the current word with the 1st suggestion in the list of word suggestions
 
 ### Placing the cursor relative to the window
 - **L** - Place the cursor low
@@ -101,6 +103,10 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 - **:*command*** - Run *command*
 - **:set spell** - Turn spell check on
 - **:set nospell** - Turn spell check off
+- **:norm**+instructions listed out - do list of normal mode instructions
+- **:norm ma [s 1z= `a** - set mark **a** at current cursor position, jump previous spelling error, correct to the
+1st suggestion and then return to the mark **a**. Use 'a instead of `a to jump to the beginning of the marked line instead of the
+marked cursor position
 
 ## Visual mode
 - **=** - Indent highlighted text
