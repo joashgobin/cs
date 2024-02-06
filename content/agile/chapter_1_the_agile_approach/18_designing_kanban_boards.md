@@ -23,11 +23,17 @@ have been completed for a certain phase/column but we have not pushed them into 
 the outline colour of the panels of digital boards can be used to show dependencies; the simplest way is to place the sections from top to bottom according
 to importance (e.g. writing a lab manual for a science lab should be above conducting the lab with your students)
 6. dependencies between tasks - within each requirement (section of the board) we can place the more important tasks (cards) first
-7. errors/delays - we place an error section on the board for tasks where the errors are encountered 
+7. errors/delays - we place an error section on the board for tasks where errors are encountered 
 for example if it is discovered that the teammate assigned to a task lacks the knowledge to complete it or where the task might have to be divided
 into smaller subtasks for completion by other teammates
 8. dependencies with third parties - we use a special color for tasks that depend on personnel and processes
 outside of our team; the facilitator works to resolve these external dependencies and unblock the work 
 9. estimated time for each task - we write the time expected to complete a task on its card
 10. time incurred in a task - after a task is complete we write the time taken to complete the task on the card
-11. multiple projects - 
+11. multiple projects - it is possible to put work from multiple projects on the same kanban board; the idea is to have all the work
+that the team is supposed to complete for the week on a single kanban board for easy visualization; the limitation here happens if 
+the projects have many requirements and thus tasks required (this can make the kanban board very big and thus harder to read)
+12. incidents - these can be assigned as tasks on the kanban thus having time allotted to fixing them 
+
+A good kanban board allows us to complete work at a smooth pace without the need for a project manager as the work team can organize the work by themselves.
+
