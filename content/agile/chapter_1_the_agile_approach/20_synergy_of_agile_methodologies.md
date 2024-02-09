@@ -1,5 +1,5 @@
 # Synergy of Agile Methodologies
-We can use various agile methodologies together in order to get the results from a project. 
+We can use various agile methodologies together in order to get the best results from a project. 
 - Scrum helps us to have useful meetings, understand our respective roles, keep track of artifacts, etc.
 - XP (eXtreme Programming) teaches us to have continuous delivery, high standards for our code, simplicity, etc.
 - Kanban helps us to organize work and prevent bottlenecks by allowing us to easily 

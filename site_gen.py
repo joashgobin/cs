@@ -68,7 +68,7 @@ def wrap_with_code_block_boilerplate(text,orig_file:str):
         case '.py':
             hljs_lib = 'python'
 
-    #print(f"Using hljs library: {hljs_lib}.min.js")
+    # print(f"Using hljs library: {hljs_lib}.min.js")
     start = f"""
 <!DOCTYPE html><html lang='en'>
 <head>
@@ -126,6 +126,7 @@ def find_files_recursively(directory_path="."):
             if "__pycache__" in path:
                 continue
             cf = [fo for fo in target_folders if path.startswith("./"+fo)]
+            # print(os.path.dirname(path))
             # print_fancy(f"ALLOW {path}") if len(cf)>0 else print_fancy(f"REJECT {path}",'red')
             if len(cf)>0:
                 file_list.append(path)
@@ -145,21 +146,36 @@ def create_file_tree_html(file_list):
     os.makedirs("./content/",exist_ok=True)
     shutil.copytree("./static/","./presentation/static/",dirs_exist_ok=True)
     f = open("./presentation/index.html",'w')
-    lesson_link_list = [f"<a href='{os.path.splitext(file)[0]}.html'>{get_readable_name(os.path.splitext(os.path.basename(file))[0])}</a>" for file in new_file_list if str(file).endswith(".md")]
-    snippet_link_list = [f"<a href='{os.path.splitext(file)[0]}.html'>{os.path.basename(file)}</a>" for file in new_file_list if str(file).endswith(".md")==False]
+    lesson_link_list = []
+    snippet_link_list = []
 
     f.write(start)
     f.write("<h1>Welcome Home</h1>")
     f.write("<p>This is where your journey begins. It is our hope that you will learn something valuable from this website. <em>Project NibbleSprouts</em> is an attempt to provide a scalable education to students across the globe for free.</p>")
-    f.write(f"<h2>Lessons ({len(lesson_link_list)})</h2>")
+
+    f.write(f"<h2>Lessons</h2>")
     f.write(f"<div class='links'><ul>")
-    for link in lesson_link_list:
-        f.write(f"<li>{link}</li>\n")
+    current_folder = ""
+    for file in new_file_list:
+        if str(file).endswith(".md"):
+            parent_folder = os.path.dirname(file)
+            if current_folder!=parent_folder and parent_folder!=".":
+                f.write(f"</ul><h3 style='padding:0;margin:0;'>{parent_folder.removeprefix('./').replace('/',' . ').replace('_',' ')}</h3><ul>")
+                current_folder = parent_folder
+            link = f"<li><a href='{os.path.splitext(file)[0]}.html'>{get_readable_name(os.path.splitext(os.path.basename(file))[0])}</a></li>"
+            lesson_link_list.append(link)
+            f.write(f"{link}\n")
+
     f.write("</ul></div>")
-    f.write(f"<h2>Code snippets ({len(snippet_link_list)})</h2>")
+    f.write(f"<h2>Code snippets</h2>")
     f.write(f"<div class='links'><ul>");
-    for link in snippet_link_list:
-        f.write(f"<li>{link}</li>\n")
+
+    for file in new_file_list:
+        if str(file).endswith(".md")==False:
+            link = f"<li><a href='{os.path.splitext(file)[0]}.html'>{os.path.basename(file)}</a></li>"
+            snippet_link_list.append(link)
+            f.write(f"{link}\n")
+
     f.write("</ul></div>")
     f.write(plain_end)
     f.close()
@@ -208,6 +224,8 @@ onload="
     result = re.sub(r"!\{\{(\S*)\}\}",lambda match:to_code_attachment(match,cur_dir+"/"),s)
     # substituting for Bible verses
     result = re.sub(r"!bible\{\{\s*(.*?)\s*\}\}",to_bible_verse,result)
+    # substituting for module diagrams
+    result = re.sub(r"!module\{\{\s*(.*?)\s*\}\}",to_module_diagram,result)
     
     # finding code snippet dependencies to include in html body
     deps = re.finditer(r"!\{\{(\S*)\}\}",s)
@@ -231,10 +249,28 @@ onload="
     return start+path_display+result+dep_string+end
 
 def to_html_link(match):
-    prev_link:str = match.group(1)
+    prev_link = match.group(1)
     # print(f"Converting .md link to .html: {prev_link}")
     new_link = prev_link.removesuffix(".md")+".html"
     return match.group(0).replace(prev_link,new_link)
+
+def to_module_diagram(match):
+    text = match.group(1)
+    head = "heading"
+    body = "body"
+    diagram=f"""
+<div style="">
+<div style="border:2px solid white;width:50%;margin:auto">
+<div style="text-align:center;border-bottom:2px solid white">
+<strong style="">{head}</strong>
+</div>
+<div style="text-align:center">
+<p>{body}</p>
+</div>
+</div>
+</div>
+"""
+    return diagram
 
 def to_bible_verse(match):
     text = match.group(1)
