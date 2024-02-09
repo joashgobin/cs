@@ -156,11 +156,20 @@ def create_file_tree_html(file_list):
     f.write(f"<h2>Lessons</h2>")
     f.write(f"<div class='links'><ul>")
     current_folder = ""
+    current_heading = ""
     for file in new_file_list:
         if str(file).endswith(".md"):
             parent_folder = os.path.dirname(file)
             if current_folder!=parent_folder and parent_folder!=".":
-                f.write(f"</ul><h3 style='padding:0;margin:0;'>{parent_folder.removeprefix('./').replace('/',' . ').replace('_',' ')}</h3><ul>")
+                new_heading = parent_folder.removeprefix('./').replace('/',' . ').replace('_',' ')
+                parts = parent_folder.removeprefix('./').split('/')
+                main_heading = parts[0].replace('_',' ')
+                if current_heading!=main_heading:
+                    f.write(f"</ul><h3 style='padding:0;margin:0;'>Learn {main_heading}</h3><ul>")
+                    current_heading = main_heading
+                if len(parts)>1:
+                    sub_heading = new_heading.removeprefix(main_heading)
+                    f.write(f"</ul><h4 style='padding:0;margin:0;'>{sub_heading}</h4><ul>")
                 current_folder = parent_folder
             link = f"<li><a href='{os.path.splitext(file)[0]}.html'>{get_readable_name(os.path.splitext(os.path.basename(file))[0])}</a></li>"
             lesson_link_list.append(link)
