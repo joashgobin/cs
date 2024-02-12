@@ -5,7 +5,7 @@
     --text-title-h2:            #d47735;
     --text-title-h3:            #c4be43;
     --text-title-h4:            #288248;/*#058231;*/
-    --text-title-h5:            #2f3d99;/*#172899;*/
+    --text-title-h5:            #5683cc;/*#172899;*/
     --text-title-h6:		    #BF40BF;
     --charcoal: #36454F;
     --dark-bluegray: #192734;
@@ -66,6 +66,7 @@ h1,h2,h3,h4,h5,h6{
     margin-bottom:0;
     line-height:0.9;
     font-family: headingFont,Arial,sans-serif;
+    /*font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;*/
     letter-spacing:1px;
 }
 
@@ -123,10 +124,11 @@ a{
 }
 
 li>a{
-    margin-top:27px;
-    margin-bottom:27px;
-    padding-top:13px;
-    padding-bottom:13px;
+    margin-top:32px;
+    margin-right:30px;
+    margin-bottom:32px;
+    padding-top:16px;
+    padding-bottom:16px;
     line-height:1.6;
 }
 
@@ -156,4 +158,9 @@ button{
 button:hover{
     background-color:#0056b3;
     text-decoration:underline;
+}
+
+hr{
+    border:1px solid grey;
+    height:0px;
 }

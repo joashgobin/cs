@@ -16,14 +16,14 @@ refresh = not args.no_refresh
 init(autoreset=True)
 
 page_header = """
-<header style='position:fixed;top:0;left:0;margin:0px;padding:4px;width:100%;background-color:#192734;color:black;z-index:9999;'>
+<header id="header" style='position:fixed;top:0;left:0;margin:0px;padding:4px;width:100%;background-color:#192734;color:black;z-index:9999;'>
     <div style='display:flex;align-items:center'>
         <div style='width:10px'></div>
         <a href='/'>
-            <img src='/static/TeamLogo.png' alt="ChickenFryBytes Studios Logo" height=40px width=40px>
+            <img id="logo" src='/static/TeamLogo.png' style="border-radius:100%" alt="ChickenFryBytes Studios Logo" height=40px width=40px>
         </a>
         <div style='width:20px'></div>
-        <p style='line-height:1.2;color:darkgray;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
+        <p id="title" style='line-height:1.2;color:darkgray;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
     </div>
 </header>
 <div style='height:40px'></div>
@@ -33,6 +33,25 @@ page_footer = """
 <footer style='padding:30px;font-size:0.7rem;color:darkgrey'>
 Generated using ChickenFryBytes Studios' static site generator
 </footer>
+<script>
+        const header = document.querySelector("#header");
+        const title = document.querySelector("#title");
+        const logo = document.querySelector("#logo");
+        window.addEventListener('scroll',
+        function (){
+            const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+            if (scrollPosition<10){
+                title.style.opacity = 1.0;
+                header.style.backgroundColor = "#192734";
+                logo.style.backgroundColor = "transparent";
+            }else{
+                title.style.opacity = 0.0;
+                header.style.backgroundColor = "transparent";   
+                logo.style.backgroundColor = "#192734";
+            }
+        }
+        );
+</script>
 """
 
 start = f"""
@@ -166,7 +185,7 @@ def create_file_tree_html(file_list):
                 parts = parent_folder.removeprefix('./').split('/')
                 main_heading = parts[0].replace('_',' ')
                 if current_heading!=main_heading:
-                    f.write(f"</ul><h3 style='padding:0;margin:0;'>Learn {main_heading}</h3><ul>")
+                    f.write(f"</ul><br><hr><br><h3 style='padding:0;margin:0;'>{main_heading.upper()}</h3><ul>")
                     current_heading = main_heading
                 if len(parts)>1:
                     sub_heading = new_heading.removeprefix(main_heading)
