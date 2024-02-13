@@ -185,7 +185,7 @@ def create_file_tree_html(file_list):
                 parts = parent_folder.removeprefix('./').split('/')
                 main_heading = parts[0].replace('_',' ')
                 if current_heading!=main_heading:
-                    f.write(f"</ul><br><hr><br><h3 style='padding:0;margin:0;'>{main_heading.upper()}</h3><ul>")
+                    f.write(f"</ul><br><hr><br><h3 id='{main_heading.lower().replace(' ','_')}' style='padding:0;margin:0;'>{main_heading.upper()}</h3><ul>")
                     current_heading = main_heading
                 if len(parts)>1:
                     sub_heading = new_heading.removeprefix(main_heading)
