@@ -52,7 +52,7 @@ or yanked (y)
 - **a** - Enter Insert mode and start inserting after current cursor position
 - **A** - Enter Insert mode and start inserting after the last character in current line
 - **s** - Delete the character under the cursor and Enter Insert mode
-- **S** - Change the current line and indent to where Vim infers that the cursor should be in the current line 
+- **S** - Change the current line and indent to where Vim infers that the cursor should be in the current line
 - **f*char*** - Jump to position of first instance of *char* in current line
 - **F*char*** - Jump to position of previous instance of *char* in current line
 - **t*char*** - Jump to position just before next instance of *char* in current line
@@ -69,6 +69,7 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 - **:*line_number*** - Jump to line number *line_number*
 - **o*char*** - Jump to next line and enter Insert Mode
 - **O*char*** - Jump to previous line and enter Insert mode
+- **[[** and **]]** - jump between paragraphs
 
 ### Finding stuff
 - **/*string*+enter** - Jump to next instance of *string* in the current file
@@ -110,3 +111,14 @@ marked cursor position
 
 ## Visual mode
 - **=** - Indent highlighted text
+
+## Crazy combos
+- **ddp** - swap the current line and the line below
+- **viw** - select in word
+- **vap** - select around paragraph
+- **vi{** - select the contents within { and }
+- **va{** - select the contents including the { and }
+- **va"** - select string including the quotation marks
+- **va"** - select string including the quotation marks
+
+Try these with **d**, **c** and **y** instead of **v**.

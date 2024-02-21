@@ -54,7 +54,7 @@ int main(){
     strcpy(subtraction.name,"Subtraction");
     subtraction.operation = diff;
     use_strategy(subtraction);
-    
+
 
     return 0;
 }

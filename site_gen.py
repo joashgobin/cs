@@ -46,7 +46,7 @@ Generated using ChickenFryBytes Studios' static site generator
                 logo.style.backgroundColor = "transparent";
             }else{
                 title.style.opacity = 0.0;
-                header.style.backgroundColor = "transparent";   
+                header.style.backgroundColor = "transparent";
                 logo.style.backgroundColor = "#192734";
             }
         }
@@ -212,14 +212,14 @@ def create_file_tree_html(file_list):
         create_html_file(file)
 
 def wrap_with_markdown_boilerplate(text,path):
-    
+
     copy_functionality = r"""<script>
     function copyToClipboard(id){
             var copyText = document.getElementById(id).innerText;
             navigator.clipboard.writeText(copyText).then(function(){
-                console.log("Copied "+id+" to clipboard");        
+                console.log("Copied "+id+" to clipboard");
                 }).catch(function(error){
-                    console.log("Error copying "+id+" to clipboard; Error: "+error);        
+                    console.log("Error copying "+id+" to clipboard; Error: "+error);
                     });
                 }
 </script>
@@ -255,7 +255,7 @@ onload="
     result = re.sub(r"!bible\{\{\s*(.*?)\s*\}\}",to_bible_verse,result)
     # substituting for module diagrams
     result = re.sub(r"!module\{\{\s*(.*?)\s*\}\}",to_module_diagram,result)
-    
+
     # finding code snippet dependencies to include in html body
     deps = re.finditer(r"!\{\{(\S*)\}\}",s)
     dep_string = ""
@@ -308,13 +308,13 @@ def to_bible_verse(match):
 
     if len(refs)==0:
         return "No Bible verse references found..."
-    
+
     verse_ids = bible.convert_references_to_verse_ids(refs)
     for verse_id in verse_ids:
         vnum = bible.get_verse_number(verse_id)
         vtext = bible.get_verse_text(verse_id)
-        compiled_text+=f"<blockquote><span style='font-size:0.8rem;opacity:0.5'>{vnum} </span>{vtext}</blockquote>"
-    return f"<div style='border:2px solid #BF40BF;border-radius:10px;padding:20px'><strong style='color:#BF40BF;padding-top:0;margin-top:0'>{text}</strong>"+compiled_text+"</div>"
+        compiled_text+=f"<blockquote><span style='font-size:0.8rem;color:grey'>{vnum} </span>{vtext}</blockquote>"
+    return f"<div style='border:2px solid steelblue;border-radius:10px;padding:20px'><strong style='color:steelblue;padding-top:0;margin-top:0'>{text}</strong>"+compiled_text+"</div>"
 
 def to_code_attachment(match,cur_dir="some directory"):
     link = cur_dir+match.group(1).removeprefix("./")
@@ -382,7 +382,7 @@ def create_html_file(file_path):
     new_dir = os.path.dirname(new_path)
     # print(f"Creating directory: {new_dir}")
     os.makedirs(new_dir,exist_ok=True)
-    
+
     with open(old_path,'r') as old_file:
         new_file = open(new_path,'w')
         match(ext):
