@@ -66,9 +66,10 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 ### Vertical movement and actions
 - **gg** - Go to first line of file
 - **G** - Go to last line of file
+- **gv** - Go to text previously selected in Visual Mode
 - **:*line_number*** - Jump to line number *line_number*
 - **o*char*** - Jump to next line and enter Insert Mode
-- **O*char*** - Jump to previous line and enter Insert mode
+- **O*char*** - Jump to previous line and enter Insert Mode
 - **[[** and **]]** - jump between paragraphs
 
 ### Finding stuff
@@ -102,6 +103,7 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 
 ## Command mode
 - **:*command*** - Run *command*
+- **:!*command*** - Run shell command
 - **:set spell** - Turn spell check on
 - **:set nospell** - Turn spell check off
 - **:norm**+instructions listed out - do list of normal mode instructions

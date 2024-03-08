@@ -20,7 +20,9 @@ negative cash flow (costs) equal to the net positive cash flow (benefits).
 
 - **Return on investment (ROI)** - this is the efficiency of an investment. It is also
 referred to as the *investment margin*:
-$$ROI=\frac{\text{Gain-Cost}}{\text{Cost}}$$
+
+$$ROI=\frag{\text{Gain-Cost}}{\text{Cost}}$$
+
 The ROI is usually expressed as a percentage.
 
 - **Payback period** - this is the period of time required to recover the initial cost of an investment.
@@ -41,4 +43,20 @@ The project charter includes the following information:
 - the vision (is unique and universal to everyone involved in the project)
 - goals and objectives (what makes the end result profitable; how will we be able to say that all the work of the project has been completed?)
 - values (the set of principles we will work according to during the project; e.g. daily relay of information with stakeholders, completing tasks 10% earlier than in previous projects, using better management tools)
--
+- definition of success (when reflecting on the project after its completion, how will we be able to say if the project was a success or failure; did we achieve all of the acceptance criteria?)
+- definition of **done** (how do we define the project as complete?)
+- risks and restrictions (what are the potential risks that stakeholders should be aware of?; what restrictions are there in terms of the resources and schedule of the project?)
+- stakeholders (who are the key stakeholders; who is the source of the user stories?)
+
+The charter serves to provide details of:
+- purpose/justification
+- measurable objectives
+- high-level requirements
+- high-level description of project
+- high-level risks and restrictions
+- summary of the milestones schedule
+- budget summary
+- list of stakeholders
+- requirements for project approval
+- assigned project director, their responsibilities and level of authority
+- name and level of authority of the project sponsor

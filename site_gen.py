@@ -1,4 +1,5 @@
 import os
+import random
 import hashlib
 import re
 import shutil
@@ -16,13 +17,13 @@ refresh = not args.no_refresh
 init(autoreset=True)
 
 page_header = """
-<header id="header" style='position:fixed;top:0;left:0;margin:0px;padding:4px;width:100%;background-color:#192734;color:black;z-index:9999;'>
+<header id="header" style='position:fixed;top:0;left:0;margin:0px;padding:4px;width:100%;background-color:transparent;color:black;z-index:9999;'>
     <div style='display:flex;align-items:center'>
         <div style='width:10px'></div>
         <a href='/'>
             <img id="logo" src='/static/TeamLogo.png' style="border-radius:100%" alt="ChickenFryBytes Studios Logo" height=40px width=40px>
         </a>
-        <div style='width:20px'></div>
+        <div style='width:12px'></div>
         <p id="title" style='line-height:1.2;color:darkgray;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
     </div>
 </header>
@@ -34,6 +35,8 @@ page_footer = """
 Generated using ChickenFryBytes Studios' static site generator
 </footer>
 <script>
+
+
         const header = document.querySelector("#header");
         const title = document.querySelector("#title");
         const logo = document.querySelector("#logo");
@@ -42,12 +45,12 @@ Generated using ChickenFryBytes Studios' static site generator
             const scrollPosition = window.scrollY || document.documentElement.scrollTop;
             if (scrollPosition<10){
                 title.style.opacity = 1.0;
-                header.style.backgroundColor = "#192734";
+                //header.style.backgroundColor = "#192734";
                 logo.style.backgroundColor = "transparent";
             }else{
                 title.style.opacity = 0.0;
-                header.style.backgroundColor = "transparent";
-                logo.style.backgroundColor = "#192734";
+                //header.style.backgroundColor = "transparent";
+                logo.style.backgroundColor = "slategrey";
             }
         }
         );
@@ -97,9 +100,10 @@ def wrap_with_code_block_boilerplate(text,orig_file:str):
     <meta name='description' content='Code Snippet from the ChickenFryBytes Studios NibbleSprouts Project'>
     <title>Code Snippet</title>
     <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
+    <link rel='stylesheet' href='/static/style.css'>
 </head>
 <body style='background-color:black'>
-<small style='color:darkgray'>{dir}</small>
+<small style='color:darkgray'>{dir.removeprefix(r"content/").replace("/"," > ")}</small>
 <h2 style='color:orange'>{basename}</h2>
 <pre>
 <code class='{hljs_lib}'>
@@ -242,6 +246,31 @@ onload="
 "></script>
 
     """
+    mcq_functionality = r"""<script>
+        function handleClick(){
+                const mcq = this.parentNode.parentNode;
+                this.innerHTML = "<span style='color:yellow'>x </span>"+this.innerHTML;
+                const incorrect_choices = mcq.querySelectorAll('.incorrect button');
+                const correct_choices = mcq.querySelectorAll('.correct button');
+                incorrect_choices.forEach(choice=>{
+                    choice.style.backgroundColor='transparent';
+                    choice.style.color='crimson';
+                    choice.style.border = '2px solid crimson';
+                    choice.removeEventListener('click',handleClick);
+                    });
+                correct_choices.forEach(choice=>{
+                    choice.style.backgroundColor='limegreen';
+                    choice.style.color='black';
+                    choice.style.fontWeight='bold';
+                    choice.style.border = '2px solid limegreen';
+                    choice.removeEventListener('click',handleClick);
+                    });
+                }
+        const choices = document.querySelectorAll('.correct button,.incorrect button');
+        choices.forEach(choice=>{
+            choice.addEventListener('click',handleClick);
+
+            });</script>"""
 
     path_trimmed = path.removeprefix("./content/").removesuffix(".md").replace("/"," > ").replace("_"," ")
     path_display = f"<p style='color:darkgrey;opacity:0.8;font-size:0.6rem'>{path_trimmed}</p>"
@@ -255,6 +284,8 @@ onload="
     result = re.sub(r"!bible\{\{\s*(.*?)\s*\}\}",to_bible_verse,result)
     # substituting for module diagrams
     result = re.sub(r"!module\{\{\s*(.*?)\s*\}\}",to_module_diagram,result)
+    # substituting for multiple choice questions
+    result = re.sub(r"!mc\{\{([\s\S]*?)\}\}",to_multiple_choice_question,result)
 
     # finding code snippet dependencies to include in html body
     deps = re.finditer(r"!\{\{(\S*)\}\}",s)
@@ -271,6 +302,7 @@ onload="
 </main>
 {page_footer}
 {copy_functionality if dep_string!="" else ""}
+{mcq_functionality if r'!mc' in text else ""}
 </body>
 </html>
     """
@@ -301,6 +333,25 @@ def to_module_diagram(match):
 """
     return diagram
 
+def to_multiple_choice_question(match):
+    raw_text = match.group(1)
+    trimmed_text = raw_text.strip()
+    segments = trimmed_text.split("\n")
+    question = segments[0]
+    choices = segments[1:len(segments)]
+    choice_text = ""
+    choice_list = []
+    for i in range(0,len(choices)):
+        if i==0:
+            choice_list.append(f"<li class='correct'><button>{choices[i]}</button></li>")
+        else:
+            choice_list.append(f"<li class='incorrect'><button>{choices[i]}</button></li>")
+
+    random.shuffle(choice_list)
+    for choice in choice_list:
+        choice_text+=choice
+    return f"<p>{question} <span style='color:slategrey'>(Tap/click an answer below)</span></p><ul class='mcq' style=''>{choice_text}</ul>"
+
 def to_bible_verse(match):
     text = match.group(1)
     refs = bible.get_references(text)
@@ -314,7 +365,7 @@ def to_bible_verse(match):
         vnum = bible.get_verse_number(verse_id)
         vtext = bible.get_verse_text(verse_id)
         compiled_text+=f"<blockquote><span style='font-size:0.8rem;color:grey'>{vnum} </span>{vtext}</blockquote>"
-    return f"<div style='border:2px solid steelblue;border-radius:10px;padding:20px'><strong style='color:steelblue;padding-top:0;margin-top:0'>{text}</strong>"+compiled_text+"</div>"
+    return f"<div style='border:2px solid aqua;border-radius:10px;padding:20px'><strong style='color:aqua;padding-top:0;margin-top:0'>{text}</strong>"+compiled_text+"</div>"
 
 def to_code_attachment(match,cur_dir="some directory"):
     link = cur_dir+match.group(1).removeprefix("./")

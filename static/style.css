@@ -8,6 +8,7 @@
     --text-title-h5:            #5683cc;/*#172899;*/
     --text-title-h6:		    #BF40BF;
     --charcoal: #36454F;
+    --dark-gray: #141617;
     --dark-bluegray: #192734;
     --darker-bluegray: #0c131a;
     --darkest-bluegray: #06090c;
@@ -34,8 +35,8 @@ body{
     /*font-family:Arial, sans-serif;*/
     line-height:1.5;
     color:#e1e3e1;
-    background-color:var(--darker-bluegray);/*#f4f4f4;*/
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif; 
+    background-color:var(--dark-gray);/*#f4f4f4;*/
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     font-size: 1.15rem;
 }
 
@@ -45,7 +46,7 @@ code{
 
 main{
     padding:20px;
-    max-width:1200px;
+    max-width:900px;
     margin:0 auto;
     display:block;
 }
@@ -65,9 +66,10 @@ h1,h2,h3,h4,h5,h6{
     padding-bottom:0;
     margin-bottom:0;
     line-height:0.9;
-    font-family: headingFont,Arial,sans-serif;
+    /*font-family: headingFont,Arial,sans-serif;*/
     /*font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;*/
-    letter-spacing:1px;
+    font-style:italic;
+    letter-spacing:-1px;
 }
 
 h1:before,h2:before,h3:before,h4:before,h5:before,h6:before{
@@ -138,7 +140,7 @@ li>a{
 }*/
 
 em{
-    color:#ababeb
+    color:#ababeb;
 }
 
 strong{
@@ -155,9 +157,28 @@ button{
     transition:background-color 0.3s ease;
 }
 
+.mcq{
+    margin-left:-14px;
+    color:darkgrey;
+}
+
+.mcq button{
+    background-color:royalblue;
+    font-size:1.1rem;
+    border:2px solid royalblue;
+    margin:4px;
+    text-align:left;
+}
+
+.mcq button:hover,.mcq button:focus,.mcq button:active{
+    text-decoration:none;
+}
+
+.mcq li{
+}
+
 button:hover{
     background-color:#0056b3;
-    text-decoration:underline;
 }
 
 hr{
