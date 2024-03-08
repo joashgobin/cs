@@ -124,3 +124,6 @@ marked cursor position
 - **va"** - select string including the quotation marks
 
 Try these with **d**, **c** and **y** instead of **v**.
+
+- **5o** - go into the next line and enter Insert Mode; copy this text for 5 lines when Insert Mode is exited
+
