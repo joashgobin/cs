@@ -117,13 +117,20 @@ marked cursor position
 ## Crazy combos
 - **ddp** - swap the current line and the line below
 - **viw** - select in word
+- **vaw** - select around word
+- **vis** - select inside sentence
+- **vas** - select around sentence
+- **vip** - select inside paragraph
 - **vap** - select around paragraph
 - **vi{** - select the contents within { and }
 - **va{** - select the contents including the { and }
+- **va"** - select string within the quotation marks
 - **va"** - select string including the quotation marks
-- **va"** - select string including the quotation marks
+- **vit** - select inside of html tags
+- **vat** - select html element
 
 Try these with **d**, **c** and **y** instead of **v**.
 
-- **5o** - go into the next line and enter Insert Mode; copy this text for 5 lines when Insert Mode is exited
+- **5i**+text+Esc - copy this text for 5 instances in the current line when Insert Mode is exited
+- **5o**+text+Esc - go into the next line and enter Insert Mode; copy this text for 5 lines when Insert Mode is exited
 

@@ -60,6 +60,6 @@ $log_{a}b+log_{a}c=log_{a}bc$
 $log_{a}b-log_{a}c=log_{a}\frac{b}{c}$
 
 ### The scalar multiple of a log
-$log_{a}b^n=nlog_{a}b$
+nlog_{a}b$=$log_{a}b^n
 
 
