@@ -444,7 +444,8 @@ def create_html_file(file_path):
         new_file.close()
 
 
-files = find_files_recursively("./content/")
-create_file_tree_html(files)
-declare_action(f"Site generation finished ({'refresh' if refresh else 'no refresh'})")
+if __name__ == "__main__":
+    files = find_files_recursively("./content/")
+    create_file_tree_html(files)
+    declare_action(f"Site generation finished ({'refresh' if refresh else 'no refresh'})")
 
