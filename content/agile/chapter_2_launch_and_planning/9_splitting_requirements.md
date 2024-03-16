@@ -16,3 +16,5 @@ When the scope is too large or too vague, we need to *divide the requirement* in
 ## Best practices
 - Do not divide requirements according to who has to complete them
 - Separate requirements according to their dependencies e.g. a lab experiment needs the equipment to be collected but a lecture does not thus we can have the lab be one requirement and the lecture another
+
+

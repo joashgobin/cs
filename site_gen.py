@@ -14,6 +14,8 @@ parser.add_argument('--no-refresh',action='store_true',help='Disable frequent we
 args = parser.parse_args()
 refresh = not args.no_refresh
 
+cache_version = 1.1
+
 init(autoreset=True)
 
 page_header = """
@@ -68,7 +70,7 @@ start = f"""
     <title>Asynchronous Learning</title>
     <!-- <link rel='stylesheet' href='/static/katex/katex.min.css'> -->
     <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
-    <link rel='stylesheet' href='/static/style.css'>
+    <link rel='stylesheet' href='/static/style.css?v={cache_version}'>
 </head>
 <body>
 {page_header}
@@ -100,7 +102,7 @@ def wrap_with_code_block_boilerplate(text,orig_file:str):
     <meta name='description' content='Code Snippet from the ChickenFryBytes Studios NibbleSprouts Project'>
     <title>Code Snippet</title>
     <link rel='stylesheet' href='/static/highlight/styles/base16/ros-pine.css'>
-    <link rel='stylesheet' href='/static/style.css'>
+    <link rel='stylesheet' href='/static/style.css?v={cache_version}'>
 </head>
 <body style='background-color:black'>
 <small style='color:darkgray'>{dir.removeprefix(r"content/").replace("/"," > ")}</small>

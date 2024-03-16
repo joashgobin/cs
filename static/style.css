@@ -9,6 +9,7 @@
     --text-title-h6:		    #BF40BF;
     --charcoal: #36454F;
     --dark-gray: #141617;
+    --final-gray: #071417;
     --dark-bluegray: #192734;
     --darker-bluegray: #0c131a;
     --darkest-bluegray: #06090c;
@@ -34,8 +35,8 @@
 body{
     /*font-family:Arial, sans-serif;*/
     line-height:1.5;
-    color:#e1e3e1;
-    background-color:var(--dark-gray);/*#f4f4f4;*/
+    color:#cfd1cf;/*#e1e3e1;*/
+    background-color:var(--final-gray);/*var(--dark-gray);*//*#f4f4f4;*/
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     font-size: 1.15rem;
 }
