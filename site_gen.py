@@ -174,7 +174,7 @@ def create_file_tree_html(file_list):
 
     f.write(start)
     f.write("<h1>Welcome Home</h1>")
-    f.write("<p>This is where your journey begins. It is our hope that you will learn something valuable from this website. <em>Project NibbleSprouts</em> is an attempt to provide a scalable education to students across the globe for free.</p>")
+    f.write("<p>This is where your journey begins. It is our hope that you will learn something valuable from this website. <em>Project NibbleSprouts</em> is an attempt to provide a scalable education to students across the globe for free. The web pages are optimized for speed to help students spend more time learning and less time waiting for the content to load.</p>")
 
     f.write(f"<h2>Lessons</h2>")
     f.write(f"<p>The following are the lessons we have in our database. Click on a link to begin learning.</p>")

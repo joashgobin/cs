@@ -1,6 +1,6 @@
 # Context
-The agile approach to project management resulted from a desire to move away from 
-traditional methodologies which were unable to match the ever-evolving nature of 
+The agile approach to project management resulted from a desire to move away from
+traditional methodologies which were unable to match the ever-evolving nature of
 various industries.
 
 ## Why is it called agile
@@ -11,7 +11,7 @@ We refer to agile project management as **agile** because of its ability to adap
 The traditional project management methodologies:
 - are too rigid
 - do not cater for changes in requirements along the way
-- favour *information coolers* such as **Gantt charts** which require a lot of 
+- favour *information coolers* such as **Gantt charts** which require a lot of
 technical knowledge to prepare
 - need all requirements to be finalized before starting
 - produce TLDR documents at the end of each stage of production
@@ -23,7 +23,7 @@ These are the four(4) principles upon which all of agile management is built:
 3. Collaboration with client over contracts
 4. Adaptation to change over a rigid plan
 
-In each pair, the latter item is not unnecessary but it is not as important as the former. 
+In each pair, the latter item is not unnecessary but it is not as important as the former.
 For example, having a working product is more important than a manual (documentation) but we still need
 to produce a manual (a document describing how the product should be used).
 
@@ -54,4 +54,3 @@ These include but are not limited to:
 - software development
 - construction e.g. lean construction
 
-[Next lesson](./2_misconceptions.md)

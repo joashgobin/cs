@@ -7,7 +7,7 @@ This project should help students to partake in **mastery learning**. It is *not
 This article will show you the basic features of the NibbleSprouts static site generator. Articles are written in a *modified markdown syntax* and **converted to html** when the site is generated.
 
 ### Typesetting
-You can include equations. The MathML rendering is handled by *$\KaTeX$*. It supports inline mode e.g. $\sin{x}$ and display mode:
+You can include equations. The MathML rendering is handled by Khan Academy's *$\KaTeX$*. It supports inline mode e.g. $\sin{x}$ and display mode:
 
 $$T=2\pi \sqrt{\frac{l}{g}}$$
 
@@ -31,13 +31,15 @@ You can also insert multiple verses:
 This feature allows the user to quickly reference Bible verses without having to exit
 their markdown editor to copy and paste Scripture.
 
-### Quiz questions
-You can add questions to a page with the following format:
+### Multiple-Choice Questions
+You can add multiple-choice questions by using the following format:
 !mc{{
 Water is a polar substance
 True
 False
 }}
+
+This feature serves to help the user to keep readers from becoming too passive in the learning process.
 
 #### Planned features
 The following features are to be implemented:
