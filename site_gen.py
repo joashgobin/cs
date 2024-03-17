@@ -23,7 +23,7 @@ page_header = """
     <div style='display:flex;align-items:center'>
         <div style='width:10px'></div>
         <a href='/'>
-            <img id="logo" src='/static/TeamLogo.png' style="border-radius:100%" alt="ChickenFryBytes Studios Logo" height=40px width=40px>
+            <img id="logo" src='/static/TeamLogo.webp' style="border-radius:100%" alt="ChickenFryBytes Studios Logo" height=40px width=40px>
         </a>
         <div style='width:12px'></div>
         <p id="title" style='line-height:1.2;color:darkgray;font-size:1.0rem;font-weight:700'>CFBS NibbleSprouts Project</p>
