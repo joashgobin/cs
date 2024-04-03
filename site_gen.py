@@ -14,7 +14,7 @@ parser.add_argument('--no-refresh',action='store_true',help='Disable frequent we
 args = parser.parse_args()
 refresh = not args.no_refresh
 
-cache_version = 1.1
+cache_version = 1.3
 
 init(autoreset=True)
 
@@ -33,8 +33,11 @@ page_header = """
 """
 page_footer = """
 <hr>
-<footer style='padding:30px;font-size:0.7rem;color:darkgrey'>
-Generated using ChickenFryBytes Studios' static site generator
+<footer style='padding:30px;font-size:0.7rem;color:darkgrey;text-align:center'>
+<p>Generated using <a href='https://chickenfrybytes.com'>ChickenFryBytes Studios</a>' static site generator. Check out our other websites <a href='https://buyinguyana.com'>BuyInGuyana</a> and <a href='https://learn.chickenfrybytes.com'>Project NibbleSprouts</a>.
+</p>
+
+<p>Created by Joash Gobin.</p>
 </footer>
 <script>
 

@@ -1,7 +1,7 @@
 # Scrum
 Many persons hate scrum because it's overdone in some organizations. It is one of
 those "good in theory, not so good in execution". This is due to some people taking
-Scrum too seriously. This in turn forces the work team to treat agile as a ritual or 
+Scrum too seriously. This in turn forces the work team to treat agile as a ritual or
 even a religion.
 
 Scrum is:
@@ -45,7 +45,7 @@ The scrum values in the Agile Manifesto are:
 - focus on the result
 - motivation
 - transparency
-- commitment 
+- commitment
 - respect
 
 ## Meetings in Scrum

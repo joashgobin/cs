@@ -112,7 +112,9 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 marked cursor position
 
 ## Visual mode
-- **=** - Indent highlighted text
+- **=** - Auto-indent highlighted text
+- **<** - Decrease indent for highlighted text
+- **>** - Increase indent for highlighted text
 
 ## Crazy combos
 - **ddp** - swap the current line and the line below
