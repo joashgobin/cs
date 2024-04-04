@@ -115,6 +115,8 @@ marked cursor position
 - **=** - Auto-indent highlighted text
 - **<** - Decrease indent for highlighted text
 - **>** - Increase indent for highlighted text
+- **:norm *commands*** - Run Normal mode commands on each line in the Visual Line mode
+- **o** - Jump to other end of current selection
 
 ## Crazy combos
 - **ddp** - swap the current line and the line below
