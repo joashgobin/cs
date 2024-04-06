@@ -121,6 +121,8 @@ marked cursor position
 ## Crazy combos
 - **ddp** - swap the current line and the line below
 - **viw** - select in word
+- **vf<** - select to opening angled bracket
+- **vt<** - select to but not including opening angled bracket
 - **vaw** - select around word
 - **vis** - select inside sentence
 - **vas** - select around sentence
