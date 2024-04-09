@@ -6,7 +6,7 @@
  * - add teacher information
  * - calculate net salary from gross salary
  *
- * Non-functional requirements (acceptance criteria):
+ * Non-functional requirements
  * - Error handling for incorrect inputs
  * - Messages to notify when a mistake is made
  *
