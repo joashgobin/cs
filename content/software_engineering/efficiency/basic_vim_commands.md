@@ -8,6 +8,8 @@ Here is a list of some basic commands in Vim. Vim has four (4) modes:
 ## Normal mode
 The following commands are used in normal mode.
 
+- **.** - replay last command
+
 ### Basic movement
 - **h** - Move cursor left
 - **j** - Move cursor down
@@ -68,9 +70,10 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 - **G** - Go to last line of file
 - **gv** - Go to text previously selected in Visual Mode
 - **:*line_number*** - Jump to line number *line_number*
-- **o*char*** - Jump to next line and enter Insert Mode
-- **O*char*** - Jump to previous line and enter Insert Mode
-- **[[** and **]]** - jump between paragraphs
+- **o*char*** - Insert line below current line and enter Insert Mode
+- **O*char*** - Insert line above current line and enter Insert Mode
+- **[[** and **]]** - jump between sections of text
+- **{** and **}** - jump between paragraphs
 
 ### Finding stuff
 - **/*string*+enter** - Jump to next instance of *string* in the current file
