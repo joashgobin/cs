@@ -22,5 +22,7 @@ Once we have defined when the work will **stop** for requirements, sprints and b
 The functional and non-functional requirements must be defined. Acceptance criteria must also be defined. The product that will be displayed in the "demo" is clear to the team.
 
 2. Ready for the sprint
+The sprint backlog must be reordered according to priority. The team must also allocate work to its members.
 
 3. Ready for the project
+The product owner must be identified and a project facilitator must be assigned.The stack of requirements in the project backlog must be prioritized. The definition of done for the sprints must be known.

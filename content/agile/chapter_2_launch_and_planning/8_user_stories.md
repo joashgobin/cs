@@ -9,7 +9,7 @@ User stories consist of:
 ## Writing user stories
 One side contains the story text written in the form: As *User*, I need *functionality or attribute* for *desired result*.
 
-On the back of the card, we place the acceptance criteria (the non-functional requirements) for the story. These are important because we want our product to not only be functional but also to perform its function very well.
+On the back of the card, we place the acceptance criteria for the story. These are important because we want our product to not only be functional but also to perform its function very well.
 
 ## I.N.V.E.S.T.
 Good user stories are:

@@ -38,11 +38,11 @@ The quality of our product is determined by how well it fulfills the requirement
 ### Types of requirements
 There are two types of requirements:
 - functional requirements (what a product does) e.g. the app allows users to list tasks to be completed
-- non-functional requirements a.k.a. acceptance criteria (how it does that function) e.g. the app must allow users to list tasks without slowing their devices down
+- non-functional requirements (how it does that function) e.g. the app must allow users to list tasks without slowing their devices down
 
 A product must have both before it is considered to be usable. Do not make the mistake of saying that work is complete when only the functional requirements have been met.
 
-Do not add unnecessary features to "gold-plate" your product. If it cannot fulfill the functional requirements as well as the acceptance criteria then it makes no sense trying to add other features in hopes of convincing customers to use your incomplete product. Solve the real problem.
+Do not add unnecessary features to "gold-plate" your product. If it cannot fulfill the functional requirements as well as the non-functional requirements then it makes no sense trying to add other features in hopes of convincing customers to use your incomplete product. Solve the real problem.
 
 ## Human resources
 The work team is pivotal to the project. All of the tools and meetings are utilized and owned by the team. If a process does not serve to motivate or benefit the work team then it is a hindrance to the project.

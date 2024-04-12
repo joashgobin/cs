@@ -5,7 +5,7 @@ the quality of a software product is the set of **requirements**.
 Requirements are the features that a software application or system delivers on.
 There are two kinds of requirements:
 - functional requirements - these are what the program does.
-- non-functional requirements - these dictate the manner in which the program delivers on the functional requirements. Non-functional requirements are also referred as acceptance criteria.
+- non-functional requirements - these dictate the manner in which the program delivers on the functional requirements.
 
 ## Functional requirements
 Our primary goal in making software is to ensure that it does what we promised that it would do.
