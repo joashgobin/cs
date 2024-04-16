@@ -13,7 +13,7 @@ Functional requirements are the features that, when absent, will definitely be n
 If we fail to fulfill these requirements then our software fails to meet even the bare minimum of
 what is expected.
 
-A program not delivering on its functional requirements is like a chair only one pair of legs.
+A program not delivering on its functional requirements is like a chair with only one pair of legs.
 
 ## Non-functional Requirements
 These separate the sheep from the goats. Non-functional requirements are the features that determine how
