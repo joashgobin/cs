@@ -8,14 +8,30 @@ Remember that ROI can help us to pinpoint a profitable business venture for the 
 
 ## Roadmap elaboration
 We take the number of story points for each requirement. We can calculate the work capacity of the teams from the number of hours each week per person:
-$$capacity=\frac{30 hours}{1 person}\times 5 persons$$
-$$capacity=150 hours$$
+$$capacity=\frac{30\ hours}{1\ person}\times 5\ persons$$
+$$capacity=150\ hours$$
 
 If we say that each story point is 12 hours of work, then the number of story points we can complete per week is:
-$$\frac{150 hours}{12 hours/point}=12.5 points$$
+$$\frac{150\ hours}{12\ hours/point}=12.5\ points$$
 
-Therefore, we can complete a single requirement which can 13 story points each week.
+Therefore, we can complete a single requirement which has 13 story points each week.
 
 The roadmap for a 16-week project would thus be:
-|It1|It2|It3|It4|...|It16|
-|13 |13 |13 |13 |...|13|
+
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;">
+
+<div style='border:2px solid grey;padding:10px'>It1</div>
+<div style='border:2px solid grey;padding:10px'>It2</div>
+<div style='border:2px solid grey;padding:10px'>It3</div>
+<div style='border:2px solid grey;padding:10px'>It4</div>
+<div style='border:2px solid grey;padding:10px'>...</div>
+<div style='border:2px solid grey;padding:10px'>It16</div>
+
+<div style='border:2px solid grey;padding:10px'>13</div>
+<div style='border:2px solid grey;padding:10px'>13</div>
+<div style='border:2px solid grey;padding:10px'>13</div>
+<div style='border:2px solid grey;padding:10px'>13</div>
+<div style='border:2px solid grey;padding:10px'>...</div>
+<div style='border:2px solid grey;padding:10px'>13</div>
+
+</div>
