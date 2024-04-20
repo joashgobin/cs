@@ -9,7 +9,7 @@ A roadmap changes as we gain more information. We may decide on having 3 iterati
 
 *Buffers* are useful when we lack information on the project. If the usually number of story points we complete in each iteration (the resolution capacity) is about 13 points, then we can have 11 points as the final resolution capacity. Yes this means that the final project will deliver on a slightly smaller number o requirements but the work team is spared from having to build the product/system and doing research at the same time in order to fill this information gap.
 
-*Consolidation iterations* are iterations in which there are no story points but we take the time to integrate the products of the previous iteration and test the integrated system before we release.
+*Consolidation iterations* are iterations in which there are no story points but we take the time to integrate the products of the previous iteration and test the integrated system before we release. These are *not necessary* but can be helpful in larger projects with more persons and technologies involved.
 
 ## Visual roadmap
 The project roadmap, like the Kanban board, is an information radiator. It is not the same a Gantt chart which has more details and is overwhelming to prepare and understand even at the beginning of the project.
