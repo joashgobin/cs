@@ -144,3 +144,12 @@ Try these with **d**, **c** and **y** instead of **v**.
 - **5i**+text+Esc - copy this text for 5 instances in the current line when Insert Mode is exited
 - **5o**+text+Esc - go into the next line and enter Insert Mode; copy this text for 5 lines when Insert Mode is exited
 
+## Registers
+- **:reg** - view the registers in vim
+- **"1y** - yank into register 1
+- **"1p** - paste from register 1
+
+## File browsing
+- **:Ex** - open current directory
+- **d** - Initiate directory creation
+- **%** - Initiate file creation
