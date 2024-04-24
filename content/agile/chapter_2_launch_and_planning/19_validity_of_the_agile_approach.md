@@ -1,4 +1,4 @@
-## Validity of the Agile Approach
+# Validity of the Agile Approach
 Agile is valid because of the value and flexibility it brings to any project.
 User stories help us to focus on who we are making the product/system for instead of falling into the corporate trap of doing everything just for the sake of saying we did.
 The project roadmap allows us to create an idea of the work to be completed by the team.
