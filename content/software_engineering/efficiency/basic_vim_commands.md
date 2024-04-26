@@ -92,6 +92,9 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 - **z=** - Open a list of word suggestions for the current word
 - **1z=** - Replace the current word with the 1st suggestion in the list of word suggestions
 
+## Search and replace
+- **%s/*old_string*/*next_string*/g** - replace *old_string* with *new_string* globally
+
 ### Placing the cursor relative to the window
 - **L** - Place the cursor low
 - **M** - Place the cursor middle
@@ -148,6 +151,13 @@ Try these with **d**, **c** and **y** instead of **v**.
 - **:reg** - view the registers in vim
 - **"1y** - yank into register 1
 - **"1p** - paste from register 1
+- **"+y** - yank into system register
+- **"+p** - paste from system register
+
+### Macros
+- **qa**+commands+**q** - start recording macro in register a
+- **@a** - replay macro stored in a
+- **@@** - replay last macro
 
 ## File browsing
 - **:Ex** - open current directory
