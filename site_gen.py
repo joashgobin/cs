@@ -14,7 +14,7 @@ parser.add_argument('--no-refresh',action='store_true',help='Disable frequent we
 args = parser.parse_args()
 refresh = not args.no_refresh
 
-cache_version = 1.3
+cache_version = 1.4
 
 init(autoreset=True)
 
@@ -32,7 +32,6 @@ page_header = """
 <div style='height:40px'></div>
 """
 page_footer = """
-<hr>
 <footer style='padding:30px;font-size:0.7rem;color:darkgrey;text-align:center'>
 <p>Generated using <a href='https://chickenfrybytes.com'>ChickenFryBytes Studios</a>' static site generator. Check out our other websites <a href='https://buyinguyana.com'>BuyInGuyana</a> and <a href='https://learn.chickenfrybytes.com'>Project NibbleSprouts</a>.
 </p>
@@ -254,7 +253,7 @@ onload="
     mcq_functionality = r"""<script>
         function handleClick(){
                 const mcq = this.parentNode.parentNode;
-                this.innerHTML = "<span style='color:yellow'>x </span>"+this.innerHTML;
+                this.innerHTML = "<span style='color:royalblue'>x </span>"+this.innerHTML;
                 const incorrect_choices = mcq.querySelectorAll('.incorrect button');
                 const correct_choices = mcq.querySelectorAll('.correct button');
                 incorrect_choices.forEach(choice=>{
@@ -370,7 +369,7 @@ def to_bible_verse(match):
         vnum = bible.get_verse_number(verse_id)
         vtext = bible.get_verse_text(verse_id)
         compiled_text+=f"<blockquote><span style='font-size:0.8rem;color:grey'>{vnum} </span>{vtext}</blockquote>"
-    return f"<div style='border:2px solid aqua;border-radius:10px;padding:20px'><strong style='color:aqua;padding-top:0;margin-top:0'>{text}</strong>"+compiled_text+"</div>"
+    return f"<div class='card' style='border-radius:10px;padding:20px'><strong style='color:steelblue;padding-top:0;margin-top:0'>{text}</strong>"+compiled_text+"</div>"
 
 def to_code_attachment(match,cur_dir="some directory"):
     link = cur_dir+match.group(1).removeprefix("./")
