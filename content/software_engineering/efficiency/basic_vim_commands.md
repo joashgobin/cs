@@ -8,7 +8,9 @@ Here is a list of some basic commands in Vim. Vim has four (4) modes:
 ## Normal mode
 The following commands are used in normal mode.
 
-- **.** - replay last command
+- **.** - Replay last command
+- **J** - Join the next line to the end of the current line
+- **Ctrl+w followed by j,k,h,l,w** - Switch between windows
 
 ### Basic movement
 - **h** - Move cursor left
