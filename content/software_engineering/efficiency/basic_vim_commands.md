@@ -93,7 +93,7 @@ and enter Insert mode; The text must be enclosed by two instances of the *char*
 - **1z=** - Replace the current word with the 1st suggestion in the list of word suggestions
 
 ## Search and replace
-- **%s/*old_string*/*next_string*/g** - replace *old_string* with *new_string* globally
+- **:%s/*old_string*/*next_string*/g** - replace *old_string* with *new_string* globally
 
 ### Placing the cursor relative to the window
 - **L** - Place the cursor low
