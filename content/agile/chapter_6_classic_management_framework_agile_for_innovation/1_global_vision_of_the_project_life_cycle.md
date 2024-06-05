@@ -1,0 +1,91 @@
+# Global Vision of the Project Life Cycle
+A project is an investment of resources (people, time, money and materials). These different factors make every project unique - no two projects have the exact same budget, team, costs, working conditions, etc.
+
+The *triple constraint* (time, cost and scope) for each project is different even for agile projects where the cost and time are fixed and the scope is less certain. We manage services differently compared to projects - a project has milestones and releases whereas services do not.
+
+## Global vision by stages
+The key management activities in the project life cycle are:
+- Initiation:
+    - select a project manager
+    - determine the corporate culture and existing systems
+    - collect processes, procedures and historical information
+    - divide large projects into phases
+    - understand the business case
+    - reveal initial requirements and risks
+    - create measurable objects
+    - develop the project charter
+    - identify stakeholders to incorporate their needs
+    - develop a stakeholder management strategy
+- Planning:
+    - determine how you will plan
+    - finalize requirements
+    - create a project scope statement
+    - determine what to buy
+    - determine the equipment
+    - create WBS and WBS Dictionary
+    - create a list of activities
+    - create a network diagram
+    - estimate resource requirements
+    - estimate time and cost
+    - determine the critical path
+    - develop the schedule
+    - develop the budget
+    - determine quality standards, processes and metrics
+    - create a process improvement plan
+    - determine roles and responsibilities
+    - plan communications
+    - perform risk identification, qualitative and quantitative risk analysis and risk response planning
+    - go back; iterations
+    - prepare procurement documents
+    - finalize "how to execute and control" sections of all management plans
+    - develop final PDP and baseline for realistic performance measurement
+    - obtain formal approval of the PDP
+    - hold the project kick-off meeting
+- Execution:
+    - execute the work according to the Project Plan
+    - produce product scope
+    - request changes
+    - only implement approved changes
+    - ensure common understanding
+    - use the work authorization system
+    - improve continuously
+    - follow the processes
+    - perform quality assurance
+    - carry out quality audits
+    - establish the final team
+    - manage people
+    - evaluate team and project performance
+    - carry out team building activities
+    - give recognition and awards
+    - use the controversy register
+    - facilitate conflict resolution
+    - send and receive information
+    - hold meetings
+    - select suppliers
+- Monitoring and control:
+    - take actions to control the project
+    - measure performance against baseline for performance measurement
+    - measure performance against other metrics determined by the project manager
+    - determine variations and decide if they deserve a change request
+    - influence the factors causing the changes
+    - request changes
+    - perform integrated change control
+    - approve or reject changes
+    - inform stakeholders of the approved changes
+    - manage settings
+    - create projections
+    - obtain acceptance of the provisional deliverables by the client
+    - perform quality control
+    - report on project performance
+    - carry out risk audits
+    - manage reservations
+    - manage acquisitions
+- Closing:
+    - confirm that the work has been completed according to the requirements
+    - complete closing of acquisitions
+    - obtain formal acceptance of the product
+    - complete final performance reports
+    - index and archive records
+    - update knowledge base of the learned lessons
+    - release the completed product
+    - release the resources
