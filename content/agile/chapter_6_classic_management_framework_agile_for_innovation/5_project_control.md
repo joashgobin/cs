@@ -20,6 +20,12 @@ The tool we use for project control is Configuration Management System. It provi
 The system's information serves as a snapshot for the state of the project. The system consists of a set of tools that the project manager uses to manage and control the project.
 
 ## Quality management
-
+Quality is the degree to which the project meets the requirements. Quality management have 3 distinct steps:
+- plan quality
+- quality assurance - performs audits to see there is any indication that standards, policies, plans or procedures are not being followed; seeks best practices and improves processes
+- quality control - measures the performance of the project in terms of meeting the requirements
 
 ## Cost of Quality (COQ)
+This is about evaluating the cost of compliance (and by extension, non-compliance) with quality. We do not try to enforce perfect quality as this may lead to wastage. Instead, we focus on sufficient fulfillment of requirements ("good enough" quality).
+
+Control Diagrams are used to represent quality measurements. We show both the lower and upper limits of control and see if the process average stays in between these limits.
