@@ -1,0 +1,45 @@
+# Some Agile Tips
+- agile values and principles
+- knowledge projects
+- more visibility, more value, less risk
+- return on investment (ROI)
+- small teams
+- stable teams
+- predictable speed/velocity
+- necessary skills
+- generalized specialists
+- roles (Scrum Master, Product Owner, Work Team)
+- facilitator role
+- role of the Product Owner
+- there is only one Product Owner
+- the business provides the backlog
+- the business decides what, the team decides how
+- common vision
+- Product Box
+- definition of Done
+- early and frequent releases
+- risk management
+- agile leadership
+- face-to-face communication
+- iterative and incremental
+- iterative and incremental simultaneously
+- empirical
+- recognize uncertainty
+- no change within an iteration
+- variable scope, fixed cost and time
+- group estimations
+- estimations in story points
+- relative estimations
+- estimations based on velocity
+- initial buffer
+- estimation with planning poker
+- small user stories
+- progressive elaboration
+- sufficient definition
+- user stories
+- stories should follow INVEST
+- sufficient construction to be acceptable (results should be "good enough", not perfect)
+- quality assurance
+- exploratory testing
+- information radiators
+- burndown and burnup

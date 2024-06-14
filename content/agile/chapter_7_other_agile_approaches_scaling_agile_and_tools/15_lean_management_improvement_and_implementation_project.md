@@ -1,0 +1,33 @@
+# Lean Management Improvement and Implementation Project
+The steps can be:
+- determine the scope of application
+- identify the objective of the improvement
+- determine the target team
+- audit the state at the beginning
+- generate a program of actions
+- generate the improvement project
+- establish policies
+- establish the processes
+- train people
+- detail and specify the action program
+- take a project of each type
+- exemplify with those projects
+- metric-taking tools
+- project management kit - this includes:
+    - model sheet for risk registration
+    - model sheet for collecting lessons learned
+    - basic structure of planning (traditional or agile)
+    - basic structure for calculating and reporting the state of a project (earned value)
+    - model for burndowns in agile projects
+    - metrics collection website
+    - public repository (within the organization) to share risks, lessons learned and proposals for improvement
+    - proposal for structuring the work (support tool for Kanban)
+- repository to share information
+- transfer what has been learned to a set of suitable projects
+- internal audit
+- corrections on the findings
+- external audit "draft"
+- corrections on the findings
+- preparation for an official external audit
+- external audit
+- determine the findings
